@@ -1,0 +1,1568 @@
+#NEXUS
+
+    [ File output by Morphobank v3.0 (http://www.morphobank.org); 2022-06-30 06.18.56 ]
+
+    BEGIN TAXA;
+    DIMENSIONS NTAX=61;
+    TAXLABELS
+    		'Tubiluchus priapulida'
+		'Cricocosmia'
+		'Siberian orsten tardigrade'
+		'Hadranax'
+		'Aysheaia'
+		'Siberion'
+		'Onychodictyon ferox'
+		'Diania'
+		'Xenusion'
+		'Paucipodia'
+		'Cardiodictyon'
+		'Microdictyon'
+		'Onychodictyon gracilis'
+		'Thanahita distos'
+		'Collinsovermis monstruosus'
+		'Collins monster Emu Bay'
+		'Acinocricus'
+		'Orstenotubulus'
+		'Tritonychus phanerosarkus'
+		'Carbotubulus'
+		'Hallucigenia sparsa'
+		'Hallucigenia fortis'
+		'Hallucigenia hongmeia'
+		'Facivermis yunnanicus'
+		'Luolishania'
+		'Ovatiovermis cribratus'
+		'Collinsium'
+		'Antennacanthopodia'
+		'Helenodora'
+		'Tertiapatus dominicanus'
+		'Euperipatoides'
+		'Plicatoperipatus'
+		'Ooperipatellus'
+		'Actinarctus'
+		'Halobiotus'
+		'Megadictyon'
+		'Jianshanopodia'
+		'Cucumericrus'
+		'Kerygmachela'
+		'Pambdelurion'
+		'Parapeytoia'
+		'Kylinxia'
+		'Isoxys'
+		'Opabinia'
+		'Utaurora'
+		'Caryosyntrips camurus'
+		'C.f. Peytoia USNM 57490'
+		'Amplectobelua symbrachiata'
+		'Anomalocaris canadensis'
+		'Cambroraster falcatus'
+		'Hurdia victoria'
+		'Peytoia nathorsti'
+		'Aegirocassis benmoulai'
+		'Lyrarapax unguispinus'
+		'Schinderhannes'
+		'Chengjiangocaris'
+		'Fuxianhuia'
+		'Leanchoilia'
+		'Alalcomenaeus'
+		'Misszhouia longicaudata'
+		'Kuamaia lata'
+    ;
+    ENDBLOCK;
+
+    BEGIN CHARACTERS;
+	DIMENSIONS NCHAR=151;
+	FORMAT DATATYPE=STANDARD GAP=- MISSING=? SYMBOLS="01234567";
+	CHARLABELS
+		 [1] 'General organization: Paired appendages'
+		 [2] 'Head region: Anterior region covered by sclerites'
+		 [3] 'Head region: Head shield (cephalic shield) formed by fused cephalic segments'
+		 [4] 'Head region: Dorsal isolated sclerite: Shape'
+		 [5] 'Head region: Dorsal isolated sclerite: Position'
+		 [6] 'Head region: Dorsal isolated sclerite: Reticulate ornament'
+		 [7] 'Head region: Degree of attachment of dorsal isolated sclerite on head'
+		 [8] 'Head region: Isolated lateral sclerites, forming tripartite carapace'
+		 [9] 'Head region: Isolated lateral sclerites: Shape'
+		 [10] '[NEW] Head region: Ventral isolated sclerite'
+		 [11] 'Head region: Anterior trunk flexure in coronal plane'
+		 [12] 'Head region: Swelling of anteriormost trunk '
+		 [13] 'Head region: Spine-like cuticular projections on anterior region (cirri)'
+		 [14] '[NEW] Oral structures: Mouth opening position'
+		 [15] '[NEW] Oral structures: Ventral mouth orientation'
+		 [16] 'Oral structures: Pre-oral chamber'
+		 [17] 'Oral structures: Radially arranged circumoral structures'
+		 [18] '[NEW] Oral structures: Radially arranged circumoral structures: contact area'
+		 [19] 'Oral structures: Differentiated circumoral structures'
+		 [20] '[New] Oral structures: Differentiated circumoral structures: Enlarged plates'
+		 [21] 'Oral structures: Nodes on differentiated circumoral structures'
+		 [22] 'Oral structures: Furrowed folds on circumoral structures'
+		 [23] 'Oral structures: Spinose projections from inner face of circumoral structures'
+		 [24] 'Oral structures: Expanded anterior gut'
+		 [25] 'Oral structures: Pharynx eversible'
+		 [26] 'Oral structures: Sclerotized pharyngeal "teeth"'
+		 [27] 'Oral structures: Nature of pharyngeal teeth or aciculae'
+		 [28] 'Oral structures: Arrangement of pharyngeal teeth or aciculae'
+		 [29] '[NEW] Oral structures: Extent of pharyngeal teeth'
+		 [30] 'Ocular structures: Ocelli'
+		 [31] 'Ocular structures: Compound eyes'
+		 [32] 'Ocular structures: Compound eyes: Attachment'
+		 [33] 'Ocular structures: Compound eyes: Posterior displacement'
+		 [34] '[New] Cephalic/anterior appendages: Loss of claws on protocerebral appendage'
+		 [35] 'Arthrodial membranes'
+		 [36] '[New] Cephalic/anterior appendages: Post-ocular (post-protocerebral) appendages arthrodial membranes'
+		 [37] 'Cephalic/anterior appendages: Pre-ocular (protocerebral) limb pair, structurally differentiated from trunk appendages'
+		 [38] '[New] Appendages: Sclerotization'
+		 [39] '[New] Appendages: Sclerotization of post-ocular (trunk) appendages'
+		 [40] 'Cephalic/anterior appendages: Protocerebral limb pair with podomeres'
+		 [41] 'Cephalic/anterior appendages: Position of protocerebral appendage pair'
+		 [42] 'Cephalic/anterior appendages: Posterior shift of frontal appendage'
+		 [43] 'Cephalic/anterior appendages: Protocerebral appendages directly adjacent to one another'
+		 [44] 'Cephalic/anterior appendages: Protocerebral appendages mechanically fused'
+		 [45] '[NEW] Cephalic/anterior appendages: Protocerebral appendage basal connection'
+		 [46] 'Cephalic/anterior appendages: Spine series on protocerebral appendage'
+		 [47] 'Cephalic/anterior appendages: Spine/spinules on protocerebral appendage: Height'
+		 [48] '[New] Trunk region: Spines on trunk'
+		 [49] 'Cephalic/anterior appendages: Number of spine/spinule series on protocerebral frontal appendage'
+		 [50] '[NEW] Cephalic/anterior appendages: Spine/spinules on protocerebral appendages: Accessory spines'
+		 [51] '[NEW] Cephalic/anterior appendages: Spine/spinules on protocerebral appendages: Accessory spine distribution'
+		 [52] 'Cephalic/anterior appendages: Spines/spinules on protocerebral appendage: Alternation'
+		 [53] 'Cephalic/anterior appendages: Spine/spinules on protocerebral appenage: Width'
+		 [54] '[NEW] Cephalic/anterior appendages: Spine/spinules on protocerebral appendage: base to tip thickness'
+		 [55] 'Cephalic/anterior appendages: Multifurcate distal termination of protocerebral appendage'
+		 [56] 'Cephalic/anterior appendages: Protocerebral appendages: Podomere differentiation'
+		 [57] 'Cephalic/anterior appendages: Protocerebral appendages: Distally tapering podomeres'
+		 [58] 'Cephalic/anterior appendages: Protocerebral appendages: Kink'
+		 [59] 'Cephalic/anterior appendages: Protocerebral appendages: Pincer'
+		 [60] 'Cephalic/anterior appendages: Protocerebral appendages: Outer spines'
+		 [61] 'Cephalic/anterior appendages: Protocerebral appendages: spine series tip orientation'
+		 [62] 'Cephalic/anterior appendages: Protocerebral spine series: lateral spine series'
+		 [63] 'Cephalic/anterior appendages: Protocerebral appendages: accessory gnathal spines'
+		 [64] 'Cephalic/anterior appendages: Nature of post-ocular lobopodous inner branch'
+		 [65] 'Cephalic/anterior appendages: Deutocerebral limb pair structurally differentiated from trunk appendages'
+		 [66] 'Cephalic/anterior appendages: Nature of sclerotized first post-ocular (deutocerebral) appendage'
+		 [67] 'Cephalic/anterior appendages: Nature of lobopodous first post-ocular (deutocerebral) appendage'
+		 [68] 'Cephalic/anterior appendages: Inner blade of deutocerebral jaw with diastema'
+		 [69] 'Cephalic/anterior appendages: Nature of lobopodous second post-ocular (tritocerebral) appendage'
+		 [70] 'Cephalic/anterior appendages: Nature of arthropodized second post-ocular (tritocerebral) appendage'
+		 [71] 'Trunk region: Epidermal segmentation'
+		 [72] 'Trunk region: Dorsal integument sclerotized and connected by arthrodial membranes'
+		 [73] 'Trunk region: Sternites connected by arthrodial membranes'
+		 [74] 'Trunk region: Annulations'
+		 [75] 'Trunk region: Anterior projection of trunk lacking annulations'
+		 [76] 'Trunk region: Organization of trunk annulation'
+		 [77] 'Trunk region: Branching of annular rings'
+		 [78] 'Trunk region: Metamerically arranged dorsolateral epidermal specializations'
+		 [79] 'Trunk region: Nature of paired epidermal specialization'
+		 [80] 'Trunk region: Proportions of epidermal trunk evaginations'
+		 [81] 'Trunk region: Trunk epidermal evaginations with acute distal termination'
+		 [82] 'Trunk region: Acute distal termination in epidermal evagination is curved'
+		 [83] 'Trunk region: Sclerotization of epidermal evaginations'
+		 [84] 'Trunk region: Dorsal trunk sclerite ornament'
+		 [85] 'Trunk region: Sclerites consist of a stack of constituent elements'
+		 [86] 'Trunk region: Maximum number of primary dorsal epidermal specializations above each leg pair'
+		 [87] 'Trunk region: "Secondary" structures in dorsal epidermal specializations'
+		 [88] 'Trunk region: Size of dorsal epidermal specialisations consistent'
+		 [89] 'Trunk region: Spacing of epidermal specializations'
+		 [90] 'Trunk region: Papillae on trunk annulations'
+		 [91] 'Trunk region: Serially repeated mid-gut glands'
+		 [92] 'Trunk region: Differentiated anterior trunk'
+		 [93] 'Trunk region: Narrowing posteriad'
+		 [94] 'Trunk appendages: Trunk exites'
+		 [95] 'Trunk appendages: Form of exite'
+		 [96] 'Trunk appendages: Exites fused with endopod to form biramous appendage'
+		 [97] 'Trunk appendages: Dorsal flaps'
+		 [98] 'Trunk appendages: Exite distribution'
+		 [99] 'Trunk appendages: Antero-posteriorly compressed protopodite with gnathobasic endites in post-deutocerebral appendage pair'
+		 [100] '[NEW] Trunk appendages: Shape of lobopodous appendages'
+		 [101] 'Trunk appendages: Secondary structures on non-sclerotized (lobopodous) limbs'
+		 [102] 'Trunk appendages: Nature of secondary structure'
+		 [103] 'Trunk appendages: Length of spines on secondary structure'
+		 [104] 'Trunk appendages: Papillae on non-sclerotized (lobopodous) limbs'
+		 [105] 'Trunk appendages: Papillae with terminal spine'
+		 [106] 'Trunk appendages: Finger-like elements in distal tip of limbs'
+		 [107] 'Trunk appendages: Claws on trunk limbs'
+		 [108] 'Trunk appendages: Claws: Morphology'
+		 [109] '[NEW] Trunk appendages: Claw position'
+		 [110] 'Trunk appendages: Terminal claws with multiple branches'
+		 [111] 'Trunk appendages: Maximum number of claws on walking limbs'
+		 [112] 'Trunk appendages: Number of claws varies between appendages'
+		 [113] 'Trunk appendages: Nature of claws on each trunk limb'
+		 [114] 'Trunk appendages: Differentiated distal foot in lobopodous trunk limbs'
+		 [115] 'Trunk appendages: Strengthening rays in lateral flaps'
+		 [116] 'Trunk appendages: Posterior tapering of lateral flaps'
+		 [117] 'Trunk appendages: Anteriormost limb pair hypertrophied'
+		 [118] 'Trunk appendages: Anterior limbs reduced'
+		 [119] 'Trunk appendages: Number of limbs on differentiated anterior trunk'
+		 [120] 'Trunk appendages: Nature of lobopodous limbs on differentiated anterior trunk'
+		 [121] 'Trunk appendages: Appendages comprise 15 or more podomeres'
+		 [122] 'Posterior termination: Limbless posterior extension of the lobopodous trunk'
+		 [123] 'Posterior termination: Posterior tagma composed of three paired lateral flaps'
+		 [124] 'Posterior termination: Posteriormost pair of trunk appendages structurally differentiated'
+		 [125] 'Posterior termination: Nature of differentiated posteriormost appendages'
+		 [126] 'Posterior termination: Nature of appendicular tail'
+		 [127] '[NEW]Posterior termination: Morphology of tail flaps'
+		 [128] 'Posterior termination: Direction of claws on posteriormost appendage pair'
+		 [129] 'Neuroanatomy: Ventral nerve cord with paired ganglia'
+		 [130] 'Neuroanatomy: Dorsal condensed brain'
+		 [131] 'Neuroanatomy: Number of neuromeres integrated into the dorsal condensed brain'
+		 [132] 'Neuroanatomy: Mouth innervation relative to brain neuromeres'
+		 [133] 'Neuroanatomy: Circumoral nerve ring'
+		 [134] 'Neuroanatomy: Ventral nerve cord (VNC) paired'
+		 [135] 'Neuroanatomy: VNC with morphologically discrete condensed hemiganglia connected by medial commissures'
+		 [136] 'Neuroanatomy: Paired nerve cord lateralized'
+		 [137] 'Neuroanatomy: Paired nerve cord bears medial interpedal commissures'
+		 [138] 'Neuroanatomy: Regularly spaced peripheral nerves along the entire length of the nerve cord'
+		 [139] 'Neuroanatomy: Nerve cord has orthogonal organization'
+		 [140] 'Neuroanatomy: Orthogonal nerve cord has complete ring commissures'
+		 [141] 'Neuroanatomy: Segmental leg nerves shifted anteriorly relative to appendages'
+		 [142] 'Neuroanatomy: Segmental leg nerves paired'
+		 [143] 'Neuroanatomy: Stomatogastric ganglion'
+		 [144] 'Musculature: Heart'
+		 [145] 'Musculature: Skeletal musculature'
+		 [146] 'Musculature: Longitudinal peripheral musculature'
+		 [147] 'Musculature: Ventromedian longitudinal muscle'
+		 [148] 'Musculature: Longitudinal muscle attachment points'
+		 [149] 'Musculature: Circular peripheral musculature'
+		 [150] 'Musculature: Circular musculature inside longitudinal musculature'
+		 [151] 'Musculature: Box-truss'
+	;
+	STATELABELS
+		1
+		'absent'
+		'present'
+		,
+		2
+		'absent'
+		'present'
+		,
+		3
+		'[transformational character]'
+		'absent'
+		'present'
+		,
+		4
+		'[transformational]'
+		'oval/rounded'
+		'elongate'
+		,
+		5
+		'[transformational]'
+		'dorsal'
+		'anterior'
+		,
+		6
+		'absent'
+		'present'
+		,
+		7
+		'[transformational character]'
+		'broad attachment to cephalic region'
+		'narrow attachment to anterior edge of cephalic region'
+		,
+		8
+		'absent'
+		'present'
+		,
+		9
+		'[transformational character]'
+		'subcircular'
+		'elongate'
+		,
+		10
+		'absent'
+		'present'
+		,
+		11
+		'orientation of mouth is fixed relative to main trunk'
+		'flexible anterior trunk allowing mouth''s dorsal-ventral orientation to be independent of main trunk axis'
+		,
+		12
+		'anteriormost trunk contiguous with posterior trunk; no swollen ‘head’'
+		'anteriormost trunk elliptical, substantially wider than adjacent trunk'
+		,
+		13
+		'absent'
+		'present'
+		,
+		14
+		'terminal'
+		'ventral'
+		,
+		15
+		'[transformational]'
+		'anterior'
+		'ventral'
+		'posterior'
+		,
+		16
+		'absent'
+		'present'
+		,
+		17
+		'absent'
+		'present'
+		,
+		18
+		'[transformational character]'
+		'small contact area (e.g. coronal spines)'
+		'large contact area (e.g. Parapeytioa)'
+		,
+		19
+		'undifferentiated (e.g. Pambdelurion plates)'
+		'differentiated (i.e. Radiodonta - three or four enlarged plates)'
+		,
+		20
+		'[transformational]'
+		'3 enlarged plates'
+		'4 enlarged plates'
+		,
+		21
+		'absent'
+		'present'
+		,
+		22
+		'absent'
+		'present'
+		,
+		23
+		'[transformational character]'
+		'proximal surface with single projection'
+		'proximal surface with multiple spines'
+		,
+		24
+		'anterior gut similar diameter to mid gut'
+		'expanded anterior gut'
+		,
+		25
+		'permanently inverted'
+		'completely eversible'
+		,
+		26
+		'absent'
+		'present'
+		,
+		27
+		'[Transformational character]'
+		'no elaboration of tooth point; spinose/acicular'
+		'each tooth has multiple cusps, perhaps expressed as denticles or serrations'
+		,
+		28
+		'[transformational character]'
+		'uniform distribution around pharynx'
+		'limited number of longitudinal rows or series'
+		,
+		29
+		'[transformational character]'
+		'teeth gap; pharyngeal teeth not directly adjacent '
+		'no teeth gap; pharyngeal teeth directly adjacent'
+		,
+		30
+		'absent'
+		'ocellus-like or pigment spots present'
+		,
+		31
+		'absent'
+		'present'
+		,
+		32
+		'eye stalks absent'
+		'eye stalks present'
+		,
+		33
+		'[transformational character]'
+		'approximately dorsal to mouth'
+		'significantly posterior of mouth'
+		,
+		34
+		'no loss of claws on differentiated protocerebral appendage'
+		'differentiated protocerebral appendage claws lost'
+		,
+		35
+		'membrane absent'
+		'membrane present'
+		,
+		36
+		'membranes absent'
+		'membranes present'
+		,
+		37
+		'pre-ocular limb pair absent or not differentiated from other limbs'
+		'distinct pre-ocular limb pair'
+		,
+		38
+		'not sclerotized'
+		'sclerotized'
+		,
+		39
+		'not sclerotized'
+		'sclerotized'
+		,
+		40
+		'absent'
+		'present'
+		,
+		41
+		'[transformational character]'
+		'lateral'
+		'ventral'
+		'within mouth cavity'
+		,
+		42
+		'frontal appendages not shifted posteriorly'
+		'frontal appendages shifted posteriorly'
+		,
+		43
+		'[transformational character]'
+		'pre-ocular appendages not directly adjacent'
+		'pre-ocular appendages adjacent to one another, with or without physical fusion'
+		,
+		44
+		'[transformational character]'
+		'pre-ocular appendages adjacent but not mechanically fused'
+		'pre-ocular appendages are mechanically fused to form a single element'
+		,
+		45
+		'[transformational character]'
+		'basally close'
+		'basally separated ''gap'''
+		,
+		46
+		'absent'
+		'present'
+		,
+		47
+		'[transformational character]'
+		'comparable size to shaft'
+		'significantly larger than shaft'
+		,
+		48
+		'absent'
+		'present'
+		,
+		49
+		'[transformational character]'
+		'one row'
+		'two rows'
+		'more than two rows'
+		,
+		50
+		'absent'
+		'present'
+		,
+		51
+		'[transformational]'
+		'accessory spines originate near base of main spine'
+		'accessory spines regularly spaced along main spine'
+		,
+		52
+		'no alternation in length'
+		'alternation in length from each spine to the next'
+		,
+		53
+		'[transformational character]'
+		'comparable width of spine to podomere width'
+		'spine width significantly narrower'
+		,
+		54
+		'[transformational]'
+		'no increase (e.g., Anomalocaris)'
+		'increase (e.g., Hurdia)'
+		,
+		55
+		'absent'
+		'present'
+		,
+		56
+		'no material differentiation of podomeres'
+		'strong differentiation of proximal from distal podomeres'
+		,
+		57
+		'[transformational character]'
+		'Distal podomeres approximately uniform size'
+		'Distal podomere diameter strongly reducing distally'
+		,
+		58
+		'absent'
+		'present'
+		,
+		59
+		'absent'
+		'present'
+		,
+		60
+		'absent'
+		'present'
+		,
+		61
+		'[transformational character]'
+		'spine series point to appendage'
+		'spine series point outwards'
+		,
+		62
+		'[transformational character]'
+		'absent'
+		'present'
+		,
+		63
+		'[transformational]'
+		'absent'
+		'present'
+		,
+		64
+		'[transformational character]'
+		'cylindrical/subconical appendage'
+		'laterally expanded swimming flap'
+		,
+		65
+		'undifferentiated, or differentiated in size only'
+		'structurally differentiated'
+		,
+		66
+		'[transformational character]'
+		'antenniform with distinct podomeres'
+		'short great-appendage'
+		,
+		67
+		'[transformational character]'
+		'ambulatory'
+		'sensorial'
+		'masticatory, with sclerotized jaw'
+		,
+		68
+		'absent'
+		'present'
+		,
+		69
+		'undifferentiated'
+		'specialized papilla'
+		,
+		70
+		'[transformational character]'
+		'ambulatory limb with distinct podomeres'
+		'specialized post-antennal appendage'
+		,
+		71
+		'absent'
+		'present'
+		,
+		72
+		'absent'
+		'present'
+		,
+		73
+		'absent'
+		'present'
+		,
+		74
+		'absent'
+		'present'
+		,
+		75
+		'[transformational character]'
+		'annulations continue for full length of trunk'
+		'differentiated anterior region of trunk lacking annulations'
+		,
+		76
+		'[transformational character]'
+		'homonomous'
+		'heteronomous'
+		,
+		77
+		'[transformational character]'
+		'unbranched'
+		'branched'
+		,
+		78
+		'absent'
+		'present'
+		,
+		79
+		'[transformational character]'
+		'epidermal depressions'
+		'epidermal evaginations'
+		,
+		80
+		'[transformational character]'
+		'wider than tall (e.g. nodes or plates)'
+		'taller than wide (e.g. spines)'
+		,
+		81
+		'absent'
+		'present'
+		,
+		82
+		'[transformational character]'
+		'straight'
+		'curved'
+		,
+		83
+		'[transformational character]'
+		'epidermal evaginations not sclerotized'
+		'epidermal evaginations sclerotized'
+		,
+		84
+		'[transformational character]'
+		'net-like'
+		'scaly'
+		'tufted'
+		,
+		85
+		'sclerites comprise single element'
+		'sclerites comprise stacked elements'
+		,
+		86
+		'[transformational character]'
+		'one'
+		'two'
+		'three'
+		'four'
+		'five'
+		'seven'
+		,
+		87
+		'absent'
+		'present'
+		,
+		88
+		'[transformational character]'
+		'each group of dorsal elements of equivalent size'
+		'size of dorsal elements varies between groups'
+		,
+		89
+		'[transformational character]'
+		'regular'
+		'variable'
+		,
+		90
+		'[transformational character]'
+		'absent'
+		'present'
+		,
+		91
+		'absent'
+		'reniform, submillimetric lamellar'
+		,
+		92
+		'trunk of uniform construction'
+		'anterior trunk differentiated from posterior trunk by abrupt change in thickness, armature and appendage construction'
+		,
+		93
+		'[transformational character]'
+		'broadly uniform trunk width'
+		'substantial posteriad trend to narrower trunk'
+		,
+		94
+		'absent'
+		'present'
+		,
+		95
+		'[transformational character]'
+		'lateral lobes'
+		'setal blades'
+		'simple oval paddle with marginal spines'
+		'bipartite shaft with lamellar setae'
+		,
+		96
+		'not fused'
+		'fused'
+		,
+		97
+		'absent'
+		'present'
+		,
+		98
+		'[transformational character]'
+		'confined laterally'
+		'present dorsally'
+		,
+		99
+		'absent'
+		'present'
+		,
+		100
+		'[Transformational character]'
+		'cylindrical (e.g. Hallucigenia sparsa)'
+		'conical; significantly tapered (e.g. Aysheaia)'
+		,
+		101
+		'absent'
+		'present'
+		,
+		102
+		'[transformational character]'
+		'spines/setae'
+		'appendicules'
+		,
+		103
+		'[transformational character]'
+		'short/equant'
+		'needle-like'
+		,
+		104
+		'absent'
+		'present'
+		,
+		105
+		'spine absent'
+		'spine present'
+		,
+		106
+		'absent'
+		'present'
+		,
+		107
+		'absent'
+		'present'
+		,
+		108
+		'[transformational character]'
+		'no enlarged base (e.g. Paucipodia''s claws)'
+		'enlarged base (e.g. Onychophora claws)'
+		,
+		109
+		'[Transformational character]'
+		'terminal'
+		'sub-terminal'
+		,
+		110
+		'absent'
+		'present'
+		,
+		111
+		'[transformational character]'
+		'one'
+		'two'
+		'three'
+		'four'
+		'seven'
+		,
+		112
+		'[transformational character]'
+		'equal number of claws on all claw-bearing appendages'
+		'variable number of claws'
+		,
+		113
+		'[transformational character]'
+		'claws on single limb all identical'
+		'claws on single limb differentiated'
+		,
+		114
+		'absent'
+		'present'
+		,
+		115
+		'absent'
+		'present'
+		,
+		116
+		'[transformational character]'
+		'absent'
+		'even body outline'
+		'present'
+		'pronounced decrease in lobe width posteriad'
+		,
+		117
+		'first pair of trunk limbs comparable in size to subsequent pairs'
+		'first pair of trunk limbs hypertrophied'
+		,
+		118
+		'no reduction of anterior limbs'
+		'anterior limbs reduced in size or absent'
+		,
+		119
+		'[transformational character]'
+		'two'
+		'three'
+		'five'
+		'six'
+		,
+		120
+		'[transformational character]'
+		'slender, simple'
+		'cirrate'
+		,
+		121
+		'[transformational character]'
+		'Fewer than 15 podomeres'
+		'15 or more podomeres'
+		,
+		122
+		'absent'
+		'present: tubular portion of the body extends beyond the last observable appendage pair'
+		,
+		123
+		'absent'
+		'present'
+		,
+		124
+		'undifferentiated'
+		'differentiated'
+		,
+		125
+		'[transformational character]'
+		'appendicular tail'
+		'partially fused/reduced walking legs'
+		,
+		126
+		'[transformational character]'
+		'tail rami'
+		'tail flaps'
+		,
+		127
+		'blade-like'
+		'paddle-like'
+		,
+		128
+		'[transformational character]'
+		'same direction as claws on other appendages'
+		'rotated anteriad'
+		,
+		129
+		'absent'
+		'present'
+		,
+		130
+		'absent'
+		'present'
+		,
+		131
+		'one'
+		'two'
+		'three'
+		,
+		132
+		'protocerebral innervation'
+		'deutocerebral innervation'
+		'innervation from multiple neuromeres'
+		'tritocerebral innervation'
+		,
+		133
+		'absent'
+		'present'
+		,
+		134
+		'unpaired'
+		'paired'
+		,
+		135
+		'hemiganglia absent'
+		'morphologically discrete condensed hemiganglia connected by medial commissures'
+		,
+		136
+		'absent (Alalcomenaeus, Fuxianhuia, Tardigrada)'
+		'present (Onychophora)'
+		,
+		137
+		'medial interpedal commissures absent'
+		'medial interpedal commissures present'
+		,
+		138
+		'absent, or not occurring regularly along entire length of nerve cord'
+		'present along entire length of nerve cord'
+		,
+		139
+		'not orthogonally organized'
+		'orthogonally organized'
+		,
+		140
+		'ring commissures incomplete or absent'
+		'complete ring commissures'
+		,
+		141
+		'not shifted anteriorly'
+		'shifted anteriorly'
+		,
+		142
+		'unpaired'
+		'paired'
+		,
+		143
+		'absent'
+		'present'
+		,
+		144
+		'absent'
+		'present'
+		,
+		145
+		'peripheral longitudinal and circular muscle'
+		'metamerically arranged skeletal muscle'
+		,
+		146
+		'absent'
+		'present'
+		,
+		147
+		'absent'
+		'present'
+		,
+		148
+		'[transformational character]'
+		'anterior and posterior of trunk only'
+		'successive attachment points along the body'
+		,
+		149
+		'absent'
+		'present'
+		,
+		150
+		'[transformational character]'
+		'circular muscles inside longitudinal'
+		'longitudinal muscles inside circular'
+		,
+		151
+		'absent'
+		'present'
+		
+	;
+	MATRIX
+	'Tubiluchus priapulida'		               00---0-0-00000-0110-001?11211000-?00?000-0---0-0-0-0--00-000----0--00-00012110--0---0-0--20010-00-0-0--?00?--?---00-00---?0??---00--100--111--000101120
+	'Cricocosmia'		                         00---0-0-00000-0110-001?11211000-?00?000-0---0-0-0-0--00-000----0--00-00012111211?210201120010-00-0-0--?00?--?---00-00---00??---????????????????0??????
+	'Siberian orsten tardigrade'		          10---0-0-000?0-01?0-001???????????00???????????????????????????1?-???-0000---???0-?????---?010-00-020--000121121200-00---0012--????????????????????????
+	'Hadranax'		                            1?????????????????????????????????00???????????????????????????1?-???-0001?211210-1??40(1,2)12?010-00-020--10????????00-??---??????????????????????????????
+	'Aysheaia'		                            10---0-0-000?0-01?0-00110????000-1001000101--1?0-0-0--10-00012110-100-00012110--0---0-0--20010-00-02111000122051100-00---0012--2????????????????0??????
+	'Siberion'		                            10---0-0-000?0-01???001?0????000-?0010001021-??????????0-00012110-100-0001?110--0---?-0--2?010-00-0????00?????????0-00---??????????????????????????????
+	'Onychodictyon ferox'		                 10---0-0-00000-0???????10????100-1001000101--1-1-0-0--00-000???10-100-00012211211121?201120010-00-0?12-000121021200-00---0012--2???????????????????????
+	'Diania'		                              10---0-0-00(0,1)00-?????????0????000-??000001?1--0-0-0-0--00-000-?-10-100-00011211210-1(1,2,3)?101120010-00-02111000???0---00-00---100---????????????????????????
+	'Xenusion'		                            10---0-0-0?0?????????????????000-?0000001?1--??????????0-000???10-100-0001?211210-1??20112?010-00-021?????????????0-00---1?0---????????????????????????
+	'Paucipodia'		                          10---0-0-000?0-????????00?????00-1000000101--0-0-0-0--00-000-?-10-100-00011110--0---0-0--10010-00-010--00011?0(1,2)2100-0?---100---????????????????????????
+	'Cardiodictyon'		                       10---0-0-0110???????????0????100-100????1?1--0-0-?????0????????10-??0-00012211210-21?201110010-00-010--000111021?00-?0---100---1???????????????????????
+	'Microdictyon'		                        10---0-0-01000-????????00?????00-1000000101--0-0-0-0--00-000-?-10-100-00012211210-21?201110010-00-010--00011102??00-00---100---1???????????????????????
+	'Onychodictyon gracilis'		              1????0?0-0??00-0???????00?????????00???????????????????????????1?-?00-0001??11211?2(1,2,3)?201120?10-00-02???00012102??00-00??-1012--1???????????????????????
+	'Thanahita distos'		                    1?????????????????????????????????00???????????????????????????1??????0000---12(1,2)0-13?2012-0110-00-010--000111022100-01?1-100---1???????????????????????
+	'Collinsovermis monstruosus'		          111??0-0-0??0??????????00?????00?100(0,1)000101--0-?????????-000-?-10-{1,2}00-0001?21122122(1,2,3)13?21?0110-00-02112???121011?00-0042-?00---????????????????????????
+	'Collins monster Emu Bay'		             111???????????????????????????????00???????????????????????????1?-{1,2}00-0001?21122122(1,2,3)?302???110-00-0?112000121011-00-0032-?0????????????????????????????
+	'Acinocricus'		                         1?????????????????????????????????00???????????????????????????10-{1,2}00-0001?21122122(1,2,3)16121?0110-00-0?112???????????0-0032-?0????????????????????????????
+	'Orstenotubulus'		                      1?????????????????????????????????00???????????????????????????1?-???-0001?22122?????202?2??10-00-010--11?????????0-????-??????????????????????????????
+	'Tritonychus phanerosarkus'		           1?????????????????????????????????00???????????????????????????1?-???-0001??2????????????2???0-00-010--110121?3?100-????????????????????????????01????0
+	'Carbotubulus'		                        1?????????????????????????????????00???????????????????????????1?-???-0000---????????????-?110-00-010--00?????????0-????-00??--?????????????????0??????
+	'Hallucigenia sparsa'		                 10---0-0-01100-1110-001001121100-?000000101--0-0-0-0--00-000---10-{1,2}00-0000---122122212011-0110-00-010--000111022100-0121-000---1???????????????????????
+	'Hallucigenia fortis'		                 10---0-0-01100-????????00????100-?000000101--0-0-0-0--00-000---10-{1,2}00-000122?122122(1,2,3)?201110110-00-010--0001?102??00-0111-?00---1???????????????????????
+	'Hallucigenia hongmeia'		               1???????????????????????????????-?00???????????????????????????1?-??0-0001?2?1221221?20211??10-00-010--000111011-00-????-?00---????????????????????????
+	'Facivermis yunnanicus'		               10---0-0-0?000-????????00????100-?001000101--0-1-0-0--00-000???10-{1,2}00-0001?210--0---?-0--20110-00-011121001?1011-00-0032-100---????????????????????????
+	'Luolishania'		                         111??0-0-0?100-?????????0????100-1001000101--0-1-0-0--00-000???10-{1,2}00-0001221122122??302220110-00-01112100121011-00-0032-?00---1???????????????????????
+	'Ovatiovermis cribratus'		              10---0-0-01000-????????0011??100-?000000101--0-?-0-0--00-000???10-{1,2}00-00012211221?2?120?210110-00-01112000121011100-0042-000---1???????????????????????
+	'Collinsium'		                          111??0-0-01000-??????????????000-1001000101--0-1-0-0-?00-000???10-{1,2}00-000112112212211502220110-00-0?112000121011-00-0042-100---1???????????????????????
+	'Antennacanthopodia'		                  10---0-0-0?0?????????????????100-1001000101--????0-0-?00-000---11-200-0001???0--0---?-0--??010-00-010--1?00?-0---00-00---100----???????????????????????
+	'Helenodora'		                          10---0-0-0?0??????????????????????001000101--???-0-0-?00-000???1?-??1-000????0--0---?-0--20?10-00-020--1?01?10211?0-0???-?0????????????????????????????
+	'Tertiapatus dominicanus'		             10---0-0-000?1-1??????????1-?100-?001000101--???-0-0-?00-000???11-??1-000111?0--0---?-0--2?010-00-0?0--??0????????0-00---100---?????????????????0??????
+	'Euperipatoides'		                      10---0-0-000?1-10-????-?001-?100-1001000101--???-0-0-?00-000---11-301-00011120--0---1-0--20010-00-020--110121021110-00---100---101121101111101010111110
+	'Plicatoperipatus'		                    10---0-0-000?1-10-????-?001-?100-1001000101--???-0-0-?00-000---11-311-00011120--0---1-0--20010-00-020--110121021110-00---100---101121101111101010111110
+	'Ooperipatellus'		                      10---0-0-000?1-10-????-?001-?100-1001000101--???-0-0-?00-000---11-311-00011120--0---1-0--20010-00-020--110121021110-00---100---101121101111101010111110
+	'Actinarctus'		                         10---0-0-00011-0110-0?1?01112100-00010003?1--?????????00-000???10-100-0000---1210-210????-0010-00-020--0011?1041200-00---0012--211001110111011?-10120-1
+	'Halobiotus'		                          10---0-0-00010?0110-0?1?01112100-0001000301--?????????00-000???10-100-0000---11-0---0????-0010-00-020--001121121200-00---0012--2110011101110111-10120-1
+	'Megadictyon'		                         10---0-0-0?01???1??????101212?00-0001000101--1?0?0-0--00-000?2110-100-000111?0--0---?-0--11010-00-0?12-000?2?????00-00---??????????????????????????????
+	'Jianshanopodia'		                      10---0-0-000?0-01??????101212?00-?00100010???1?0?0-0--00-000?2110-100-00011210--0---?-0--11010-00-0212-000???????00-00---001121-???????????????????????
+	'Cucumericrus'		                        1?????????????????????????????????11??1????????????????????????(1,2)?????????????????????????????110111?0????00--0---01????????????????????????????????????
+	'Kerygmachela'		                        10-??0-0-00011101???001?0?????101?0010001011-1?0?0-0--10-00012110-100-0001?211210-1??40?1210111011020--0000--0---00100---00111--?100?1??????????01?11??
+	'Pambdelurion'		                        1????????0001120110-001?01212????1001000202121?0?0-0--00-00012110-100-0001????????????0???10111011020--000?2?0???00100---???????????????????????1111??0
+	'Parapeytoia'		                         1?????????00???0121(2,1)002?0????????111111????????????????????????1???0????1?????--?---?-0??????110111-?????00--0---0?????-1??????????????????????????????
+	'Kylinxia'		                            1111201?-?000130???????00????011111111112121211?111121001000211-0-100-110?????--0---?-0---??211001?-0--0000--0---0??01--1011121-???????????????????????
+	'Isoxys'		                              112???????00?130???????00????0111111111121212??????????????????-???00-?0???????????????????0?12??1?-0??0000--0---0??????1??????????????????????????????
+	'Opabinia'		                            11111010-0000130120-001?0????01111001101202111???0-0--01?00012210-100-100?1??0--0---0-0---10111012020--0000--0---00100---?11121-???????????????????????
+	'Utaurora'		                            1????0-0-?00?130????????0????0111??01?0?20211?????????????0????????0???00?????????????0????01110120????0000--0---00100--??11120????????????????????????
+	'Caryosyntrips camurus'		               1????????????????????????????????1??11?1202111???0-?--0??000122????0???????????????????????????????????????????????????????????????????????????????????
+	'C.f. Peytoia USNM 57490'		             1????????????????????????????????11?11?12021112??120120??001122????0???????????????????????????????????????????????????????????????????????????????????
+	'Amplectobelua symbrachiata'		          1111?0111?0??1201?1211(1,2)?0????011?11011012?21211?11112111111121120-100-?00????0--0---0-0---?021100?1-0--0000--0---01201--?011120-???????????????????????
+	'Anomalocaris canadensis'		             11111011110?01201211112?0????011111011012021211?21112110100121120-100-0000---0--0---0-0---102110020-0--0000--0---01201--?011120-????????????????1??????
+	'Cambroraster falcatus'		               11121111200?01101212002?012120112110110120?1212?11201?11200111120-100-0000---0--0---0-0---?02110020-0--0000--0---0?101--?001120-???????????????????????
+	'Hurdia victoria'		                     11121111200??1?01212002?012120112110110120???12?11201211200111120-100-?000---0--0---0-0---?0?110?20-0--0000--0---0?101--?001121-???????????????????????
+	'Peytoia nathorsti'		                   11121011210?01201212002?0????011211011012021?12?11201211100111120-100-0000---0--0---0-0---102110?20-0--0000--0---01201--?000----???????????????????????
+	'Aegirocassis benmoulai'		              11121011??0????0?????????????????1?0110120???12?11201?00??0011120-100-0000---0--0---0-0---?0?110120-0--0000--0---0120?--?000----???????????????????????
+	'Lyrarapax unguispinus'		               11111011??0?01201212102?0????011111011012021211?1111210?111121120-100-0000---0--0---0-0---102110020-0--0000--0---01211--?01112?-?1000110????????1??????
+	'Schinderhannes'		                      1??????1??0??1?01?0-?0??0????01111?011012021?12?1120??????0?22???-100-????????????????????????????0-????????????????1?--?001120-???????????????????????
+	'Chengjiangocaris'		                    1111202???0??1300-????-?0????011111111102122?????????-0???0????-11-0?2110????-------0-0---0-?121010-?????00--0---00-0?--2-01121-1??????0?1?????????????
+	'Fuxianhuia'		                          1111202???0?11300-????-00????01111111110212??????????-0???0????-11-0?2110????-------0-0---0-?121010-?????00--0---00-0?--2-0112?-?121?11????????110??0-?
+	'Leanchoilia'		                         1121202??10??1300-????-00????0111111111?212??????????-????0????-???0?111?????-------0-0---1-?121011-?????01110{1,3}1?00-0?--1-00----??????????????1????????
+	'Alalcomenaeus'		                       1121202???0??1300-????-00????0111111111?212??????????-????0????-???0?111?????-------0-0---1-?121011-?????0111011-00-0?--1-00----1121?11000--??1????????
+	'Misszhouia longicaudata'		             1121202???0??1300-????-00????011111111102122?????????-0???0????-11-0?1111????-------0-0---1-?131011-?????0111011-00-0?--1-00----????????????????10120-?
+	'Kuamaia lata'		                        11212?2???0??1300-????-?0????011111111102122?????????-0???0????-11-0?1111????-------0-0---1-?131011-?????0111031200-0?--1-00----????????????????10120-?
+    ;
+    ENDBLOCK;
+
+          BEGIN NOTES;
+              [Taxon comments]
+        	TEXT TAXON=1 TEXT='DELETE';
+	TEXT TAXON=53 TEXT='Taxon name corrected using international commission on zoological nomenclature from A. benmoulae to A. benmoulai by Van Roy et al., 2015. ';
+
+        [Character comments]
+        	TEXT CHARACTER=1 TEXT='[SC: 1; Y: 1]';
+	TEXT CHARACTER=2 TEXT='[SC: 2; Y: 2]^nNumerous lobopodians have been considered to have cephalic sclerites (see Ma et al.2014, trans. ser. 37), but in some cases this interpretation requires revision or confirmation through new material. Following Liu and Dunlop (2014), we score this transformation series as absent in Hallucigenia fortis (contra Hou and Bergström 1995), Onychodictyon ferox (contra Ou et al. 2012) and Cardiodictyon (see Hou and Bergström 1995).  It is coded as ambiguous in Onychodictyon gracilis (Liu et al. 2008b) and Hallucigenia hongmeia (Steiner et al. 2012), as well as Luolishania (following Smith and Ortega-Hernández 2014). Actinarctus is coded as absent as a single dorsal sclerite covers the entire body; this structure does not seem to correspond directly to the anterior sclerites of other taxa (Boesgaard and Kristensen 2001). Fossil taxa with an incomplete anterior region are coded as uncertain.';
+	TEXT CHARACTER=3 TEXT='[SC: 3; Y: 3]^nWe score this transformation series as absent for fuxianhuiids, because the cephalic shield is not derived from fused segments (Chen et al. 1995c; Waloszek et al. 2005; Bergström et al. 2008; Yang et al. 2013), and in anomalocaridids, because the carapace-like structure on the head seems not to cover multiple cephalic segments (e.g. Daley et al. 2009; Daley and Edgecombe 2014).^n';
+	TEXT CHARACTER=4 TEXT='[Y: 5]^nCharacter adapted from 59 in Van Roy et al. (2015).';
+	TEXT CHARACTER=5 TEXT='This transformation series represents the hypothetical change in position of the anterior sclerite of the upper-stem euarthropods and the dorsal head sclerite of the anomalocaridids that are associated with protocerebral structures (see Budd 2021).';
+	TEXT CHARACTER=6 TEXT='Character 26 in Moysiuk & Caron (2019). The head sclerites of certain hurdiids exhibit a conspicuous reticulate ornamentation.';
+	TEXT CHARACTER=7 TEXT='[Y: 6]^nThe dorsal sclerite is broadly attached in Radiodonta (Daley et al. 2009; Daley and Bergström 2012; Cong et al. 2014; Daley and Edgecombe 2014; Van Roy et al. 2015), whereas the euarthropod anterior sclerite is only narrowly attached to the anterior end of the body in upper-stem and crown-group euarthropods (Edgecombe and Ramsköld 1999; Budd 2008; Yang et al. 2013; Ortega-Hernández 2015).^n';
+	TEXT CHARACTER=8 TEXT='[Y: 7]^nThis transformation series refers to the lateral "P" elements that typify the anterior scleritome of hurdiid radiodontans (Daley et al. 2009; Daley and Bergström 2012; Van Roy et al. 2015).';
+	TEXT CHARACTER=9 TEXT='Transformation series 30 in Moysiuk & Caron (2019).  The lateral sclerites of certain hurdiids are elongate, whereas those of anomalocaridids are more circular in aspect and shape.';
+	TEXT CHARACTER=10 TEXT='Character formulated from possible homology of ventral sclerites in §7 of Budd 2021.';
+	TEXT CHARACTER=11 TEXT='[SC: 5]^nThe terminal mouths of Hallucigenia sparsa (Smith and Caron 2015), H. fortis (Liu and Dunlop 2014), Collinsium (Yang et al. 2015), Microdictyon and Cardiodictyon (Chen et al. 1995b; Liu and Dunlop 2014) are consistently oriented ventrally, perpendicular to the main trunk axis; the anteriormost trunk (or, colloquially, ‘head’) can be manoeuvred independently of the main trunk.  In other taxa (e.g. priapulids), the orientation of the mouth is fixed relative to the main trunk.^n';
+	TEXT CHARACTER=12 TEXT='[SC: 6]^nCertain lobopodians (Cardiodictyon, Hallucigenia fortis, Luolishania) have a differentiated anteriormost trunk that forms a wide ellipse or "head" (Liu and Dunlop 2014). In Hallucigenia sparsa, the "head" is denoted by a slight increase in the width of the anteriormost trunk, which is most prominent in smaller specimens. In other taxa (Aysheaia, Onychodictyon ferox, Megadictyon, Jianshanopodia, Ilyodes, Collinsium), the anteriormost trunk is not differentiated in this way (Thompson and Jones 1980; Ou et al. 2012; Vannier et al. 2014; Yang et al. 2015). Coded as ambiguous in euarthropods, where the "trunk" has been replaced by sclerotized segments. Diania updated description with anterior ''helmet like structure'' Ou and Mayer (2018).';
+	TEXT CHARACTER=13 TEXT='Adapted from[Y16: 95]. Pambdelurion, Megadictyon have anterior cuticular projections that could be homologous to projections in tardigrades, therefore we code as present. ^nThese anterior projections, in certain lobopodians and tardigrades are proposed to be homologous to euarthropod frontal filaments (see Budd 2021).^nHomologoues to the frontal filaments are possibly present in crown group Onycophora (see Ortega-Hernandez & Budd 2016), which may change the interpretation of filament-like structures in taxa commonly allied to the onycophoran stem-group such as Collinovermis and Loulishania. In the absence of strong positive evidence of frontal filaments in Onycophora, we retain the current interpretation that the paired anterior projections of loulishaniids are appendicular in origin. ';
+	TEXT CHARACTER=14 TEXT='^nTransformation series identifies the hypothesised evolutionary event of a movement of the mouth position. In Euarthropods the mouth is in a ventral position in lobopodians mouth position varies.  ^n^nThe transformation series below was removed, as both these characters appear to code for the same event of movement of mouth position, leading to a rotation in the head area, with appendages moving to an anterior position relative to the mouth. ^n[Y: 24]^nThis character refers to the condition in Onychophora, upper stem-Euarthropoda and Euarthropoda, in which either protocerebral or deutocerebral appendages are displaced forward relative to the mouth opening and occupy a pre-oral position.';
+	TEXT CHARACTER=15 TEXT='When the mouth is anterior and terminal, mouth orientation is fixed as it can only face anteriorly. However, if the mouth is in a ventral position, then it can face anteriorly (Kerygmachela interpretation of Park et al., 2018), ventrally (anomalocaridids) or posteriorly (crown euarthropods, opabiniids). This character is only applicable when mouth is ventral.  ^n^nAdapted from:^n[SC: 7; Y: 23]^n^nMost lobopodian taxa possess a terminal anterior mouth – for example Aysheaia (Whittington 1978), Onychodictyon ferox (Ou et al. 2012) and Kerygmachela (Budd 1993, 1998a) – as do Eutardigrada (e.g. Halberg et al. 2009; Persson et al. 2012).  The mouth is also terminal in many lobopodians, including Collinsium, hallucigeniids and Luolishania, even if it is turned ventrally due to flexure of the neck (Ma et al. 2009; Smith and Caron 2015; Yang et al. 2015).  We score this transformation series as uncertain in Megadictyon as it is difficult to determine whether the mouth was originally ventral (cf. Liu et al. 2007) or whether this appearance results from compaction. The mouth opening is ventrally oriented in Pambdelurion (Budd 1998b), radiodontans (Daley et al. 2009; Daley and Edgecombe 2014), Onychophora and Heterotardigrada (Eriksson and Budd 2000; Ou et al. 2012; de Sena Oliveira and Mayer 2013; Mayer et al. 2013b; Persson et al. 2014); it faces posteriad in Opabinia (Whittington 1975; Budd 1996; Budd and Daley 2012) and upper stem-group euarthropods (Edgecombe and Ramsköld 1999; Haug et al. 2012b; Yang et al. 2013; Ortega-Hernández 2016).  Antennacanthopodia is coded as ambiguous as there is no direct evidence for the location of the mouth (Ou et al. 2011)';
+	TEXT CHARACTER=16 TEXT='[SC: 8]^n^nWe define a pre-oral (‘buccal’) chamber as a region enclosing the mouth and formed by the outgrowth of surrounding body tissue – as observed in modern onychophorans (Martin and Mayer 2014).  Taking the circumoral structures of Hallucigenia sparsa to represent the position of the true mouth, the mouth is located in a chamber within the anteriormost trunk (i.e. ‘head’).  The transformation series is coded as absent where the oral region is clearly displayed externally, as in Tardigrada, euarthropods from Kerygmachela crownwards (where the position of the mouth is marked by the expression of an ‘oral cone’), Jianshanopodia (Vannier et al. 2014), Aysheaia (Whittington 1978), and Siberion (Dzik 2011).  It is coded as ambiguous in other taxa, as the location of the original mouth is unclear.';
+	TEXT CHARACTER=17 TEXT='[SC: 9; Y: 25]^nThe mouth of many ecdysozoans is surrounded by radially-arranged cuticular or sclerotized structures.  In priapulids and other cycloneuralians these are typically conical spines, arranged centripetally when the pharynx is contracted and centrifugally when the pharynx is everted (Conway Morris 1977).  In basal panarthropods such as Aysheaia, Kerygmachela, Hallucigenia and Jianshanopodia, the structures are regular non-sclerotized lamellae, aciculae or plates (Whittington 1978; Budd 1998a; Vannier et al. 2014; Smith and Caron 2015); among anomalocaridids the plates are sclerotized and differentiated (Daley and Bergström 2012; Daley et al. 2013a, b).  (Although the three or four prominent plates in the anomalocaridid oral cone are differentiated to give rise to bilateral symmetry (Daley and Bergström 2012), the underlying radial arrangement of these plates is clear: some plates straddle the midline, and if rotated by 90° the smaller plates are equivalent to their counterparts.)  Tardigrades bear circumoral lamellae (Budd 2001a; Guidetti et al. 2012; Mayer et al. 2013b).  Antennacanthopodia is coded as ambiguous as there is no direct evidence for the location of the mouth.  Opabinia is coded as ambiguous; radial structures around the mouth are drawn by Whittington (1975) but not interpreted, and further study is needed to confirm their status.  The cuticular ring reported in the head of Microdictyon (Liu and Dunlop 2014) requires detailed study before its interpretation can be considered secure. Other lobopodians are coded as ambiguous; euarthropods and onychophorans are coded as absent (discussed in Smith and Caron 2015, trans. ser. 9).';
+	TEXT CHARACTER=18 TEXT='This character differentiates circumoral structures with a small contact area with the body (e.g. coronal spines of priapulomorph worms) from the plate-like circumoral structures that have a large surface area in contact with the body - found commonly in stem euarthropods (e.g. Parapeytioa, Hurdia)';
+	TEXT CHARACTER=19 TEXT='[SC: 10]^nThis transformation series distinguishes the simple organization of the mouth apparatus in Hallucigenia (Smith & Caron 2015) and Pambdelurion (Budd 1998b; Vinther et al. 2016) from the more complex mouthparts of anomalocaridids (Daley et al. 2009; Daley and Bergstrom 2012; Daley and Edgecombe 2014). We score Megadictyon, Schinderhannes and Jianshanopodia as uncertain to reflect their mouthparts" poor preservation (Liu et al. 2006, 2007; Kuhl et al. 2009). The character is treated as neomorphic to reflect the increasing gradient of complexity reflected by differentiation.';
+	TEXT CHARACTER=21 TEXT='[NEW]^nNode bearing plates are considered by Liu et al. (2018) to represent a synapomorphy of Anomalocarididae + Amplectobeluidae';
+	TEXT CHARACTER=23 TEXT='[NEW]^nThe inner surface of the circumoral plates of Anomalocaris, Peytoia and Hurdia bear multiple spinose projections (Daley and Bergström 2012), but the equivalent face of plates in priapulids and Hallucigenia sparsa lacks projections (Daley et al. 2013a; Smith and Caron 2015).';
+	TEXT CHARACTER=24 TEXT='Onychodictyon ferox''s gut expands anteriad forming a cone shape (see Vannier & Martin, 2017), whilst some other lobopodian guts do not expand significantly in the anterior region, with the anterior end of a gut with a similar diameter to the mid-gut. We code the taxa with an eversible pharynx as ambiguous as it is unclear how these should be coded. ^n^n^nAdapted from previous character, which was invariant in the matrix: ^n[SC: 11]^nCoded as differentiated in taxa where the pharynx (foregut) is distinct from the midgut.  This may reflect a change in width (as in extant onychophorans), structural differentiation (as in priapulids and Anomalocaris (Daley and Edgecombe 2014)), or the presence of cuticular teeth in the foregut but not midgut (as in Jianshanopodia).';
+	TEXT CHARACTER=25 TEXT='[SC: 12]^nThe pharynx of priapulids and palaeoscolecids can be everted (Conway Morris 1977), whereas the panarthropod foregut is permanently inverted.  No lobopodians exhibit complete eversion of the pharynx, even if some taxa display a certain degree of flexibility: as perhaps evident in the proboscis of Onychodictyon ferox (Ou et al. 2012) or the presumed suction-feeding mouthparts of anomalocaridids (Daley and Bergström 2012).  Taxa whose mouth region is unknown or is known from a limited sample size are coded ambiguous to reflect the possibility that eversion was possible but not displayed in the available material.';
+	TEXT CHARACTER=26 TEXT='[SC: 13]^nIn many taxa the pharynx is lined with cuticular sclerites or "pharyngeal teeth".  Priapulids have an eversible pharynx lined with pharyngeal teeth (van der Land 1970; Conway Morris 1977).  Hallucigenia sparsa has a structurally differentiated (narrower) pharynx lined with acicular teeth (Smith and Caron 2015).  Jianshanopodia bears a series of pharyngeal teeth with multiple cusps (Liu et al. 2006; Vannier et al. 2014).  This fossil, perhaps alongside Omnidens (Hou et al. 2006), resembles a longitudinally extended Hurdia mouthpart; the inner rows of teeth in Hurdia are correspondingly interpreted as pharyngeal teeth (Daley et al. 2009, 2013a).  Sclerotized teeth have also been reported in the foregut of Paucipodia (Hou et al. 2004), although the nature and distribution of the teeth is not clear from the fossil material. Onychophorans bear a differentiated pharynx with an oesophageal constriction, but this is unornamented (Elzinga 1998).  Most tardigrade taxa exhibit two to five  rows of buccopharyngeal teeth (= mucrones) caudally to their circumoral lamellae (Pilato 1972; Schuster et al. 1980; Dastych et al. 2003; Guidetti et al. 2012); a further row of sclerotized transverse ridges (=baffles) may also correspond to pharyngeal teeth.  Coded as ambiguous in all other taxa due to inadequate preservation.';
+	TEXT CHARACTER=27 TEXT='[SC: 14]^nPriapulids'' pharyngeal teeth exhibit a range of morphologies but always bear multiple cusps (van der Land 1970; Smith et al. 2015).  Hallucigenia sparsa has acicular teeth that come to a single point (Smith and Caron 2015).  The teeth of Hurdia and Jianshanopodia have multiple cusps (Daley et al. 2009, 2013a; Vannier et al. 2014); tardigrade teeth do not (Pilato 1972; Schuster et al. 1980; Dastych et al. 2003).';
+	TEXT CHARACTER=28 TEXT='[SC: 15]^nIn contrast to the uniform distribution of sclerites in priapulids and total-group euarthropods, the pharyngeal teeth in Hallucigenia sparsa seem to occupy one or two longitudinal rows and do not cover the entire surface of the pharynx (Smith and Caron 2015).';
+	TEXT CHARACTER=29 TEXT='Pharangeal teeth in Cricocosmia do not extend to the circumoral spines of the introvert (e.g. Cong et al., 2017). Similarly in Hallucigenia there is an absence of pharyngeal teeth in proximity to the circumoral structures (Smith & Caron 2015). In Tardigrades (e.g. Hansen & Katholm 2002), Hurdia (Daley et al., 2009) and Cambroraster (Moysiuk & Caron 2019) the pharyngeal teeth are directly adjacent to the radially arranged circumoral structures.';
+	TEXT CHARACTER=30 TEXT='[cf. SC: 16, 18; Y: 29, 31]^nDaley et al. (2009, t.s. 10) and Ma et al. (2014, t.s. 25, 27) implicitly treat compound eyes and ocelli as homologous structures, though there is good evidence that they are not (#TODO INSERT REFERENCES).  We thus code each structure as a separate transformation series.';
+	TEXT CHARACTER=31 TEXT='[cf. SC: 16, 18; Y: 29, 31]^nTreated as a separate organ from ocelli; see "Ocelli" transformation series for discussion.';
+	TEXT CHARACTER=32 TEXT='[SC: 17; Y: 30]^nTransformation series 26 in Ma et al. (2014). Treated as neomorphic as a stalk represents an additional morphological structure.^nNote that transformation series 4 in Smith & Caron (2015) and Yang et al. (2016) is redundant to this character, so is not included in the present matrix.';
+	TEXT CHARACTER=33 TEXT='After transformation series 15 in Moysiuk & Caron (2019). ^nThe eyes of certain hurdiid radiodonts are dislocated to an extremely posterior location.';
+	TEXT CHARACTER=34 TEXT='This neomorphic transformation series represents the loss of claws on the (differentiated) protocerebral appendage as compared to the (undifferentiated) trunk appendages. Taxa with undifferentiated protocerebral appendages have not undergone loss of claws, therefore are coded as such. Taxa without claws are coded as ambiguous as we cannot tell if a claw suppression mechanism acts silently in the protocerebral appendages; in other words, presence/absence of all claws is independent of this transformation series (both neomorphic events). ^n^nClaws are absent in many lobopodians with differentiated protocerebral appendages. In Tardigrades, the presence of stylet glands, responsible for the moulting and production of stylet and stylet supports are likely transformed claw glands (Morbjerg et al., 2018). As such stylets and stylet supports are interpreted as modified claws (Halberg et al., 2009; Nielsen 2001). ';
+	TEXT CHARACTER=35 TEXT='This character generalises the innovation of arthrodial membranes as a part of the arthrodisation process. Treated as neomorphic. ';
+	TEXT CHARACTER=36 TEXT='Character atomised from previous formulation to reflect complexity in ''arthropodization'' of the post-occular appendages.  ^n^nAdapted from:^n[SC: 19; Y: 8]^nSchinderhannes (Kühl et al. 2009) is coded as having lobopodous post-protocerebral appendages based on the presence of a pair of enlarged lateral body flaps resembling those of Lyrarapax (Cong et al. 2014). Although Liu et al. (2011) described the appendages of the lobopodian Diania as having an arthropodized organization, a recent revision of this taxon (Ma et al. 2014) concluded that the podomere-like structures on the legs represent taphonomic features on lobopodous appendages.';
+	TEXT CHARACTER=37 TEXT='[SC: 20]^nIn most panarthropods, the first pair of limbs is pre-ocular (at least developmentally), is associated with the protocerebral segment, and is structurally differentiated from other limb pairs.  In hallucigeniids, however, the first limb pair is not structurally differentiated from its neighbour; moreover, the great distance between the head and the first limb pair in Hallucigenia sparsa (Smith and Caron 2015) argues against a pre-ocular or indeed cerebral identity of these appendages.  Whether or not the first appendage pair truly corresponds to the pre-ocular appendage of other groups, the absence of a differentiated pre-ocular appendage characterizes a number of armoured lobopodians: Xenusion (Dzik and Krumbiegel 1989), Diania (Ma et al. 2014), Microdictyon (Chen et al. 1995b), Paucipodia (Chen et al. 1995a; Hou et al. 2004), H. fortis (Ramsköld and Chen 1998), and H. sparsa (Smith and Caron 2015).  A distinct structure is evident in onychophorans, Antennacanthopodia Ilyodes, and luolishaniids (antennae); tardigrades (the stylet apparatus); anomalocaridids (great appendages) (Cong et al. 2014); Opabinia (proboscis); and euarthropods and basal panarthropods (various).   Coded as ambiguous in Cardiodictyon, where the detailed morphology of the head is unclear, and in taxa where the head is not preserved (including Carbotubulus).';
+	TEXT CHARACTER=38 TEXT='New character. To reflect sclerotization absence/presence as a more general feature. It is hypothesised that Sclerotization originated in the protocerebral (pre-occular) appendages. This character reflects this hypothesised event, and describes sclerotization as a more general feature. Modified from Yang et al., 2015 trans. ser ''Cephalic/anterior appendages: Protocerebral limb pair sclertoized''. Describing sclerotization as a more general feature disentangles this attribute from potential hypothetical modifications of the protocerebral limb pair in panarthropods. ^n^n[SC: 21; Y: 9]^nWe code this transformation series as present in any taxon with sclerotized pre-ocular (protocerebral) limbs, including the podomeres in anomalocaridid "great appendages" (Daley and Edgecombe 2014) and the hypostome that covers the euarthropod labrum (e.g. Edgecombe and Ramskold 1999; Yang et al. 2013).  We score this transformation series as uncertain in taxa where the presence of a hypostome is suggested, but not verified (e.g. Alalcomenaeus), and in the Siberian "Orsten" tardigrade (Maas and Waloszek 2001), where (assuming its modification to a stylet, as in modern tardigrades) it cannot be directly observed.^nThe character is treated as neomorphic, as sclerotization represents a novel increase in the complexity of the limb.';
+	TEXT CHARACTER=39 TEXT='Arthropodization is thought to happen first in pre-occular appendages, then co-opted to the rest of the appendages (Chipman & Edgecombe 2019). This transformation series reflects this hypothesised event. Sclerotization is thought to occur simultaneously in trunk appendages (as they have been co-opted from the pre-occular appendages, therefore we code this in one transformation series. This is treated as a neomorphic character as the trunk appendages co-opting of sclertoization from pre-occular appendages requires additional genetic control.';
+	TEXT CHARACTER=40 TEXT='[SC: 22; Y: 10]^nThis neomorphic transformation series distinguishes the arthropodized "great appendages" of radiodontans (Daley and Edgecombe 2014) from the hypostome of Euarthropoda (e.g. Edgecombe and Ramsk"';
+	TEXT CHARACTER=41 TEXT='[SC: 26; Y: 16]^nWe score this transformation series as ventral in Euarthropoda given that the reduced protocerebral appendage pair, transformed into the labrum, occupies a ventral position in association with the mouth (e.g. Scholtz and Edgecombe 2006). As the forward-facing stylet apparatus of tardigrades is internalized into the mouth cone (Halberg et al. 2009), the position of the stylets are not independent of the mouth position, therefore we code this as an alternative character state. ';
+	TEXT CHARACTER=42 TEXT='As Budd 2021 notes, the frontal appendage of Megacherians and Leancholiids have shifted posteriorly, whereas e.g. Anomalocaris frontal appendages are in a more anterior position, and are not shifted posteriorly. We assume that the ancestral position of the appendages are more anterior, as lobopodian forms (e.g. Kerygmachela, Jianshaopodia, Pambdelurion, Siberion) have appendages in a more anterior position, whereas the e.g. the euarthropod labrum is in a more (ventral) posterior position, which we assume is the derived condition.';
+	TEXT CHARACTER=43 TEXT='[SC: 27; cf. Y: 17]^nModified from transformation series 16 in Ma et al. (2014) to reflect the posited homology between the anterior appendages of lobopodians and the euarthropod labrum (cf. Eriksson and Budd 2000; Budd 2002): specifically, the euarthropod labrum is coded as a fused pair of appendages (Scholtz and Edgecombe 2006; Liu et al. 2009, 2010; Posnien et al. 2009). The stylet apparatus of Tardigrada is not coded as fused, as each stylet within the buccal tube remains independent despite significant modification (Dewel and Eibye-Jacobsen 2006; Halberg et al. 2009; Guidetti et al. 2012).  Jianshanopodia is coded uncertain due to unclear preservation (Liu et al. 2006, 2007), whereas the well-developed dorsal cephalic plate in Hurdia or Aegirocassis obscures the base of the appendages (Daley et al. 2009; Van Roy et al. 2015).  The first pair of appendages in Ilyodes, and seemingly Megadictyon, are not directly adjacent (Thompson and Jones 1980; Liu et al. 2007; Haug et al. 2012c).';
+	TEXT CHARACTER=44 TEXT='[SC: 28; cf. Y: 17]^nIn Kerygmachela, Pambdelurion and Siberion, the appendages have migrated into an adjacent position but are not mechanically connected (Budd 1993, 1998a, b; Dzik 2011); this also seems to be the case in radiodontans (Daley et al. 2009; Daley and Edgecombe 2014).  In Opabinia and euarthropods, the appendages exhibit a degree of fusion (see trans. ser. 37).';
+	TEXT CHARACTER=45 TEXT='Appendages can be adjacent, with a prominent gap between appendages (e.g., Anomlalocaris) or in Opabinia, Caryosyntrips and c.f Peytoia (of Moyisuk and Caron 2021), the  protocerebral appendages are adjacent to the other, without a gap; whereas many radiodonts have seperated protocerebral appendages with a gap (e.g. Anomalocaris candensis Figure 1 Daley & Edgecombe 2014). Unclear in many hurdids due to preservation of appendage bases. This is separate event to the mechanical fusion of the protocerebral appendages.';
+	TEXT CHARACTER=46 TEXT='[SC: 30; Y: 19]^nThis neomorphic transformation series refers to the spines/spinules present in the most anterior appendage pair of anomalocaridids (Daley et al. 2009; Daley and Edgecombe 2014), gilled lobopodians (Kerygmachela, see Budd 1993, 1998; Pambdelurion, see Budd 1997; Opabinia, see Budd 1996) and certain lobopodians (e.g. Aysheaia, see Whittington 1978; Jianshanopodia, see Liu et al. 2006; Megadictyon, see Liu et al. 2007; Onychodictyon ferox, see Ou et al. 2012).  Coded as inapplicable in tardigrades due to the extreme modification of the pre-ocular appendage into a stylet apparatus, which poses challenges to the identification of homologues of appendicular features.^n^n-----------------------------------^nWe removed this transformation series from the matrix as treating the ventral and lateral spine series as non-homologous (following Dhungana & Smith 2022) meant that the transformation series was no longer useful: ^n[SC: 32; Y: 21]^nThis transformation series distinguishes the coplanar spinules found in Onychodictyon ferox (Ou et al. 2012) from those of Anomalocaris (Daley and Budd 2010; Daley and Edgecombe 2014), where both spine rows face in the same direction.';
+	TEXT CHARACTER=47 TEXT=' Adapted from Ch. 191 Zeng et al., 2020; Ch.90 Aria & Caron 2019. Hurdids typically have very long main spines (endites) compared to the the thickness of the shaft of the appendage. We treat the ventral spine series as distinct from lateral spine series (following Dhungana & Smith 2022), and limit this character to ventral spines. ';
+	TEXT CHARACTER=48 TEXT='Some lobopodians such as Onychodictyon ferox have spines on the trunk in addition to spines on appendages. Others, such as Aysheaia, have spines on some appendages but lack spines on the trunk.^nTreated as Neomorphic.^n^n(-) Inapplicable when spine/spinule series absent';
+	TEXT CHARACTER=49 TEXT='We treat the ventral spine series as distinct from lateral spine series (following Dhungana & Smith 2022), and limit this character to ventral spines. ^nPrevious formulation:^n[SC: 31; Y: 20]^nOne series of spines characterise Aysheaia, Kerygmachela, Opabinia, Hurdia, Peytoia (Whittington 1978; Budd 1993, 1996, 1998a; Daley and Budd 2010); two occur in Anomalocaris, Onychodictyon ferox (Daley and Budd 2010; Ou et al. 2012; Daley and Edgecombe 2014).';
+	TEXT CHARACTER=50 TEXT='Accessory spines to the main ventral spines of the protocerebral spine series of many radiodonts.';
+	TEXT CHARACTER=51 TEXT='Hurdids have accessory spines arranged in a regular series along the main spine, whereas e.g. Anomalocaris candensis has accessory spines originating near the base of the main spine, giving a multifurcate appearance. ';
+	TEXT CHARACTER=52 TEXT='Character 44 in Vinther et al. (2014) and 41in Moysiuk & Caron (2019).  The edites of certain anomalocaridid appendages alternate in length from podomere to podomere. Treated as neomorphic as alternation represents additional complexity in developmental control.';
+	TEXT CHARACTER=53 TEXT='Spine series can be comparable in width to the base of the podomere/span the entire podomere or significanly narrower.^nCharacter adapted from Ch. 192 Zeng et al., 2020; Ch. 108 Aria & Caron 2019 ';
+	TEXT CHARACTER=54 TEXT='The large ventral endites of radiodonts can increase in size from base to tip e.g., Hurdia, Peytioa, Stanleycaris. Absent in Anomalocaris, Amplectobelua. Treated as transformational. See Table 1 Guo et al., 2019 and Figure 2 Pates et al., 2019. ';
+	TEXT CHARACTER=55 TEXT='[SC: 33; Y: 22]^nThis neomorphic transformation series describes the multifurcate termination observed in the protocerebral appendages of dinocaridids (Budd 1996; Daley et al. 2009; Daley and Budd 2010; Budd and Daley 2012; Daley and Edgecombe 2014) and certain lobopodians -- such as Aysheaia (Whittington 1978), Megadictyon (Liu et al. 2007) and Kerygmachela (Budd 1993, 1998a) -- but absent in Onychodictyon ferox (Ou et al. 2012).^nCoded as inapplicable in tardigrades due to the extremely modification of the pre-ocular appendage into a stylet apparatus, which poses challenges to the identification of homologues of appendicular features.';
+	TEXT CHARACTER=56 TEXT='Character 33 in Moysiuk & Caron (2019). The segments of the first appendage pair are uniform in form (homonomous) along the length of the limb in Anomalocaris, whereas in Hurdia the segments of the distal and proximal sections are strongly distinct.^nThe peduncle and outer spines are not considered in this character. The character is treated as neomorphic, as differentiation is seen to reflect a greater degree of developmental and morphological specialization.';
+	TEXT CHARACTER=57 TEXT='Character 35 in Moysiuk & Caron (2019).  ^nThe distalmost podomeres of Caryosyntrips, Hurdia are differentiated and strongly reduce distally, resulting in ''inward flexure'' of these podomeres.^nTreated as applicable even when podomeres are homonomous, as differentiation in size need not depend on differentiation of podomere morphology.  Inapplicable in taxa that lack sclerotized protocerebral appendages.';
+	TEXT CHARACTER=58 TEXT='Character 36 in Moysiuk & Caron (2019), following character 27 in Vinther et al. (2014). ^n^nIn Amplectobelua, Lyrarapax and Anomalocaris saron, the distal appendage kinks outwards at a high angle relative to the appendage peduncle (shaft).';
+	TEXT CHARACTER=59 TEXT='Character 35 in Vinther et al. (2014) and 40 in Moysiuk & Caron (2019).  In Amplectobelua and Lyrarapax, a proximal endite projects forwards to oppose the distal endites, forming a "pincer" or "claw".';
+	TEXT CHARACTER=60 TEXT='Most radiodonts have outer spine series in addition to inner spine series on the protocerebral appendage (Moysiuk & Caron 2019) also referred to as ''dorsal'' spines (e.g. Zeng et al., 2020), typically the spines in this series are larger distal-ward. This spine series appears to be independent of the medial/ventral spine series (Moysiuk & Caron 2019) ';
+	TEXT CHARACTER=61 TEXT='The orientation of spine series are independent of the position of the spine series. E.g. In Hurdids the main enditic spines are in a ventral position but spines curve such that the dital tips face the other appendage. In gilled lobopodians and Caryosyntrips spine series point towards the other appendage. In Anomlocaris the ventral spine series do not face the other appendage, but are straight and point outwards (ventrally). ';
+	TEXT CHARACTER=62 TEXT='Moyisuk & Caron 2021 suggest that the laterally located gnathal spine series in e.g. Caryosyntrips is independent of the ventral enditic spine series observed in many radiodonts. As the spine series of e.g. gilled lobopodians are also laterally located, we suggest these spine series maybe positionally homologous. ';
+	TEXT CHARACTER=63 TEXT='Adapted from Ch.55 in Moysiuk & Caron 2021^nwho note that Auxiliary spines are present on the gnaithites of Stanleycaris and c.f. Peytoia. ^n';
+	TEXT CHARACTER=64 TEXT='[SC: 23; Y: 11]^nThe cylindrical ambulacral lobopodous leg characteristic of lobopodians is also found in Opabinia (Budd 1996; Budd and Daley 2012), Kerygmachela (Budd 1993, 1998a), Pambdelurion (Budd 1998b) and Aegirocassis (Van Roy et al. 2015).  Coding for radiodontans follows Van Roy et al. (2015); Schinderhannes is coded uncertain in view of its ambiguous morphology (Kuhl et al. 2009; Ortega-Hernandez 2016).';
+	TEXT CHARACTER=65 TEXT='[SC: 24; Y: 14]^nThere are various taxa in which the deutocerebral appendage pair is morphologically differentiated from the rest of the trunk appendages (see references in Liu and Dunlop 2014). For example, Antennacanthopodia has a second set of antenna-like limbs that are morphologically distinct from the walking legs (Ou et al. 2011). Daley and Edgecombe (2014) recently redescribed Anomalocaris canadensis and reported the presence of a smaller set of flaps in proximity with the putative head region; given that this differentiation is expressed in size, rather than structural identity, we score the deutocerebral limbs as undifferentiated in Anomalocaris. The nature of the second appendage in Schinderhannes is unclear due to poor preservation (Kühl et al. 2009). The first pair of legs in Tardigrada is serially homologous with the deutocerebral segment of Euarthropoda (Mayer et al. 2013b), and thus is not structurally different from the rest of the trunk appendages. The deutocerebral jaws of Onychophora are significantly modified relative to the rest of the appendages in the body (Eriksson et al. 2010; de Sena Oliveira and Mayer 2013).  In Euarthropoda, this morphological differentiation is generally expressed in the presence of an antenniform (e.g. Edgecombe and Ramsköld 1999; Ma et al. 2012a; Yang et al. 2013) or raptorial (Chen et al. 2004; Haug et al. 2012b; Tanaka et al. 2013) deutocerebral appendage.  The second leg pair of hallucishaniid taxa are not differentiated from their neighbours (Ramsköld and Chen 1998) and are therefore coded as undifferentiated; the trunk limbs are instead divided into two morphological zones (trans. ser. 66).  The second appendage pair of Cardiodictyon does not seem to be differentiated (Liu et al. 2008a).  Because the head of Carbotubulus is not preserved (Haug et al. 2012c), the identity of the limbs is unclear and this transformation series is coded as ambiguous.';
+	TEXT CHARACTER=66 TEXT='[SC: 25; Y: 12]^nThis character, corresponding to SC25 and Y12, has been re-formulated into two separate transformation series (trans. ser. 31–32) on the basis that the arthropodization of the first post-ocular appendage is not independent from the arthropodization of the subsequent trunk appendages (trans. ser. 25).  This formulation makes it unnecessary to distinguish taxa with differentiated deutocerebral appendages (SC24).';
+	TEXT CHARACTER=67 TEXT='[SC: 25; Y: 12]^nThe first post-ocular limb is not observable in Tertiapatus or Ilyodes (Poinar 2000; Haug et al. 2012c), and is thus scored as ambiguous.  Schinderhannes is scored as having an ambulatory limb based on the structure of the enlarged body flap, which is the first observable pot-ocular appendage (Kühl et al. 2009).  The ‘second antenna’ of Antennacanthopodia (Ou et al. 2011) is interpreted as a sensorial appendage.  It is difficult to evaluate the role of the slender appendages of Hallucigenia (Ramsköld and Chen 1998; Smith and Caron 2015) and the cirrate post-ocular appendages of Luolishania, Collinsium, Acinocrinus and the Collins monsters (Ma et al. 2009; García-Bellido et al. 2013; Yang et al. 2015); as such, these are coded as ambiguous for states 0 and 1.^n';
+	TEXT CHARACTER=68 TEXT='[Y: 13]^nPresent in Peripatidae (de Sena Oliveira and Mayer 2013), but absent in Euperipatoides (Smith and Ortega-Hernández 2014).^n"';
+	TEXT CHARACTER=69 TEXT='[Y: 15]^nAs with trans. ser. XXX35, this character is coded as a separate transformation series in taxa with lobopodous and with arthropodized appendages.  Ilyodes (Haug et al. 2012c), Tertiapatus (Poinar 2000) and extant onychophorans are interpreted as bearing paired oral papillae.';
+	TEXT CHARACTER=70 TEXT='[Y: 15]^nThe tritocerebral appendages of fuxianhuiids are reduced for a sweep-feeding function (Yang et al. 2013).';
+	TEXT CHARACTER=71 TEXT='[SC: 34; Y: 32]^nTransformation series 25 in Daley et al. (2009).  Epidermal segmentation is a distinguishing feature of Euarthropoda (Budd 2001a; Edgecombe 2009). Although the body of Onychophora and Tardigrada is metamerically organized, both at the level of segment polarity gene expression (Gabriel and Goldstein 2007; Eriksson et al. 2009) and musculature (e.g. Halberg et al. 2009; Marchioro et al. 2013), this pattern is not expressed on the epidermis: we thus score it as absent in these phyla.  We code Opabinia as present since has discrete body segments separated by furrows (Budd 1996; Zhang and Briggs 2007; Budd and Daley 2012). Epidermal segmentation is not evident in radiodontans (e.g. Daley and Edgecombe 2014), which we score absent.  Hurdia and Schinderhannes are the exceptions: the one complete specimen of each taxon does not conclusively establish the presence or absence of epidermal segmentation (Daley et al. 2009; Kühl et al. 2009).';
+	TEXT CHARACTER=72 TEXT='[SC: 35; Y: 33]^nThe development of sclerotized tergal plates connected by arthrodial membranes is distinctive of body arthrodization, and thus exclusive to Euarthropoda (Edgecombe and Ramsköld 1999; Haug et al. 2012b; Yang et al. 2013). Although some heterotardigrades possess dorsal plates (e.g. Nelson 2002; Marchioro et al. 2013), these are not connected by arthrodial membranes and thus score the heterotardigrade terminal Actinarctus as absent for this transformation series.';
+	TEXT CHARACTER=73 TEXT='[SC: 36; Y: 34]^nSternites – ventral sclerotized plates – are a key feature of most Euarthropoda, and are well documented in Artiopoda (e.g. Whittington 1993; Edgecombe and Ramsköld 1999; Ortega-Hernández and Brena 2012).  Sternites are notably absent in Fuxianhuiida (Chen et al. 1995c; Waloszek et al. 2005; Bergström et al. 2008; Yang et al. 2013), even though these taxa have a sclerotized dorsal exoskeleton. We code sternites as uncertain in leanchoiliids.^n';
+	TEXT CHARACTER=74 TEXT='[SC: 37; Y: 36]^nTransformation series 26 in Daley et al. (2009).  Annulations are repeated superficial integument rings. Absent in Hallucigenia sparsa (Smith and Caron 2015).  Coded as absent in Carbotubulus; a taphonomic absence can be discounted because annulations are preserved in co-occurring specimens of Ilyodes (Haug et al. 2012c).^n';
+	TEXT CHARACTER=75 TEXT='[SC: 39]^nThe anterior trunk of Aysheaia and Onychodictyon ferox is differentiated into a stout "proboscis", distinct from the trunk by virtue of its shape and its lack of annulations (Ou et al. 2012).  The anterior introvert of Tubiluchus and Cricocosmia is differentiated in a similar fashion, to a greater or lesser (Calloway 1975; Kirsteuer 1976; Han et al. 2007).  The  bulbous heads of Hallucigenia fortis, Microdictyon, Cardiodictyon and Luolishania also lack annulations (Chen et al. 1995b; Ma et al. 2009, 2012b; Liu and Dunlop 2014).  In contrast, annulations continue to the tip of the head in Paucipodia, Onychodictyon gracilis, and Diania (whichever end of Diania is interpreted as anterior) (Chen et al. 1995a; Hou et al. 2004; Liu et al. 2008b; Ma et al. 2014).  Annulations are not clearly preserved in the anterior region of Jianshanopodia and Megadictyon (Liu et al. 2006, 2007), making this transformation series difficult to score with confidence. Annulations continue to the anterior extremity of the onychophoran trunk.^n--------------------------------------------------^nTransformation series: Trunk region: Annulation distribution (trunk and limbs/limbs only) removed as code appeared redundant (only 1 state present across matrix). Observations relating to annulation of Pambdelurion and Antenacanthopodia may become relevant in future and explain why these observations do not feature as a separate character in this matrix, hence the character description is retained below.^n ^n[SC: 38; Y: 37]^nMost taxa have annulations on the trunk and limbs.  Whereas the limbs of Pambdelurion unambiguously exhibit annulations, preservation makes it unclear whether the structures also occurred on the trunk (Budd 1998b).  The same is true in Antennacanthopodia (cf. Ou et al. 2011), where the effaced preservation of the trunk may obscure trunk annulations.';
+	TEXT CHARACTER=76 TEXT='[SC: 40; Y: 38]^nTransformation series 29 in Liu et al. (2011); trans. ser. 27 in Daley et al. (2009).  This transformation series distinguishes between annulation patterns that are uniform along the length of the trunk (homonomous) from those which display serially-repeated differentiated fields (heteronomous), usually associated with the location of limbs. We code Pambdelurion as uncertain, reflecting the poor preservation of the trunk (Budd 1998b).  Jianshanopodia exhibits regions of narrower annulations between appendages (Liu et al. 2006), and is coded as heteronomous; annulations in Megadictyon appear regular (Liu et al. 2007), and this taxon is coded as homonomous.';
+	TEXT CHARACTER=77 TEXT='[NEW]^nUnbranched in Aysheaia, Siberion, Onychodictyon, Diania, Xenusion, Paucipodia, Microdictyon, Luolishania, the Collins Monsters, Acinocricus, Jianshanopodia, Hadranax and Kerygmachela  (Whittington 1978; Collins 1986; Conway Morris and Robison 1988; Dzik and Krumbiegel 1989; Chen et al. 1995b; Budd and Peel 1998; Hou et al. 2004; Liu et al. 2006, 2008b; Ma et al. 2009, 2014; Dzik 2011; Ou et al. 2012; García-Bellido et al. 2013; Yang et al. 2015); branched in Orstenotubulus, onychophorans (i.e. anastomosing plicae) and the Orsten-type lobopodian segment (Maas et al. 2007; De Sena Oliveira et al. 2014); ambiguous in Megadictyon, Antennacanthopodia and Tertiapatus (Poinar 2000; Liu et al. 2007; Ou et al. 2011).';
+	TEXT CHARACTER=78 TEXT='[SC: 41; Y: 39]^nThis transformation series refers to the differentiated epidermal regions found on the dorsal side of most lobopodians. The epidermal specialization is usually conspicuous, as in the paired nodes of Xenusion (Dzik and Krumbiegel 1989), Hadranax (Budd and Peel 1998) and Kerygmachela (Budd 1993, 1998a); the sclerotized plates of Onychodictyon (Zhang and Aldridge 2007; Ou et al. 2012); and the spines of Hallucigenia (Ramsköld 1992; Hou and Bergström 1995; Steiner et al. 2012), luolishaniids (Ma et al. 2009; Yang et al. 2015) and Orstenotubulus (Maas et al. 2007).  The transformation is also coded as present in the modern tardigrades, denoting the paired pit-like structures associated with each pair of legs. These have been described as sites for muscular attachment in the visceral side of the body wall (e.g. Halberg et al. 2009; Marchioro et al. 2013); the epidermal specializations of lobopodians have also been interpreted as muscle attachment sites (Budd 2001a; Zhang and Aldridge 2007).';
+	TEXT CHARACTER=79 TEXT='[SC: 42; Y: 40]^nThe nodes, plates and spines of Cricocosmia and lobopodian taxa (trans. ser. 52) represent epidermal evaginations; the paired sclerotized dorsal plates of Actinarctus (Heterotardigrada) are also interpreted as epidermal evaginations (e.g. Nelson 2002; Marchioro et al. 2013; Persson et al. 2014). Halobiotus (Eutardigrada) has epidermal depressions, represented by the paired pits that serve as muscle attachment sites (Halberg et al. 2009; Marchioro et al. 2013). The nodes in Paucipodia and Diania are scored as epidermal evaginations (Chen et al. 1995a; Liu and Dunlop 2014; Ma et al. 2014).';
+	TEXT CHARACTER=80 TEXT='[SC: 43; Y: 41]^nEpidermal evaginations fall into two geometric categories: flat nodes or plates (token 0) and tall spines (token 1).';
+	TEXT CHARACTER=81 TEXT='[SC: 44; Y: 42]^nThis transformation series refers solely to the shape of the trunk evaginations’ apices. It is independent from the evaginations’ proportions (trans. ser. 54), as demonstrated by Onychodictyon ferox, where sclerites are wider than tall (i.e. plates) but display an acute distal termination (Zhang and Aldridge 2007; Ou et al. 2012; Topper et al. 2013).  O. gracilis and Orstenotubulus are coded as uncertain due to its ambiguous preservation (Liu et al. 2008b). ';
+	TEXT CHARACTER=82 TEXT='[SC: 45; Y: 43]^nThe spines of Hallucigenia (Hou and Bergström 1995, Steiner et al. 2012, Smith & Caron 2015), Luolishania (Ma et al. 2009) and the Emu Bay "Collins Monster" (García-Bellido et al. 2013) are distinctively curved, whereas those Onychodictyon ferox (Topper et al. 2013) are essentially straight.';
+	TEXT CHARACTER=83 TEXT='[SC: 46; Y: 44]^nThe epidermal evaginations of Cricocosmia and "armoured" lobopodians are substantially sclerotized (Hou and Bergstrom 1995; Han et al. 2007; Steiner et al. 2012; Caron et al. 2013), in contrast to those of Xenusion (Dzik and Krumbiegel 1989), Hadranax (Budd and Peel 1998), Diania (Ma et al. 2014) and Kerygmachela (Budd 1993, 1998a).';
+	TEXT CHARACTER=84 TEXT='[SC: 47; Y: 45]^nWe code this transformation series as uncertain in taxa that are not well enough preserved for the ornament to be apparent. Hallucigenia sparsa has a scaly ornament (Caron et al. 2013) whereas H. hongmeia and Collinsium bear a net-like pattern (Steiner et al. 2012; Yang et al. 2015) shared with Onychodictyon, Microdictyon and Cricocosmia (Han et al. 2007; Topper et al. 2013); Cardiodictyon specimens show a comparable ornament (Liu and Dunlop 2014 fig. 4f).';
+	TEXT CHARACTER=85 TEXT='[SC: 48; Y: 46]^nThis neomorphic transformation series is coded as present in any taxon where exoskeletal elements (claws or epidermal evaginations) comprise stacked constituent elements at all stages of growth (as in Hallucigenia sparsa, Euperipatoides and Collinsium, see Smith & Ortega Hernández 2014, Yang et al. 2015), not just during ecdysis (as in Onychodictyon, see Topper et al. 2013).    Whereas the dorsal sclerites of Microdictyon and Onychodictyon do not express constituent elements, the detailed construction of their claws is not known; as such these taxa are coded as ambiguous.  Where sclerites are not preserved in sufficient detail to assess their construction, this transformation series is coded as ambiguous.';
+	TEXT CHARACTER=86 TEXT='[SC: 49; Y: 47]^nWe score Cardiodictyon as having two epidermal specializations (token 1), following suggestions that the apparently single dorsal sclerite is formed by the fusion of a pair of elements (Liu and Dunlop 2014).  The plates of Cricocosmia occur in pairs (Han et al. 2007). Collinsium bears five primary spines (Yang et al. 2015); Acinocricus bears seven (Conway Morris and Robison 1988). Tardigrades are coded as ambiguous in view of the complex integration of their dorsal plates.';
+	TEXT CHARACTER=87 TEXT='[Y: 48]^nUniquely, Acinocricus bears diminutive spines between the "primary" spines that decrease gradually in length along the length of the body (Conway Morris and Robison 1988).';
+	TEXT CHARACTER=88 TEXT='[Y: 49]^nIn most armoured lobopodians, each group of dorsal spines or plates exhibits a similar size (e.g. Smith and Caron 2015).  In Collinsium, Hallucigenia hongmeia, Luolishania, Acinocricus and the Emu Bay Collins Monster, the size of spines varies between each group (Conway Morris and Robison 1988; Li et al. 2007; Ma et al. 2009; Steiner et al. 2012; García-Bellido et al. 2013). Orstenotubulus has prominent spines and buttresses above some leg pairs, but these are profoundly diminished above others (Maas et al. 2007).';
+	TEXT CHARACTER=89 TEXT='[Y: 50]^nIn most lobopodian taxa, the epidermal specializations exhibit a regular spacing, even if the spacing of appendages varies along the body (Smith and Caron 2015).  Both Collinsium and Luolishania, by contrast, exhibit an extended spacing between spines in the medial portion of the trunk (Ma et al. 2009; Yang et al. 2015).';
+	TEXT CHARACTER=90 TEXT='[SC: 50; Y: 51]^nTransformation series 41 in Ma et al. (2014).  Present in Orstenotubulus (Maas et al. 2007). Antennacanthopodia is coded as uncertain as its trunk annulations are not clearly apparent (Ou et al. 2011). Coded as transformational because it is not clear whether the absence of papillae on limbs represents a differentiation of the limbs (and the introduction of a separate developmental regime to pattern them independently from the trunk)';
+	TEXT CHARACTER=91 TEXT='[SC: 53; Y: 52]^nTransformation series 42 in Ma et al. (2014); transformation series 16 in Daley et al. (2009).  Coded as uncertain in Antennacanthopodia (Ou et al. 2011) because the dark infilling of the type material may represent decayed internal organs.  The nature of the mid-gut glands of Megadictyon, Jianshanopodia, Pambdelurion and Opabinia is elucidated by Vannier et al. (2014).  Gut glands are present in Anomalocaris (Daley and Edgecombe 2014).  Midgut glands were biologically, rather than taphonomically, absent in Ilyodes (Haug et al. 2012c), Hallucigenia sparsa (Smith and Caron 2015), Lyrarapax (Cong et al. 2014) Acinocricus (Conway Morris and Robison 1988) and Collinsium (Yang et al. 2015).';
+	TEXT CHARACTER=92 TEXT='[SC: 54; Y: 72]^nThis transformation series reflects the pronounced differentiation of the posterior and anterior trunk – not just the trunk appendages – in certain lobopodians.  In  Hallucigenia sparsa, the region of the trunk anterior of the third appendage pair is narrower, lacks dorsal armature, and expresses differentiated appendages (Smith and Caron 2015).  The short constricted region anterior of the first spine pair in H. fortis is associated with two differentiated appendage pairs (Ramsköld and Chen 1998) and apparently corresponds with the ‘neck’ of H. sparsa.  In luolishaniids, the anterior body bears elongate limbs with accentuated armature (Ma et al. 2009; García-Bellido et al. 2013).  The portion of the trunk in Carbotubulus corresponding to the first two or three leg pairs is substantially narrower than the posterior trunk and its associated appendages are narrower and less prominent than the posterior appendages, indicating trunk differentiation (Haug et al. 2012c).  Although the width of the trunk narrows gradually towards the front of Paucipodia, this tapering is gradual and does not correspond to the differentiation of the anterior trunk (Chen et al. 1995a; Hou et al. 2004).  Coded ambiguous in Orstenotubulus, Hallucigenia hongmeia, and Ilyodes due to incomplete preservation (Thompson and Jones 1980; Maas et al. 2007; Steiner et al. 2012).^n^n[SC: 54; Y: 72]^nThis transformation series reflects the pronounced differentiation of the posterior and anterior trunk -- not just the trunk appendages -- in certain lobopodians.  In  Hallucigenia sparsa, the region of the trunk anterior of the third appendage pair is narrower, lacks dorsal armature, and expresses differentiated appendages (Smith and Caron 2015).  The short constricted region anterior of the first spine pair in H. fortis is associated with two differentiated appendage pairs (Ramsk"';
+	TEXT CHARACTER=93 TEXT='Character 65 in Moysiuk & Caron (2019).  Lobopodians have a relatively cylindrical trunk with a uniform width, whereas the trunk of anomalocaridids narrows markedly towards the posterior.';
+	TEXT CHARACTER=94 TEXT='[SC: 55; Y: 53]^nTransformation series 31 in Daley et al. (2009). Treated as neomorphic.^n^nTo summarise Daley et al. (2009) and Van Roy et al. (2015):^nExopods, the outer branch of a true biramous limb, are unique to Mandibulata.  The outer appendage branch of chelicerates and many stem-group euarthropods is interpreted as an exite, a lateral flap which is not homologous to the mandibulate exopod (see also Bruce & Patel 2020).  ^nDaley et al. (2009) treated this flap as homologous with the lateral flaps of anomalocaridids and gilled lobopodians, which often bear dorsal lanceolate blades (= setal blades). ^nVan Roy et al. (2015) considered the setal blades themselves to represent the exite, homologizing the wrinkling on Kerygmachela and Pambdelurion flaps, the setal blades of Opabinia and anomalocaridids, and the exites of upper stem euarthropods.  Dorsal flaps are therefore not necessarily present in addition to the setal blades; indeed Van Roy et al. (2015) code them as absent in Amplectobeluids and Anomalocaris (as well as euarthropods).';
+	TEXT CHARACTER=95 TEXT='[SC: 51, 56, 68; Y: 54]^nThe description of Aegirocassis (Van Roy et al. 2015) clarifies the relationship of the dorsal lanceolate (setal) blades in gilled lobopodians and radiodontans, and establishes their homology with setae borne on the outer appendage branches (i.e. exites) of upper-stem Euarthropoda.';
+	TEXT CHARACTER=96 TEXT='[SC: 57; Y: 57]^nThe dorsal flaps of anomalocaridids and gilled lobopodians are considered as homologous with euarthropod exites.^nSee transformation series 57 in Van Roy et al. (2015). Treated as neomorphic.';
+	TEXT CHARACTER=97 TEXT='[SC: 67; Y: 55]^nModified from transformation series 21 in Van Roy et al. (2015).^n^nVan Roy et al. (2015) consider the setal blades to represent exites.  Dorsal flaps are not always present in addition to the setal blades: the (ventral) flaps of Amplectobeluids and Anomalocaris correspond to the euarthropod endopod.  Dorsal flaps are considered to represent an elaboration of the setal blades, and thus treated as a neomorphic character.';
+	TEXT CHARACTER=98 TEXT='[Y: 56]^nTransformation series 51 of Van Roy et al. (2015), reflecting the continuation of setal blades in certain dinocaridids across the dorsal surface.';
+	TEXT CHARACTER=99 TEXT='[SC: 58; Y: 58]^nTransformation series 8 of Ma et al. (2014), 35 in Daley et al. (2009).  Gnathobasic appendages are absent in fuxianhuiids (Chen et al. 1995c; Waloszek et al. 2005; Bergström et al. 2008; Yang et al. 2013) but present in Artiopoda (Edgecombe and Ramsköld 1999; Ortega-Hernández et al. 2013) and megacheirans (Chen et al. 2004; Haug et al. 2012a, b).';
+	TEXT CHARACTER=100 TEXT='Some lobopodians have cylindrical appendages (e.g. Microdictyon, Hallucigenia) whereas others have more conical or tapered lobopods.^nInapplicable when lobopodous limbs are absent. ';
+	TEXT CHARACTER=101 TEXT='[SC: 59; Y: 59]^nThis transformation series is modified from transformation series 9 in Ma et al. (2014).  We code as O. gracilis as uncertain as its longitudinal series of dot-like structures (Liu et al. 2008b fig. 2A6) could indicate an organization of appendicules similar to those of O. ferox (see Ou et al. 2012, fig. 2a). Siberion is coded as uncertain because its limbs are poorly preserved (Dzik 2011). Hurdia and Peytoia as scored as absent, and Anomalocaris as uncertain (Van Roy et al. 2015). Ambiguous in euarthropods as sclerotization of limbs is considered to overprint and obscure any secondary structures that may have been present.';
+	TEXT CHARACTER=102 TEXT='[SC: 60; Y: 60]^nSpines and setae taper to sharp point, whereas appendicules have a uniform length and a flattened terminus.';
+	TEXT CHARACTER=103 TEXT='[Y: 61]^nLuolishaniids have long setiform spines (Collins 1986; Conway Morris and Robison 1988; Ma et al. 2009; García-Bellido et al. 2013; Yang et al. 2015), which contrast with the short, more equant spines of Diania and Aysheaia (Whittington 1978; Ma et al. 2014).';
+	TEXT CHARACTER=104 TEXT='[SC: 61; Y: 62]^nTransformation series 10 in Ma et al. (2014).  In contrast to appendicules and spines, papillae are short projections associated with the annulations.  The preservation of papillae in Ilyodes indicates that the absence of papillae in Carbotubulus is not taphonomic (Haug et al. 2012c). Ambiguous in euarthropods as sclerotization is considered to overprint and obscure any papillae that may have been present.';
+	TEXT CHARACTER=105 TEXT='[NEW]^nA cuticularized spine is borne by the papillae of the partial Orsten-type lobopodian and crown-group onychophorans.';
+	TEXT CHARACTER=106 TEXT='[SC: 62; Y: 63]^nThe finger-like projections in the legs of tardigrades can bear sets of terminal claws or sucking discs (Schuster et al. 1980; Nelson 2002).';
+	TEXT CHARACTER=107 TEXT='[SC: 63; Y: 64]^nWe score terminal claws as absent in Opabinia following Budd and Daley (2012). Anomalocaris is coded as ambiguous as there is no definitive information on the presence of lobopodous limbs or a second set of flaps (Van Roy et al. 2015). Jianshanopodia (Liu et al. 2006) and Megadictyon (Liu et al. 2007) are also coded as uncertain as the preservation of the type material does not allow the presence or absence of terminal claws to be confirmed. Diania too is scored as uncertain, as it is difficult to distinguish possible terminal claws from its myriad accessory spines (Liu et al. 2011; Ma et al. 2014). The lobopod claws of Aysheaia are sub-terminal; the lobopods extend beyond the claws (Whittington 1978)';
+	TEXT CHARACTER=108 TEXT='The outer edge of e.g. Onychophoran claws have a similar curvature along its length, whereas the inner edge has a distinct inflection/step in curvature along its length, forming an enlarged attachment base. Emu Bay Shale''s Collins monster has an enlarged base (Garcia-bellido et al., 2013). Hallucigenia''s claws do not have an enlarged base, with similar curvature through the length of the claw (Smith & Ortega-Hernandez 2014). Paucipodia''s claws do not have an enlarged base (Vannier & Martin 2017). ';
+	TEXT CHARACTER=109 TEXT='Whilst many lobopodians have terminal claws, Aysheaia''s claws are sub-terminal; lobopods extend beyond the claws (Whittington 1978).^n(-)Inapplicable when terminal or sub-terminal claws absent (trans. ser. 95)';
+	TEXT CHARACTER=110 TEXT='[SC: 64; Y: 65]^nPresent in Eutardigrada (Schuster et al. 1980; Nelson 2002; Halberg et al. 2009) and the Siberian Orsten-type tardigrade (Maas and Waloszek 2001).  Absent in heterotardigrades and Palaeozoic lobopodians, which express simple concavo-convex claws.';
+	TEXT CHARACTER=111 TEXT='[SC: 65; Y: 66]^nThe differentiated anterior appendages of hallucishaniids do not bear unambiguous claws: structures interpreted as such (e.g. in Ovatiovermis, Luolishania) are not morphologically or compositionally distinct from co-occurring setae/spinules.  As such, only the walking trunk limbs are considered.';
+	TEXT CHARACTER=112 TEXT='In many lobopodians, posterior trunk appendages bear fewer claws than anterior appendages.';
+	TEXT CHARACTER=113 TEXT='[SC: 66]^nAll seven claws in Aysheaia are identical (Whittington 1978).  Euperipatoides claws are identical on trunk limbs, although the jaw elements are differentiated (Smith and Ortega-Hernández 2014).  Paucipodia claws are not visibly differentiated (Hou et al. 2004); neither are those of Hallucigenia sparsa (Smith and Caron 2015).  Onychodictyon ferox has a large and a small claw (Steiner et al. 2012 fig. 8). The nature of other lobopodians’ claws has not been described in detail.^n';
+	TEXT CHARACTER=114 TEXT='[Y: 67]^nA movable foot is present in the Onychophoran crown group, but not in Tertiapatus (Poinar 2000).  The preservation of Ilyodes is inadequate to evaluate this feature.';
+	TEXT CHARACTER=115 TEXT='[SC: 69; Y: 69]^nTransformation series 37 in Daley et al. (2009)';
+	TEXT CHARACTER=116 TEXT='[SC: 70; Y: 70]^nTransformation series 40 in Daley et al. (2009): "Posterior tapering of the width of the lateral lobes is pronounced in Anomalocaris and Laggania, while other lateral lobe-bearing taxa, including Hurdia, have a more even body outline."';
+	TEXT CHARACTER=117 TEXT='[Y: 68]^nThe first pair of body flaps (posterior of segments lacking flaps) are enlarged into "paddles" in Schinderhannes and Lyrarapax (Kuhl et al. 2009; Cong et al. 2014, 2016).  Because the body flaps of these radiodontans are homologous with endopods and lobopods (Van Roy et al. 2015), this character has been generalized from Yang et al. (2016) in order to apply to all appendage-bearing taxa.';
+	TEXT CHARACTER=118 TEXT='[Y: 71]^nIn Lyrarapax, Hurdia, Peytoia and Anomalocaris, the flaps of the anterior region are reduced (Daley et al. 2009; Cong et al. 2014; Daley and Edgecombe 2014), whereas in Opabinia, Kerygmachela and Pambdelurion, the equivalent flaps remain expressed (Whittington 1975; Budd 1998a, c).  The preservation of Aegirocassis and Schinderhannes in inadequate to resolve this feature.^nBecause the ventral body flaps of the radiodonts are homologous with endopods and lobopods (Van Roy et al. 2015), this character has been generalized from Yang et al. (2015, 2016) in order to apply to all limb-bearing taxa.';
+	TEXT CHARACTER=119 TEXT='[Y: 73]^nHallucigenia fortis has two pairs of elongate limbs (Ma et al. 2012b); Hallucigenia sparsa has three (Smith and Caron 2015); Luolishania, Fascivermis, Acinocricus and the Emu Bay Collins Monster have five (Ramskold and Chen 1998; Ma et al. 2009; Garcia-Bellido et al. 2013; Howard et al. 2020); Collinsium, Ovatiovermis and the Burgess Shale Collins Monster bear six (Collins 1986; Yang et al. 2015; Caron & Aria 2017).';
+	TEXT CHARACTER=120 TEXT='[SC: 71]^nThe anterior limbs of Hallucigenia sparsa are simple and lack cirri; the anterior limbs of luolishaniids bear multiple cirri.  The trunk is not differentiated into distinct anterior and posterior components in any other taxon.';
+	TEXT CHARACTER=121 TEXT='[SC: 72; Y: 74]^nThe endopods of certain taxa in the euarthropod stem-group, such as fuxianhuiids, bear 15 or more podomeres and are considered "multipodomerous" (Chen et al. 1995c; Waloszek et al. 2005; Bergström et al. 2008; Yang et al. 2013).';
+	TEXT CHARACTER=122 TEXT='[SC: 73; Y: 75]^nThis transformation series has been modified by that of previous analyses (e.g. transformation series 34 in Ma et al. 2014) to reflect the fact that, in extant Onychophorans, the posterior extension of the lobopodous trunk (i.e. anal cone) corresponds to a segment that has lost its appendage pair, as evinced by the prevalence of nephridia in this region (Mayer and Koch 2005).  As it is not possible to determine whether the posterior extension of the trunk in Palaeozoic lobopodians arises through the loss of the last appendage pair (as in Onychophora) or as an elongation of the trunk, we code this transformation series as present in all taxa where the trunk extends posteriad of the last observable pair of limbs.';
+	TEXT CHARACTER=123 TEXT='[SC: 74; Y: 76]^nTransformation series 42 in Daley et al. (2009)';
+	TEXT CHARACTER=124 TEXT='[SC: 75; Y: 77]^nWe score Jianshanopodia (Liu et al. 2006) as present because the lateral extensions of the tail fan likely correspond to a modified pair of appendages.  Onychophora are scored as undifferentiated, as the posteriormost appendages are appendages are lost, not structurally differentiated (Mayer and Koch 2005).   See also transformation series 35 in Ma et al. (2014).  Hurdia and Schinderhannes bear a single flap-like appendage on the posterior end (Daley et al. 2009; Kühl et al. 2009).';
+	TEXT CHARACTER=125 TEXT='[SC: 76; Y: 78]^nIn fuxianhuiids, the posteriormost appendage pair is modified into a tail fan or tail flukes (e.g. Chen et al. 1995c; Yang et al. 2013); a similar condition is also observed in Opabinia (Whittington 1975; Budd 1996; Budd and Daley 2012), Anomalocaris (Daley and Edgecombe 2014) and Hurdia (Daley et al. 2009). The paired tail rami of Kerygmachela (Budd 1993, 1998a) likely represent modified appendages. The last appendage pair of Jianshanopodia is modified into a set of lateral flaps, which form a tail fan together with the flattened terminal portion of the body (Liu et al. 2006).  Partial fusion of the last pair of legs occurs in Aysheaia (Whittington 1978), Onychodictyon gracilis (Liu et al. 2008b), O. ferox (Ou et al. 2012) and Tardigrada (e.g. Halberg et al. 2009; Marchioro et al. 2013); in these taxa, this characteristic is expressed as an incipient fusion of the medioproximal bases of the posteriormost appendage pair.  The Siberian Orsten tardigrade is scored as having a reduced posteriormost appendage pair based on the vestigial rudiment present on its posteroventral body region (Maas and Waloszek 2001).  We score Pambdelurion as uncertain because its posterior trunk is poorly known (Budd 1998b).';
+	TEXT CHARACTER=126 TEXT='[SC: 77; Y: 79]^nThis transformation series distinguishes the long tail rami of Kerygmachela (Budd 1993, 1998a) from the flaps observed in Jianshanopodia (Liu et al. 2006), Opabinia (Budd 1996; Budd and Daley 2012), anomalocaridids (Daley et al. 2009; Daley and Edgecombe 2014), and fuxianhuiids (e.g. Yang et al. 2013).';
+	TEXT CHARACTER=127 TEXT='Transformation series from Pates et al., 2021 (trans. series 106).^nOpabiniids (Budd and Daley 2012; Pates et al., 2021) and Anomalocaridids (Daley et al., 2009) have differentiated posterior appendages that form a tail fan (MS note: I think I recall this being why it was tricky to code Opabinia for ‘trunk extends past posteriormost appendages’), Fuxianhuiids have similar modified appendicular tail flukes (e.g. Yang et al., 2013). Opabinia regalis has a paddle-like, more symmetric morphology to its tail appendages, whereas Anomalocaris and the Wheeler Opabiniid’s appendages are more asymmetric, with a sharp anterior edge of the appendages, forming a blade-like morphology (Pates et al., 2021) ^n(-) inapplicable when posterior tagma tail flaps absent (Trans. series XX116)';
+	TEXT CHARACTER=128 TEXT='[SC: 78; Y: 80]^nThe last pair of legs are rotated anteriad in tardigrades (e.g. Marchioro et al. 2013), Aysheaia (Whittington 1978) and O. ferox (Ou et al. 2012), but not in O. gracilis, Cardiodictyon, Hallucigenia fortis or Microdictyon (Hou and Bergström 1995).  The claws of Hallucigenia sparsa seem to be oriented in the same direction on all appendage pairs (Smith and Caron 2015).  We score the Siberian Orsten tardigrade (Maas et al. 2007) and Onychodictyon gracilis (Liu et al. 2008b) as uncertain.^n';
+	TEXT CHARACTER=129 TEXT='[SC: 79; Y: 81]^nTransformation series 2 in Tanaka et al. (2013).  Tardigrada and Euarthropoda have a ganglionated ventral nerve cord (Schulze et al. 2014), in contrast to the ladder-like ventral nerve cord in Onychophora (Mayer et al. 2013a). Priapulida have an unpaired nerve cord associated with a net-like system of neural connectives (Storch 1991; Rothe and Schmidt-Rhaesa 2010).';
+	TEXT CHARACTER=130 TEXT='[SC: 80; Y: 82]^nWhereas typical cycloneuralians have a circumoesophageal nerve ring (e.g. Storch 1991; Telford et al. 2008; Edgecombe 2009; Rothe and Schmidt-Rhaesa 2010), Panarthropoda is characterized by dorsal condensed brain neuromeres (Eriksson et al. 2003; Mittmann and Scholtz 2003; Harzsch et al. 2005; Mayer et al. 2010, 2013b). A dorsal condensed brain has been described in Fuxianhuia (Ma et al. 2012a) and Alalcomenaeus (Tanaka et al. 2013).';
+	TEXT CHARACTER=131 TEXT='[SC: 81; Y: 83]^nSee the introductory statements above.';
+	TEXT CHARACTER=132 TEXT='[SC: 82; Y: 84]^nRecent fossil data suggest a likely deutocerebral innervation for the mouth in Fuxianhuia and Alalcomenaeus based on the position of the oesophageal foramen relative to the brain (Ma et al. 2012a; Tanaka et al. 2013), which is congruent with the organization found in phylogenetically basal extant euarthropods such as Chelicerata and Myriapoda (Mittmann and Scholtz 2003; Harzsch et al. 2005; Scholtz and Edgecombe 2005, 2006).  Tritocerebral innervation is observed in Pancrustacea, but not among the taxa included in this study.  Onychophora are coded as state 2 to reflect their complex neurological organization: although the jaws have a deutocerebral segmental affinity and innervation, the lip papillae that delineate the oral opening are formed as epidermal derivatives of the three anteriormost body segments, and thus receive nervous terminals from the protocerebrum, deutocerebrum and part of the ventral nerve cord (Eriksson and Budd 2000; Martin and Mayer 2014). The tardigrade mouth cone is innervated from the protocerebrum (Mayer et al. 2013b).  Lyrarapax also has protocerebral mouth innervation (Cong et al. 2014).';
+	TEXT CHARACTER=133 TEXT='[NEW]^nCircumpharyngeal nerve rings are found in the nematode brain (Schmidt-Rhaesa &^nHenne, 2017; White et al., 1986) and the anterior nervous systems of extant tardigrades (Mayer et al., 2013a; Smith et al., 2017).';
+	TEXT CHARACTER=134 TEXT='[Y16: 85]^nUnpaired in Priapulida; paired in all extant Panarthropoda. Paired in Alalcomenaeus, Lyrarapax and Chengjiangocaris; uncertain in Paucipodia.  See Yang et al. (2016) for further discussion.';
+	TEXT CHARACTER=135 TEXT='Present in Tardigrada and Euarthropoda (including Alalcomenaeus and Chengjiangocaris); absent in Onychophora and Priapulida.  Ambiguous in Lyrarapax and Paucipodia. See Yang et al. (2016) for further discussion.';
+	TEXT CHARACTER=136 TEXT='[SC: 83; Y: 85; Y16: 87]^nTransformation series 1 in Tanaka et al. (2013); revised by Yang et al. (2016) to apply only to paired nerve cords.  This transformation series distinguishes the organization of the ventral nerve cord in Onychophora (e.g. Mayer et al. 2013a) from that in other phyla.';
+	TEXT CHARACTER=137 TEXT='[Y16: 88]^nPresent in Onychophora and Tardigrada; absent in Euarthropoda, including Alalcomenaeus.  Ambiguous in Lyrarapax and Chengjiangocaris. See Yang et al. (2016) for further discussion.';
+	TEXT CHARACTER=138 TEXT='[Y16: 93]^nPresent in Priapulida, Onychophora, Tardigrada and Chengjiangocaris; absent in Euarthropoda and Alalcomenaeus. See Yang et al. (2016) for further discussion.';
+	TEXT CHARACTER=139 TEXT='[Y16: 89]^nOrthogonal organization of several ring-like commissures and peripheral nerves that intersect longitudinal dorsal and lateral nerve strands to form a reticulate pattern.  Present in Priapulida, Onychophora and Tardigrada.  Uncertain in Chengjiangocaris; absent in Alalcomenaeus and crown Euarthropoda. See Yang et al. (2016) for further discussion.  Contra Yang et al. (2016), we score this transformation series as inapplicable in taxa where the regularly spaced peripheral nerves that constitute the transverse component of the orthogonal organization are not present.';
+	TEXT CHARACTER=140 TEXT='[Y16: 90]^nComplete in Priapulida and Onychophora; incomplete in Tardigrada.  Inapplicable in Euarthropoda. See Yang et al. (2016) for further discussion.';
+	TEXT CHARACTER=141 TEXT='[Y16: 91]^nAnteriorly displaced in Tardigrada and Euarthropoda; not in Onychophora. Ambiguous in fossil taxa. See Yang et al. (2016) for further discussion.';
+	TEXT CHARACTER=142 TEXT='[Y16: 92]^nTwo nerves innervate each leg in Onychophora and Eutardigrada, but a single nerve innervates each Euarthropod leg.  The configuration is ambiguous in fossil material.  See Yang et al. (2016) for further discussion.';
+	TEXT CHARACTER=143 TEXT='[Y16: 64]^nPresent in Eutardigrada and Euarthropoda; uncertain in Heterotardigrada; absent in Onychophora and Priapulida. See Yang et al. (2016) for further discussion.';
+	TEXT CHARACTER=144 TEXT='[SC: 84; Y: 86/81]^nMa et al. (2014) described a dorsal heart in Fuxianhuia; all other fossil taxa are scored as ambiguous.  Coded inapplicable in tardigrades, following Budd (2001b), as their miniscule body size renders a heart unnecessary.';
+	TEXT CHARACTER=145 TEXT='[SC: 52]^nBudd (2001b) proposes the distribution of musculature as a key phylogenetic character.  The musculature of tardigrades, Pambdelurion, Anomalocaris and more derived euarthropods is metamerically arranged and runs through the body cavity, whereas muscles in cycloneuralians, onychophorans and Kerygmachela are seemingly dominated by longitudinal and circular structures (Carnevali and Ferraguti 1979; Hoyle and Williams 1980; Budd 1998c, 2001b).';
+	TEXT CHARACTER=146 TEXT='[NEW]^nThe presence of longitudinal muscles in the peripheral region (see Zhang et al., 2016) which may exist in addition to circular and/or metameric musculature. Present in priapulids and onychophorans (Carnevali and Ferraguti 1979; Hoyle and Williams 1980); absent in tardigrades and euarthropods (Halberg et al. 2009), and presumed absent in Fuxianhuia.';
+	TEXT CHARACTER=147 TEXT='[NEW]^nObserved in Pambdelurion, tardigrades and onychophorans (Young & Vinther 2017).';
+	TEXT CHARACTER=148 TEXT='[NEW]^nIn tardigrades, longitudinal muscles attach at successive points along the body; on onychophorans and gilled lobopodians, they attach only at the anterior and posterior end of the trunk (Young & Vinther 2017).  Inapplicable if longitudinal muscles are absent.';
+	TEXT CHARACTER=149 TEXT='[NEW]^nPresent in priapulids and onychophorans (Carnevali and Ferraguti 1979; Hoyle and Williams 1980); absent in tardigrades and euarthropods, (Halberg et al. 2009), and presumed absent in Fuxianhuia.';
+	TEXT CHARACTER=150 TEXT='[NEW]^nLongitudinal muscles inside circular muscles in  priapulids and onychophorans (Carnevali and Ferraguti 1979; Hoyle and Williams 1980).';
+	TEXT CHARACTER=151 TEXT='[NEW]^nMetamerically arranged dorsoventral and oblique muscles connecting the lateral and ventral muscle groups are present in tardigrades and euarthropods, resulting in a "box-truss trunk musculature system" (Young & Vinther 2017)';
+
+      [Attribute comments]
+      	TEXT TAXON=13 CHARACTER=2 TEXT='Liu et al., 2008 Fig 2A4-5 suggest anterior region is sclerotized, although preservation shows irregular margins therefore more specimens are need to confirm presence.';
+	TEXT TAXON=24 CHARACTER=2 TEXT='Head sclerite absent (Howard et al. 2020)';
+	TEXT TAXON=26 CHARACTER=2 TEXT='Absent (Caron & Aria, 2017)';
+	TEXT TAXON=34 CHARACTER=2 TEXT='Actinarctus is coded as absent as a single dorsal sclerite covers the entire body; this structure does not seem to correspond directly to the anterior sclerites of other taxa (Boesgaard and Kristensen 2001).';
+	TEXT TAXON=40 CHARACTER=2 TEXT='Budd 1998 notes the dorsal structures of Pamdelurion are poorly preserved, therefore we code as ambiguous.';
+	TEXT TAXON=44 CHARACTER=2 TEXT='Coded as present following Dhungana & Smith 2022.';
+	TEXT TAXON=48 CHARACTER=2 TEXT='Central oval head shield present (Cong et al. 2017)';
+	TEXT TAXON=48 CHARACTER=4 TEXT='Oval (Cong et al. 2017)';
+	TEXT TAXON=48 CHARACTER=6 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=49 CHARACTER=6 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=50 CHARACTER=6 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=51 CHARACTER=6 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=52 CHARACTER=6 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=53 CHARACTER=6 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=54 CHARACTER=6 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=55 CHARACTER=6 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=40 CHARACTER=8 TEXT='Budd 1998 notes the dorsal structures of Pamdelurion are poorly preserved, therefore we code as ambiguous.';
+	TEXT TAXON=48 CHARACTER=8 TEXT='Prominent ovoid structures adjacent to the frontal appendage are interpreted as P-elements, connected by a rod (Cong et al. 2017)';
+	TEXT TAXON=49 CHARACTER=8 TEXT='Present (Moysiuk & Caron 2019)';
+	TEXT TAXON=52 CHARACTER=8 TEXT='Present (Moysiuk & Caron 2019)';
+	TEXT TAXON=54 CHARACTER=8 TEXT='Present (Moysiuk & Caron 2019)';
+	TEXT TAXON=55 CHARACTER=8 TEXT='Moysiuk & Caron (2019) interprete the ventrolateral plate-like elements interpreted as lateral sclerites';
+	TEXT TAXON=48 CHARACTER=9 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=49 CHARACTER=9 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=50 CHARACTER=9 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=51 CHARACTER=9 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=52 CHARACTER=9 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=53 CHARACTER=9 TEXT='The dorsal sclerite of Aegirocassis is neither resembles the cub-circular Anomalocaris-type sclerite nor as elongate as e.g., Hurdia. Therefore we code this  character as ambiguous.';
+	TEXT TAXON=54 CHARACTER=9 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=55 CHARACTER=9 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=26 CHARACTER=11 TEXT='Interpreted as flexible (Caron & Aria, 2017)';
+	TEXT TAXON=24 CHARACTER=12 TEXT='No swelling (Howard et al. 2020)';
+	TEXT TAXON=35 CHARACTER=13 TEXT='Innervation data suggests that Heterotardigrade anterior cephalic structures are homologous to sensory fields in Eutardigrades (Gross et al., 2021) hence we code as present.';
+	TEXT TAXON=36 CHARACTER=13 TEXT='See Figure 1e from Vannier et al., 2014';
+	TEXT TAXON=39 CHARACTER=13 TEXT='See rostral spines in supplementary figure 8 from Park et al., 2018';
+	TEXT TAXON=56 CHARACTER=13 TEXT='Coded ambiguous, as anterior region comprises sclerotised segments.';
+	TEXT TAXON=57 CHARACTER=13 TEXT='Frontal filaments present (see Budd 2021)';
+	TEXT TAXON=58 CHARACTER=13 TEXT='Coded ambiguous, as anterior region comprises sclerotised segments.';
+	TEXT TAXON=59 CHARACTER=13 TEXT='Coded ambiguous, as anterior region comprises sclerotised segments.';
+	TEXT TAXON=60 CHARACTER=13 TEXT='Coded ambiguous, as anterior region comprises sclerotised segments.';
+	TEXT TAXON=61 CHARACTER=13 TEXT='Coded ambiguous, as anterior region comprises sclerotised segments.';
+	TEXT TAXON=24 CHARACTER=17 TEXT='Preservation inadequate to evaluate (Howard et al. 2020)';
+	TEXT TAXON=26 CHARACTER=17 TEXT='Detailed arrangement of tooth-like structures compatible with arrangement in Hallucigenia (Smith & Caron, 2015), but inadequately preserved to evaluate (Caron & Aria, 2017). Coded as ambiguous.';
+	TEXT TAXON=36 CHARACTER=17 TEXT='Vannier et al., 2014 Supplementary Figure 6';
+	TEXT TAXON=44 CHARACTER=17 TEXT='Following Dhungana & Smith 2022';
+	TEXT TAXON=48 CHARACTER=17 TEXT='Smooth and tuberculate plates are interpreted as elements of an Anomalocaris-like oral cone (Cong et al. 2017)';
+	TEXT TAXON=54 CHARACTER=17 TEXT='Not described in original reports (Cong et al. 2014, 2016, 2017), but documented in a juvenile by Liu et al. (2018), who propose that the absence in larger specimens is taphonomic.';
+	TEXT TAXON=44 CHARACTER=19 TEXT='Following Dhungana & Smith 2022';
+	TEXT TAXON=48 CHARACTER=19 TEXT='Three or possibly four tuberculate plates (Cong et al. 2017)';
+	TEXT TAXON=50 CHARACTER=19 TEXT='Moysiuk & Caron (2019)';
+	TEXT TAXON=54 CHARACTER=19 TEXT='Four enlarged plates (Liu et al. 2018)';
+	TEXT TAXON=55 CHARACTER=19 TEXT='Figure 1H of Khul et al., 2009 has no indication that any of the plates are enlarged, therefore we code Schinderhannes as having undifferentiated circumoral sclerites. The reconstruction of Khul et al., 2009 implicitly implies that the sclerites were interpreted as undifferentiated by the authors.';
+	TEXT TAXON=41 CHARACTER=19 TEXT='Following Budd, 2021';
+	TEXT TAXON=48 CHARACTER=21 TEXT='Tubercles (Cong et al. 2017)';
+	TEXT TAXON=50 CHARACTER=21 TEXT='Not evident or interpreted as present by Moysiuk & Caron (2019)';
+	TEXT TAXON=54 CHARACTER=21 TEXT='Liu et al. (2018)';
+	TEXT TAXON=44 CHARACTER=23 TEXT='Following Dhungana & Smith 2022';
+	TEXT TAXON=48 CHARACTER=23 TEXT='Cong et al. (2017) identify two spinose projections on one tuberculate plate (fig. 8e), but only one is unambiguously evident.  We thus code this character as ambiguous.';
+	TEXT TAXON=50 CHARACTER=23 TEXT='Multispinose (Moysiuk & Caron 2019)';
+	TEXT TAXON=54 CHARACTER=23 TEXT='Multiple spines (Liu et al. 2018)';
+	TEXT TAXON=5 CHARACTER=24 TEXT='Anterior gut expanded e.g., Fig 43 Whittington 1978';
+	TEXT TAXON=10 CHARACTER=24 TEXT='No indication of gut widening whichever end is anterior (Hou et al.,2004 or Vannier & Martin 2017)';
+	TEXT TAXON=60 CHARACTER=24 TEXT='Chen et al., 1997';
+	TEXT TAXON=39 CHARACTER=25 TEXT='Anterior position in certain specimens is attributed to post-mortem processes (Park et al. 2018)';
+	TEXT TAXON=40 CHARACTER=25 TEXT='Oral cone eversible, but pharynx is not (Vinther et al. 2016)';
+	TEXT TAXON=26 CHARACTER=26 TEXT='Present (Caron & Aria, 2017)';
+	TEXT TAXON=40 CHARACTER=26 TEXT='Present (Vinther et al. 2016)';
+	TEXT TAXON=48 CHARACTER=26 TEXT='Preservation insufficient to evaluate (Cong et al. 2017)';
+	TEXT TAXON=50 CHARACTER=26 TEXT='Present (Moysiuk & Caron 2019)';
+	TEXT TAXON=2 CHARACTER=27 TEXT='Cong et al., 2017 Supplementary Figure 1b show';
+	TEXT TAXON=26 CHARACTER=27 TEXT='Short spines (Caron & Aria, 2017)';
+	TEXT TAXON=36 CHARACTER=27 TEXT='From Vannier et al., 2014 supplementary figure 6c the pharyngeal teeth appear multicupsate, although only few are preserved well.';
+	TEXT TAXON=40 CHARACTER=27 TEXT='Multiple cusps inferred based on similarity to Omnidens (Vinther et al. 2016)';
+	TEXT TAXON=50 CHARACTER=27 TEXT='Multiple cusps (Moysiuk & Caron 2019)';
+	TEXT TAXON=26 CHARACTER=28 TEXT='Distribution unclear; possibly uniform around pharynx (Caron & Aria, 2017), but coded as ambiguous';
+	TEXT TAXON=40 CHARACTER=28 TEXT='Uniformly distributed (Vinther et al. 2016)';
+	TEXT TAXON=50 CHARACTER=28 TEXT='Four series (Moysiuk & Caron 2019)';
+	TEXT TAXON=7 CHARACTER=30 TEXT='Present (cf. Ou et al. 2012)';
+	TEXT TAXON=11 CHARACTER=30 TEXT='Bears a single pair of eyespots (Liu & Dunlop 2014)';
+	TEXT TAXON=12 CHARACTER=30 TEXT='Coded ambiguous. A dark structure occurs in a location equivalent to the ocellus of Hallucigenia sparsa in ELRC 30060 (Chen et al. 1995, pl. 6 fig. 2); reexamination of fossil material is necessary before the absence of ocelli can be categorically confirmed.';
+	TEXT TAXON=21 CHARACTER=30 TEXT='Ocelli (Smith & Caron 2015)';
+	TEXT TAXON=22 CHARACTER=30 TEXT='We follow Liu & Dunlop (2014) in recognizing a single pair of eyespots.  In our view the various carbonaceous regions and pigmented patches (Ma et al. 2012b) likely represent a degraded but originally continuous carbon film.';
+	TEXT TAXON=24 CHARACTER=30 TEXT='Pair of simple ocellus-like eyes (Howard et al. 2020)';
+	TEXT TAXON=25 CHARACTER=30 TEXT='Pit-type eyes (per Smith and Caron 2015 trans. ser. 18)';
+	TEXT TAXON=26 CHARACTER=30 TEXT='Sessile ocellus-type eyes (Caron & Aria, 2017)';
+	TEXT TAXON=39 CHARACTER=30 TEXT='Compound, following Park et al. (2018)';
+	TEXT TAXON=39 CHARACTER=31 TEXT='Present, following Park et al. (2018)';
+	TEXT TAXON=40 CHARACTER=31 TEXT='We code the presence of eyes as ambiguous as Budd 1998 states that the dorsal surface of Pamdelurion is poorly known.';
+	TEXT TAXON=48 CHARACTER=31 TEXT='Large and anteriorly set eyes ("second anomalocaridid" in Chen et al. 1994)';
+	TEXT TAXON=21 CHARACTER=32 TEXT='Sessile (Smith and Caron 2015).';
+	TEXT TAXON=39 CHARACTER=32 TEXT='Sessile, following Park et al. (2018)';
+	TEXT TAXON=40 CHARACTER=32 TEXT='Eyes not known although this may be preservational, therefore we code ambiguously (see text from compound eyes)';
+	TEXT TAXON=39 CHARACTER=33 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=44 CHARACTER=33 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=49 CHARACTER=33 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=50 CHARACTER=33 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=51 CHARACTER=33 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=52 CHARACTER=33 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=54 CHARACTER=33 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=55 CHARACTER=33 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=56 CHARACTER=33 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=57 CHARACTER=33 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=58 CHARACTER=33 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=59 CHARACTER=33 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=60 CHARACTER=33 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=61 CHARACTER=33 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=15 CHARACTER=37 TEXT='Antenniform structures of Caron & Aria 2020';
+	TEXT TAXON=24 CHARACTER=37 TEXT='Tentatively interpreted as present: Howard et al. (2020) illustrate dorsal antenniform structures that are conceivably homologous to those in Luolishania and Collinsium.';
+	TEXT TAXON=26 CHARACTER=37 TEXT='Not evident (Caron & Aria, 2017)';
+	TEXT TAXON=34 CHARACTER=40 TEXT='The scletotized stylets and stylet supports of tardigrades are likely modified claws (see Mobjerg et al., 2018) hence no appendage sclerotization (or arthrodial membranes) are present.';
+	TEXT TAXON=35 CHARACTER=40 TEXT='The scletotized stylets and stylet supports of tardigrades are likely modified claws (see Mobjerg et al., 2018) hence no appendage sclerotization (or arthrodial membranes) are present.';
+	TEXT TAXON=44 CHARACTER=40 TEXT='We interpret the claws of Opabinia''s protocerebral appendage as podomerous';
+	TEXT TAXON=25 CHARACTER=41 TEXT='The antenna-like limbs of Collinsium and Luolishania (Ma et al. 2009; Yang et al. 2015) are interpreted as lateral.';
+	TEXT TAXON=27 CHARACTER=41 TEXT='The antenna-like limbs of Collinsium and Luolishania (Ma et al. 2009; Yang et al. 2015) are interpreted as lateral.';
+	TEXT TAXON=29 CHARACTER=41 TEXT='The first pair of appendages in Ilyodes are lateral (Thompson and Jones 1980; Haug et al. 2012c).';
+	TEXT TAXON=40 CHARACTER=41 TEXT='Ventral (Budd 1998b)';
+	TEXT TAXON=39 CHARACTER=43 TEXT='Not directly adjacent, but separated by anterior lobe (Park et al. 2018)';
+	TEXT TAXON=48 CHARACTER=43 TEXT='Adjacent in better-articulated material, and thus presumably in life (Cong et al. 2017)';
+	TEXT TAXON=50 CHARACTER=45 TEXT='Figure 2J Moysiuk & Caron 2019 show a prominent gap between appendages';
+	TEXT TAXON=36 CHARACTER=52 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=37 CHARACTER=52 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=39 CHARACTER=52 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=40 CHARACTER=52 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=48 CHARACTER=52 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=49 CHARACTER=52 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=50 CHARACTER=52 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=51 CHARACTER=52 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=52 CHARACTER=52 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=53 CHARACTER=52 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=54 CHARACTER=52 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=55 CHARACTER=52 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=42 CHARACTER=52 TEXT='Following Zeng et al 2020';
+	TEXT TAXON=36 CHARACTER=55 TEXT='Megadictyon protocerebral appendages end in a single claw (e.g. Vannier et al., 2014), therefore have a single rather than multifurcate termination.';
+	TEXT TAXON=40 CHARACTER=55 TEXT='Vannier et al., 2014 show Pambdelurion''s protocerebral appendage terminates in a single claw';
+	TEXT TAXON=44 CHARACTER=55 TEXT='We interpret the claws of Opabinia''s protocerebral appendage as podomeres (see Whittington 1975 Figs 75,59). The distalmost podomere terminates in a single point (e.g. Fig 79 Whittington 1975), therefore we code this as absent for multifurcate termination.';
+	TEXT TAXON=53 CHARACTER=55 TEXT='"Terminal podomere stout, with pointed tip." From Van Roy et al., 2015';
+	TEXT TAXON=54 CHARACTER=55 TEXT='Liu et al., 2018 shows that the Lyrarapax appendage terminates in a distal claw, and does not have a multifurcate distal termination.';
+	TEXT TAXON=41 CHARACTER=55 TEXT='No indication that distalmost podomere is multifurcate (e.g. Fig 12 Hou et al., 1995)';
+	TEXT TAXON=47 CHARACTER=55 TEXT='Moysiuk and Caron (2021) interpret the tip of the appendages to have outer spine series (os in Figure 6F) with a single terminal stub without a multifurcate termination.';
+	TEXT TAXON=44 CHARACTER=56 TEXT='*TEMPORARILY CODED AS STRONG DIFF*^n^nWe interpret the claws of Opabinia''s protocerebral appendage as podomerous (see Whittington 1975 Figs 75,79). ^n^nIt is unclear if the linear annulation-like structures adjacent to the claws that are not parallel to the annulations that span the majority of the appendage (clearly depicted in Fig. 82 Whittington 1975), are podomeres or not. If they are podomeres, significant podomere differentiation is present. However as this is currently difficult to ascertain we code this as ambiguous.';
+	TEXT TAXON=48 CHARACTER=56 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=49 CHARACTER=56 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=50 CHARACTER=56 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=51 CHARACTER=56 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=52 CHARACTER=56 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=53 CHARACTER=56 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=54 CHARACTER=56 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=55 CHARACTER=56 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=44 CHARACTER=57 TEXT='We interpret the claws of Opabinia''s protocerebral appendage as podomerous (see Whittington 1975 Figs 75,79). The distal three podomeres are differentiated, and could be homologous to the differentiation of distal podomeres of certain hurdids, however, given that hurdid distal podomeres taper in diameter, and Opabinia''s terminal podomere is the largest, we code as uncertain for this character.';
+	TEXT TAXON=48 CHARACTER=57 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=49 CHARACTER=57 TEXT='No significant change.';
+	TEXT TAXON=50 CHARACTER=57 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=51 CHARACTER=57 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=52 CHARACTER=57 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=53 CHARACTER=57 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=54 CHARACTER=57 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=55 CHARACTER=57 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=49 CHARACTER=58 TEXT='Unkinked (Daley & Edgecombe 2014), though kink present in A. saron. ^nOriginally coded as kinked by Vinther et al. (2014); updated to unkinked by Moysiuk & Caron (2019).';
+	TEXT TAXON=48 CHARACTER=59 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=49 CHARACTER=59 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=50 CHARACTER=59 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=51 CHARACTER=59 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=52 CHARACTER=59 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=53 CHARACTER=59 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=54 CHARACTER=59 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=55 CHARACTER=59 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=41 CHARACTER=59 TEXT='''Pincer'' of Parapeytoia formed by distal endite with opposing curvature (Hou et al., 1995),rather than the proximal endite (such as in Lyrarapax) therefore coded as absent for this character.';
+	TEXT TAXON=11 CHARACTER=65 TEXT='The second appendage pair of Cardiodictyon does not seem to be differentiated (Liu et al. 2008a).';
+	TEXT TAXON=20 CHARACTER=65 TEXT='Because the head of Carbotubulus is not preserved (Haug et al. 2012c), the identity of the limbs is unclear and this transformation series is coded as ambiguous.';
+	TEXT TAXON=48 CHARACTER=65 TEXT='The first three flaps are reduced, but the deutocerebral appendage is not morphologically distinct (Cong et al. 2017). The gnathobase-like structures (Cong et al. 2017) are captured in a separate transformation series.';
+	TEXT TAXON=56 CHARACTER=69 TEXT='Inapplicable in upper stem euarthropods with arthropodized second appendage; coded with ambiguous token as character is neomorphic.';
+	TEXT TAXON=57 CHARACTER=69 TEXT='Inapplicable in upper stem euarthropods with arthropodized second appendage; coded with ambiguous token as character is neomorphic.';
+	TEXT TAXON=58 CHARACTER=69 TEXT='Inapplicable in upper stem euarthropods with arthropodized second appendage; coded with ambiguous token as character is neomorphic.';
+	TEXT TAXON=59 CHARACTER=69 TEXT='Inapplicable in upper stem euarthropods with arthropodized second appendage; coded with ambiguous token as character is neomorphic.';
+	TEXT TAXON=60 CHARACTER=69 TEXT='Inapplicable in upper stem euarthropods with arthropodized second appendage; coded with ambiguous token as character is neomorphic.';
+	TEXT TAXON=61 CHARACTER=69 TEXT='Inapplicable in upper stem euarthropods with arthropodized second appendage; coded with ambiguous token as character is neomorphic.';
+	TEXT TAXON=42 CHARACTER=73 TEXT='Following Zeng et al., 2020';
+	TEXT TAXON=24 CHARACTER=74 TEXT='Annulated trunk and limbs (Howard et al. 2020)';
+	TEXT TAXON=26 CHARACTER=74 TEXT='Fine epidermal annuli between limb pairs (Caron & Aria, 2017)';
+	TEXT TAXON=56 CHARACTER=74 TEXT='Coded ambiguous as sclerotization of trunk assumed to overprint evidence of annulation';
+	TEXT TAXON=57 CHARACTER=74 TEXT='Coded ambiguous as sclerotization of trunk assumed to overprint evidence of annulation';
+	TEXT TAXON=58 CHARACTER=74 TEXT='Coded ambiguous as sclerotization of trunk assumed to overprint evidence of annulation';
+	TEXT TAXON=59 CHARACTER=74 TEXT='Coded ambiguous as sclerotization of trunk assumed to overprint evidence of annulation';
+	TEXT TAXON=60 CHARACTER=74 TEXT='Coded ambiguous as sclerotization of trunk assumed to overprint evidence of annulation';
+	TEXT TAXON=61 CHARACTER=74 TEXT='Coded ambiguous as sclerotization of trunk assumed to overprint evidence of annulation';
+	TEXT TAXON=38 CHARACTER=74 TEXT='Lobopodous limb appears annulated (Hou et al., 1995)';
+	TEXT TAXON=13 CHARACTER=75 TEXT='Uncertain given preservation in Liu et al 2008 e.g. Fig2A1-5';
+	TEXT TAXON=24 CHARACTER=75 TEXT='Preservation inadequate to evaluate (Howard et al. 2020)';
+	TEXT TAXON=26 CHARACTER=75 TEXT='Proboscis seemingly without annulations (Caron & Aria, 2017)';
+	TEXT TAXON=36 CHARACTER=75 TEXT='Annulations continue on anterior limbs and the terminal position of the mouth suggests that the anterior portion had annulations(Vannier et al., 2014)';
+	TEXT TAXON=37 CHARACTER=75 TEXT='Annulations continue on anterior limbs and the terminal position of the mouth suggests that the anterior portion had annulations(Vannier et al., 2014)';
+	TEXT TAXON=39 CHARACTER=75 TEXT='Initially coded as: Annulations in the pharynx of Kerygmachela continue to the terminal mouth (Budd 1998a); given the position of the prominent annulated appendages, it seems likely that the head also expressed external annulations. ^n^nNow coded as to ambiguous: Park et al., 2018 interpret Kerygmachela''s mouth to be in a ventral position as such it becomes unclear if the anterior part of the trunk (which could be in a sub-terminal position, as the mouth is in a ventral position) lacks annulations or not, and we thus code this character as ambiguous.';
+	TEXT TAXON=44 CHARACTER=75 TEXT='The anterior frontal process of Opabinia is annulated, implying that annulations are present to the anterior head region (see Whittington 1975)';
+	TEXT TAXON=24 CHARACTER=77 TEXT='No branching observed (Howard et al. 2020)';
+	TEXT TAXON=26 CHARACTER=77 TEXT='No evidence of branching (Caron & Aria, 2017)';
+	TEXT TAXON=2 CHARACTER=78 TEXT='Present (Han et al. 2007; Steiner et al. 2012).';
+	TEXT TAXON=5 CHARACTER=78 TEXT='Paucipodia (Chen et al. 1995a) and Aysheaia (Liu and Dunlop 2014 fig. 1) have been reported to bear subtle sub-circular specializations, but these putative structures in fact represent flattened appendages (Hou et al. 2004; Yang et al. 2015).';
+	TEXT TAXON=6 CHARACTER=78 TEXT='Impressions of the dorsal and ventral surfaces are interpreted as evident on the single specimen; neither surface shows evidence of epidermal specializations (Dzik, 2011).';
+	TEXT TAXON=8 CHARACTER=78 TEXT='Coded as present based on the shield-like specializations associated with each leg pair (Ma et al. 2014, fig. 2).';
+	TEXT TAXON=10 CHARACTER=78 TEXT='Paucipodia (Chen et al. 1995a) and Aysheaia (Liu and Dunlop 2014 fig. 1) have been reported to bear subtle sub-circular specializations, but these putative structures in fact represent flattened appendages (Hou et al. 2004; Yang et al. 2015).';
+	TEXT TAXON=20 CHARACTER=78 TEXT='Ambiguous, as the dorsal surface is not visible in the available material (Haug et al. 2012c)';
+	TEXT TAXON=24 CHARACTER=78 TEXT='Not evident (Howard et al. 2020)';
+	TEXT TAXON=26 CHARACTER=78 TEXT='We interpret the ''gut diverculata'' as described by Aria & Caron 2017 to be dorsal epidermal evaginations. ^n^nAs Aria & Caron 2017 point out, these features are located above limb pairs. Additional file 1 shows these features are pointed dorsally and rounded ventrally, and exhibit more consistent shape. They also clearly overprint the annulations in Additional File 4 panel c, consistent with being an external feature - and where they do so you can clearly see a well-defined gut margin, making it difficult to see how the feature could be interpreted as an outgrowth of the gut. These features have a paired appearance in Additional file 2 panel b.^n^nFurthermore, elemental  mapping in Fig 1C shows no hint of a gut characterization in the posteriormost element (see also panel D, E in the additional file 6). Moreover, they are associated with elevated concentrations of carbon, as are the claws; see the carbon distribution in additional file 6 panel A. In additional file 9, these features appear as a hump extending beyond the body wall, with these humps being darker, indicating extra carbon.';
+	TEXT TAXON=14 CHARACTER=80 TEXT='Equant (Siveter et al. 2018), so coded ambiguous';
+	TEXT TAXON=13 CHARACTER=81 TEXT='Presence of apical tip in sclerotized evaginations of O. gracilis shown in Fig3) A1-A3, B1 in Liu etal., 2008';
+	TEXT TAXON=2 CHARACTER=82 TEXT='The distal termination of Cricocosmia’s epidermal evaginations appear blunted (Fig 2C Han et al ., 2007, contra the reconstruction given in Fig 6A1) compared to the pointed tips of e.g. Onychodictyon or Hallucigenia, therefore we code the shape of the distal termination to be ambigious';
+	TEXT TAXON=7 CHARACTER=82 TEXT='Liu et al., 2008 (Fig 1B.1,2C) show O.ferox  with a straight distal termination in epidermal evagination.';
+	TEXT TAXON=13 CHARACTER=82 TEXT='Liu et al., 2008 Fig 3a, b depict a curved morphology, however fossil photographs appear less supportive of this interpretation, hence we code this as ambiguous.';
+	TEXT TAXON=21 CHARACTER=82 TEXT='The spines of Hallucigenia sparsa are gently curved (Smith and Caron 2015).';
+	TEXT TAXON=14 CHARACTER=83 TEXT='Not obviously sclerotized (Siveter et al. 2018)';
+	TEXT TAXON=7 CHARACTER=84 TEXT='Liu et al., 2008 Fig. 2B shows a net like texture of sclerite ornaments for O.ferox, similar to those described by Topper et al., 2013 in Onychodictyon sp. plates';
+	TEXT TAXON=13 CHARACTER=84 TEXT='Difficult to discern texture of sclerites of O.gracilis from Liu et al., 2008 therefore we code for present states (not inapplicable).';
+	TEXT TAXON=14 CHARACTER=84 TEXT='Thanahita exhibits a distinct tuft-like morphology (Siveter et al. 2018)';
+	TEXT TAXON=22 CHARACTER=84 TEXT='Unclear from Hou and Bergstom 1995, however clearly not inapplicable.';
+	TEXT TAXON=27 CHARACTER=84 TEXT='"The dorsolateral spines of Collinsium have a distinctive punctate-like ornamentation similar to that of H. hongmeia." (Yang et al. 2015)';
+	TEXT TAXON=34 CHARACTER=84 TEXT='Actinarctus sclerites exhibit a net-like ornament (Marchioro et al. 2013)';
+	TEXT TAXON=5 CHARACTER=85 TEXT='Aysheaia does not have stacked elements (Smith & Ortega Hernández 2014).';
+	TEXT TAXON=10 CHARACTER=85 TEXT='No cone-in-cone construction evident in claws (Vannier & Martin 2017)';
+	TEXT TAXON=15 CHARACTER=85 TEXT='See discussion in Caron & Aria 2020';
+	TEXT TAXON=17 CHARACTER=85 TEXT='Caron & Aria 2020';
+	TEXT TAXON=24 CHARACTER=85 TEXT='Spines not described in adequate detail to evaluate presence of stacked elements (Howard 2020)';
+	TEXT TAXON=26 CHARACTER=85 TEXT='Claws comprise stacked elements (Caron & Aria, 2017)';
+	TEXT TAXON=14 CHARACTER=86 TEXT='Two papillae reported per leg pair, with additional in between leg pairs (Siveter et al. 2018)';
+	TEXT TAXON=15 CHARACTER=86 TEXT='Caron & Aria 2020';
+	TEXT TAXON=35 CHARACTER=86 TEXT='Halobiotus (Eutardigrada) has paired epidermal specialisations (depressions), represented by pits that serve as muscle attachment sites (Halberg et al. 2009; Marchioro et al. 2013).';
+	TEXT TAXON=4 CHARACTER=88 TEXT='Not all dorsal specialisations present, as trunk incomplete in Budd and Peel 1998, therefore coded as applicable states.';
+	TEXT TAXON=24 CHARACTER=90 TEXT='Present (Howard et al. 2020)';
+	TEXT TAXON=24 CHARACTER=91 TEXT='Absent (Howard et al. 2020)';
+	TEXT TAXON=54 CHARACTER=91 TEXT='Present in L. trilobus (Cong et al. 2016); reported absence in L. unguispinus (Cong et al. 2014) attributed to non-preservation.';
+	TEXT TAXON=14 CHARACTER=92 TEXT='Change in appendage construction, and possibly thickness (Siveter et al. 2018)';
+	TEXT TAXON=24 CHARACTER=92 TEXT='Differentiated: posterior trunk lacks appendages (Howard et al. 2020)';
+	TEXT TAXON=26 CHARACTER=92 TEXT='Short posterior trunk comprising three appendage pairs (Caron & Aria, 2017)';
+	TEXT TAXON=39 CHARACTER=93 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=40 CHARACTER=93 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=44 CHARACTER=93 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=48 CHARACTER=93 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=49 CHARACTER=93 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=50 CHARACTER=93 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=51 CHARACTER=93 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=52 CHARACTER=93 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=53 CHARACTER=93 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=54 CHARACTER=93 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=55 CHARACTER=93 TEXT='Following Moysiuk & Caron (2019)';
+	TEXT TAXON=42 CHARACTER=93 TEXT='Zeng et al., 2020 supplementary info clarifies narrowing trend posteriad';
+	TEXT TAXON=39 CHARACTER=97 TEXT='Setal blades are expressed as wrinkles on the dorsal flaps of gilled lobopodians (Van Roy et al. 2015)';
+	TEXT TAXON=40 CHARACTER=97 TEXT='Setal blades are expressed as wrinkles on the dorsal flaps of gilled lobopodians (Van Roy et al. 2015)';
+	TEXT TAXON=48 CHARACTER=97 TEXT='Coded as absent by Van Roy et al. (2015)';
+	TEXT TAXON=50 CHARACTER=97 TEXT='Only a single series of lateral flaps is reconstructed (Moysiuk & Caron 2019)';
+	TEXT TAXON=51 CHARACTER=97 TEXT='The presence of dorsal and ventral flaps is tentatively interpreted by Van Roy et al. (2015), though Moysiuk & Caron (2019) consider them absent';
+	TEXT TAXON=52 CHARACTER=97 TEXT='Van Roy et al. (2015) identify "clear evidence" of two sets of flaps, though Moysiuk & Caron (2019) consider the evidence equivocal.';
+	TEXT TAXON=50 CHARACTER=98 TEXT='Crossing the body (Moysiuk & Caron 2019)';
+	TEXT TAXON=48 CHARACTER=99 TEXT='Coded as present to reflect proposed homology of gnathobasic endites with those of euarthropods (Chen et al. 2017)';
+	TEXT TAXON=24 CHARACTER=101 TEXT='Double series of Luolishania-like spines (Howard et al. 2020)';
+	TEXT TAXON=26 CHARACTER=102 TEXT='Two series of spines, arranged in chevrons (Caron & Aria, 2017)';
+	TEXT TAXON=24 CHARACTER=104 TEXT='Seemingly present (Howard et al. 2020)';
+	TEXT TAXON=26 CHARACTER=104 TEXT='Absent (Caron & Aria, 2017)';
+	TEXT TAXON=2 CHARACTER=107 TEXT='Coded as ambiguous: the potential homology between the pair of terminal hooks of Cricocosmia and the similarly-shaped claws on trunk appendages (Steiner et al. 2012) is difficult to evaluate.';
+	TEXT TAXON=10 CHARACTER=107 TEXT='Simple elongate claws (Vannier & Martin, 2017)';
+	TEXT TAXON=14 CHARACTER=107 TEXT='Present (Siveter et al. 2018)';
+	TEXT TAXON=24 CHARACTER=107 TEXT='The "trunk spines" (Howard et al. 2020) are interpreted as corresponding to terminal claws on vestigial trunk limbs';
+	TEXT TAXON=58 CHARACTER=107 TEXT='.  Leanchoilia is coded as ambiguous for tokens 0 and 2 (one or three claws) to reflect the conflicting interpretations of García-Bellido and Collins (2007) and Haug et al. (2012a).  Luolishania is coded with token 0 (one claw) as this represents the state of its typical trunk limbs.  Spinose elements on its anterior limbs do not exhibit a claw-like morphology and may represent cirri rather than claws.  Hallucigenia sparsa is coded with token 1 (two claws) as this is the state on most trunk limbs, even if a second claw is not evident on the posteriormost appendages (Smith and Caron 2015).';
+	TEXT TAXON=7 CHARACTER=111 TEXT='A pair of claws occurs on each appendage (Liu et al. 2008)';
+	TEXT TAXON=10 CHARACTER=111 TEXT='Hou et al. (2004) report that each lobopod carries two claws, whereas Vannier & Martin (2017) only observe a single claw on the two complete and exceptionally well preserved appendages of ELI-JS0001A.  We interpret this discrepancy as representing variation in claw number between appendages.';
+	TEXT TAXON=11 CHARACTER=111 TEXT='Cardiodictyon unambiguously has two claws on each leg (Ramsköld and Chen 1998)';
+	TEXT TAXON=12 CHARACTER=111 TEXT='Hou & Bergstrom (1995) observe a single claw, but leave open the possibility of a second. Liu et al. (2008) interpret the presence of two claws.';
+	TEXT TAXON=13 CHARACTER=111 TEXT='A pair of claws is evident in one appendage (Liu et al. 2008), and taken to represent the typical number.';
+	TEXT TAXON=14 CHARACTER=111 TEXT='One on some appendages, two on others (Siveter et al. 2018)';
+	TEXT TAXON=16 CHARACTER=111 TEXT='Single claw present on posterior appendages; claws are not apparent on cirrate anterior appendages (García-Bellido et al. 2013)';
+	TEXT TAXON=21 CHARACTER=111 TEXT='Two claws on anterior trunk appendages, one on posterior (Smith and Caron 2015)';
+	TEXT TAXON=23 CHARACTER=111 TEXT='Single claw (Steiner et al. 2012)';
+	TEXT TAXON=25 CHARACTER=111 TEXT='Only one claw is observed on the unmodified (i.e. posterior) trunk limbs (Ma et al. 2009).  Spinose elements on anterior limbs do not exhibit a claw-like morphology and may represent cirri rather than claws.';
+	TEXT TAXON=26 CHARACTER=111 TEXT='The two "claws" on anterior limbs have the same shape and elemental composition as cirri (Caron & Aria, 2017), so are not treated as homologous with claws.  The posterior appendages each bear a single claw (Caron & Aria, 2017)';
+	TEXT TAXON=27 CHARACTER=111 TEXT='No claws on anterior appendages; single claw on each posterior appendage.';
+	TEXT TAXON=58 CHARACTER=111 TEXT='Coded as ambiguous (one or three claws) to reflect the conflicting interpretations of García-Bellido and Collins (2007) and Haug et al. (2012a)';
+	TEXT TAXON=7 CHARACTER=112 TEXT='A pair of claws occurs on each appendage (Liu et al. 2008)';
+	TEXT TAXON=10 CHARACTER=112 TEXT='Hou et al. (2004) report that each lobopod carries two claws, whereas Vannier & Martin (2017) only observe a single claw on the two complete and exceptionally well preserved appendages of ELI-JS0001A.  We interpret this discrepancy as representing variation in claw number between appendages.';
+	TEXT TAXON=11 CHARACTER=112 TEXT='Cardiodictyon unambiguously has two claws on each leg (Ramsköld and Chen 1998)';
+	TEXT TAXON=13 CHARACTER=112 TEXT='Only one appendage is adequately preserved to identify claws (Liu et al. 2008)';
+	TEXT TAXON=14 CHARACTER=112 TEXT='One on some appendages, two on others (Siveter et al. 2018)';
+	TEXT TAXON=16 CHARACTER=112 TEXT='Single claw presumed on all posterior appendages';
+	TEXT TAXON=21 CHARACTER=112 TEXT='Two claws on anterior trunk appendages, one on posterior (Smith and Caron 2015)';
+	TEXT TAXON=26 CHARACTER=112 TEXT='Two claws on anterior limbs, one on posterior (Caron & Aria, 2017)';
+	TEXT TAXON=48 CHARACTER=115 TEXT='"Oblique veins" (Chen et al. 1994) interpreted as strengthening rays.';
+	TEXT TAXON=51 CHARACTER=115 TEXT='Treated as ambiguous by Moysiuk & Caron (2019)';
+	TEXT TAXON=54 CHARACTER=115 TEXT='Present in L. trilobus (Cong et al. 2016); possibly reflected by striations in L. unguispinus?';
+	TEXT TAXON=50 CHARACTER=116 TEXT='Relatively even (Moysiuk & Caron 2019)';
+	TEXT TAXON=20 CHARACTER=118 TEXT='Single anterior pair reduced in size (Haug et al. 2012); unclear whether this represents a homologous reduction, so coded ambiguous';
+	TEXT TAXON=50 CHARACTER=118 TEXT='First three flaps reduced (Moysiuk & Caron 2019)';
+	TEXT TAXON=2 CHARACTER=122 TEXT='Coded as absent: tail hooks, a putative equivalent to claws (Steiner et al. 2012), are terminal, leaving no scope for a tubular portion of the body beyond these claws';
+	TEXT TAXON=6 CHARACTER=122 TEXT='Siberion is scored as uncertain as it is difficult to distinguish the possible body termination from a posterior leg or pair of legs (Dzik 2011).';
+	TEXT TAXON=12 CHARACTER=122 TEXT='Present (Chen et al. 1995b)';
+	TEXT TAXON=14 CHARACTER=122 TEXT='Conical extension present (Siveter et al. 2018)';
+	TEXT TAXON=20 CHARACTER=122 TEXT='Absent (Haug et al. 2012c)';
+	TEXT TAXON=21 CHARACTER=122 TEXT='Absent (Smith and Caron 2015)';
+	TEXT TAXON=22 CHARACTER=122 TEXT='H. hongmeia and H. fortis are coded as ambiguous, as the preservation is insufficiently clear to determine whether possible "posterior extensions" correspond to the trunk or to legs (Hou and Bergström 1995; Steiner et al. 2012; Liu and Dunlop 2014)';
+	TEXT TAXON=23 CHARACTER=122 TEXT='H. hongmeia and H. fortis are coded as ambiguous, as the preservation is insufficiently clear to determine whether possible "posterior extensions" correspond to the trunk or to legs (Hou and Bergström 1995; Steiner et al. 2012; Liu and Dunlop 2014)';
+	TEXT TAXON=24 CHARACTER=122 TEXT='Pear-shaped posterior bulge (Howard et al. 2020)';
+	TEXT TAXON=25 CHARACTER=122 TEXT='Although Luolishania is described as bearing a protruding posterior termination, this is not unambiguously evident in specimens or camera lucida images; this taxon is thus coded as ambiguous (Liu et al. 2008a; Ma et al. 2009).';
+	TEXT TAXON=26 CHARACTER=122 TEXT='Absent (Caron & Aria, 2017)';
+	TEXT TAXON=37 CHARACTER=122 TEXT='We code this transformation series as absent in Kerygmachela (Budd 1993, 1998a), Jianshanopodia (Liu et al. 2006) and Anomalocaris (Daley and Edgecombe 2014) as their tails likely represent modified appendages.';
+	TEXT TAXON=39 CHARACTER=122 TEXT='We code this transformation series as absent in Kerygmachela (Budd 1993, 1998a), Jianshanopodia (Liu et al. 2006) and Anomalocaris (Daley and Edgecombe 2014) as their tails likely represent modified appendages.';
+	TEXT TAXON=40 CHARACTER=122 TEXT='We score Pambdelurion as uncertain because its posterior trunk is poorly known (Budd 1998b).';
+	TEXT TAXON=44 CHARACTER=122 TEXT='There is possible, but inconclusive, evidence for a small posterior extension in Opabinia (Whittington 1975; Budd 1996; Budd and Daley 2012), which is thus coded as uncertain.';
+	TEXT TAXON=49 CHARACTER=122 TEXT='We code this transformation series as absent in Kerygmachela (Budd 1993, 1998a), Jianshanopodia (Liu et al. 2006) and Anomalocaris (Daley and Edgecombe 2014) as their tails likely represent modified appendages.';
+	TEXT TAXON=40 CHARACTER=123 TEXT='We score Pambdelurion as uncertain because its posterior trunk is poorly known (Budd 1998b).';
+	TEXT TAXON=48 CHARACTER=123 TEXT='Amplectobelua "resembles Anomalocaris in the number of lateral flaps, the flap venation, tail fan, and long furcae" (Chen et al. 1994)';
+	TEXT TAXON=40 CHARACTER=124 TEXT='We score Pambdelurion as uncertain because its posterior trunk is poorly known (Budd 1998b).';
+	TEXT TAXON=48 CHARACTER=124 TEXT='Amplectobelua "resembles Anomalocaris in the number of lateral flaps, the flap venation, tail fan, and long furcae" (Chen et al. 1994)';
+	TEXT TAXON=50 CHARACTER=124 TEXT='Several pairs of lobes incorporated into tail fan (Moysiuk & Caron, 2019)';
+	TEXT TAXON=40 CHARACTER=125 TEXT='We score Pambdelurion as uncertain because its posterior trunk is poorly known (Budd 1998b).';
+	TEXT TAXON=48 CHARACTER=125 TEXT='Amplectobelua "resembles Anomalocaris in the number of lateral flaps, the flap venation, tail fan, and long furcae" (Chen et al. 1994)';
+	TEXT TAXON=40 CHARACTER=126 TEXT='We score Pambdelurion as uncertain because its posterior trunk is poorly known (Budd 1998b).';
+	TEXT TAXON=48 CHARACTER=126 TEXT='Amplectobelua "resembles Anomalocaris in the number of lateral flaps, the flap venation, tail fan, and long furcae" (Chen et al. 1994)';
+	TEXT TAXON=26 CHARACTER=128 TEXT='Claw direction on posteriormost pair (appendage 9) matches that of adjacent appendages (7 and 8) (Caron & Aria, 2017).  Caron and Aria assert that the posteriormost two or three claws of Hallucigenia and Collinsium are directed in a different direction to those of other trunk limbs, citing references that do not obviously support this assertion.';
+	TEXT TAXON=40 CHARACTER=128 TEXT='We score Pambdelurion as uncertain because its posterior trunk is poorly known (Budd 1998b).';
+	TEXT TAXON=10 CHARACTER=129 TEXT='Hou et al. (2004, figs 2f, 4f) reported faint paired structures adjacent to the gut of Paucipodia, which were interpreted as potential nerve ganglia.  We nevertheless code Paucipodia as ambiguous: the structures cannot be observed in the figured material, and are described as "faintly preserved with a pink colour" in contrast to the conspicuously dark colouration of unambiguous nervous tissue in Chengjiang-type fossils (see Ma et al. 2012a; Tanaka et al. 2013; Yang et al. 2013).';
+	TEXT TAXON=39 CHARACTER=129 TEXT='We code this ambiguously as Park et al., 2018 only implicitly reconstruct paired ganglia (in Figure 4); the ''nerve cords'' referred to in the text could represent the circumpharyngeal connectives that lead to the ventral nerve cord.';
+	TEXT TAXON=54 CHARACTER=129 TEXT='Ambiguous (Cong et al. 2014)';
+	TEXT TAXON=56 CHARACTER=129 TEXT='Recent data on the neurological organization of stem-euarthropods indicate that paired ganglia are present in Chengjiangocaris (Yang et al. 2013) and Alalcomenaeus (Tanaka et al. 2013).';
+	TEXT TAXON=59 CHARACTER=129 TEXT='Recent data on the neurological organization of stem-euarthropods indicate that paired ganglia are present in Chengjiangocaris (Yang et al. 2013) and Alalcomenaeus (Tanaka et al. 2013).';
+	TEXT TAXON=39 CHARACTER=130 TEXT='Present (Park et al. 2018)';
+	TEXT TAXON=39 CHARACTER=131 TEXT='The brain is protocerebral (Park et al. 2018)';
+	TEXT TAXON=1 CHARACTER=133 TEXT='[Present in nematodes]';
+	TEXT TAXON=31 CHARACTER=133 TEXT='Following Martin et al., 2022 who argue that the circumpharyngeal connective represents the last vestiges of the circumoral nerve ring.';
+	TEXT TAXON=32 CHARACTER=133 TEXT='Following Martin et al., 2022 who argue that the circumpharyngeal connective represents the last vestiges of the circumoral nerve ring.';
+	TEXT TAXON=33 CHARACTER=133 TEXT='Following Martin et al., 2022 who argue that the circumpharyngeal connective represents the last vestiges of the circumoral nerve ring.';
+	TEXT TAXON=39 CHARACTER=133 TEXT='The ''nerve cords'' interpreted by Park et al., 2018 could represent circumoral connectives (interpreted by Martin et al., 2022 as homologous to the circumoral nerve ring).';
+	TEXT TAXON=54 CHARACTER=133 TEXT='Not interpreted as present (Cong et al. 2014; Park et al. 2018)';
+	TEXT TAXON=39 CHARACTER=134 TEXT='Tentatively interpreted as paired, unfused (Park et al. 2018)';
+	TEXT TAXON=39 CHARACTER=136 TEXT='Hints of a paired nerve cord in the anterior of Kerygmachela (Park et al. 2018) are insufficient to establish their lateralization, though the positioning seems to correspond to that of Lyrarapax (Cong et al. 2014).';
+	TEXT TAXON=54 CHARACTER=136 TEXT='Medial (Cong et al. 2014)';
+	TEXT TAXON=58 CHARACTER=143 TEXT='Coded present by proxy as unambiguously present in crown-Euarthropoda (see Budd 2021). If this matrix is to be used to investigate euarthropod relationships in future, this character should be adjusted accordingly.';
+	TEXT TAXON=59 CHARACTER=143 TEXT='Coded present by proxy as unambiguously present in crown-Euarthropoda (see Budd 2021). If this matrix is to be used to investigate euarthropod relationships in future, this character should be adjusted accordingly.';
+	TEXT TAXON=20 CHARACTER=145 TEXT='A longitudinal arrangement of musculature is suggested by the longitudinal wrinkling (Haug et al. 2012c).';
+	TEXT TAXON=49 CHARACTER=145 TEXT='Present (Daley and Edgecombe 2014)';
+	TEXT TAXON=54 CHARACTER=145 TEXT='Present (Cong et al. 2014)';
+	TEXT TAXON=57 CHARACTER=145 TEXT='Coded as present in Fuxianhuia based on a probable fuxianhuiid with muscle tissue from Kaili (Zhu et al. 2004)';
+	TEXT TAXON=60 CHARACTER=145 TEXT='The metameric distribution of musculature in artiopodans is inferred by comparison with Campanamuta (Budd 2011).';
+	TEXT TAXON=61 CHARACTER=145 TEXT='The metameric distribution of musculature in artiopodans is inferred by comparison with Campanamuta (Budd 2011).';
+	TEXT TAXON=39 CHARACTER=146 TEXT='Well-developed longitudinal muscles "appear to sheath the entire body" (Young & Vinther 2017)';
+	TEXT TAXON=40 CHARACTER=146 TEXT='Pambdelurion exhibits longitudinal peripheral musculature (Budd 1998c; Young & Vinther 2017).';
+	TEXT TAXON=60 CHARACTER=146 TEXT='An axial distribution of longitudinal muscle is inferred in artiopodans by comparison with Campanamuta (Young & Vinther 2017).';
+	TEXT TAXON=1 CHARACTER=147 TEXT='Priapulids exhibit undifferentiated longitudinal muscle bands (Young & Vinther 2017)';
+	TEXT TAXON=40 CHARACTER=147 TEXT='Present (Young & Vinther 2017)';
+	TEXT TAXON=60 CHARACTER=147 TEXT='Inferred in artiopodans by comparison with Kiisortoqia (Young & Vinther 2017)';
+	TEXT TAXON=61 CHARACTER=147 TEXT='Inferred in artiopodans by comparison with Kiisortoqia (Young & Vinther 2017)';
+	TEXT TAXON=60 CHARACTER=148 TEXT='The successive attachment points in artiopodans are inferred by comparison with Campanamuta (Young & Vinther 2017).';
+	TEXT TAXON=61 CHARACTER=148 TEXT='The successive attachment points in artiopodans are inferred by comparison with Campanamuta (Young & Vinther 2017).';
+	TEXT TAXON=39 CHARACTER=149 TEXT='Circular muscle reported by multiple studies (Budd 1993, 1998; Young & Vinther 2017)';
+	TEXT TAXON=40 CHARACTER=149 TEXT='Pambdelurion exhibits longitudinal peripheral musculature; the presence of circular muscle is equivocal (Budd 1998c; Young & Vinther 2017).';
+	TEXT TAXON=60 CHARACTER=149 TEXT='The absence of circular muscle in artiopodans is inferred by comparison with Campanamuta, in which no circular musculature is evident despite preservation of individual myofibrils (Young & Vinther 2017).';
+	TEXT TAXON=61 CHARACTER=149 TEXT='The absence of circular muscle in artiopodans is inferred by comparison with Campanamuta, in which no circular musculature is evident despite preservation of individual myofibrils (Young & Vinther 2017).';
+	TEXT TAXON=19 CHARACTER=151 TEXT='Oblique musculature, but no dorsoventral (Zhang et al. 2016)';
+	TEXT TAXON=39 CHARACTER=151 TEXT='Oblique muscles are evident in the anterior, but there is no good evidence of dorsoventral muscles (Young & Vinther 2017).';
+	TEXT TAXON=40 CHARACTER=151 TEXT='Dorsoventral muscles not reported; extent of oblique muscles disputed (Budd 1998; Young & Vinther 2017), and orientation does not match that of box-truss.';
+	TEXT TAXON=34 CHARACTER=38 TEXT='The scletotized stylets and stylet supports of tardigrades are likely modified claws (see Mobjerg et al., 2018) hence no appendage sclerotization (or arthrodial membranes) are present.';
+	TEXT TAXON=35 CHARACTER=38 TEXT='The scletotized stylets and stylet supports of tardigrades are likely modified claws (see Mobjerg et al., 2018) hence no appendage sclerotization (or arthrodial membranes) are present.';
+	TEXT TAXON=44 CHARACTER=38 TEXT='We interpret the claws of Opabinia''s protocerebral appendage as podomerous (see Whittington 1975 Figs 75,79). Therefore the protocerebral appendage is sclerotized.';
+	TEXT TAXON=7 CHARACTER=46 TEXT='Spine series present on differentiated protocerebral appendage, therefore coded as present.';
+	TEXT TAXON=29 CHARACTER=46 TEXT='Coded as absent (Haug et al. 2012c)';
+	TEXT TAXON=55 CHARACTER=49 TEXT='Previously thought coded as having two rows, we code for the possibility that Schinderhannes may only have one row (only one row clear in Khul et al.2008, Supplementary Fig S1A), although the reconstruction in Khul et al.,2008 depicts two rows';
+	TEXT TAXON=48 CHARACTER=36 TEXT='Flaps are not sclerotized (Chen et al. 1994).';
+	TEXT TAXON=24 CHARACTER=14 TEXT='Terminal (Howard et al. 2020)';
+	TEXT TAXON=36 CHARACTER=14 TEXT='Liu et al., 2007 suggest a ventral location, although this could be due to compaction, therefore we code this as uncertain.';
+	TEXT TAXON=39 CHARACTER=14 TEXT='Park et al. (2018) interpret a ventral position, contra Budd (1993, 1998a).';
+	TEXT TAXON=48 CHARACTER=14 TEXT='Ventral (Cong et al. 2017).';
+	TEXT TAXON=6 CHARACTER=100 TEXT='Appendages not completely preserved, therefore not able to code for Siberion see Dzik (2011)';
+	TEXT TAXON=7 CHARACTER=100 TEXT='Neither entirely slender and cylindrical or conical';
+	TEXT TAXON=10 CHARACTER=100 TEXT='Vannier et al., Fig5a shows when lobopods are oriented parallel to bedding, they are clearly cylindrical in morphology.';
+	TEXT TAXON=27 CHARACTER=100 TEXT='Ambiguous';
+	TEXT TAXON=36 CHARACTER=100 TEXT='Preservation inadequate to distinguish Liu et al., 2007';
+	TEXT TAXON=36 CHARACTER=15 TEXT='Unclear mouth position (Trans.ser XX12) however mouth clearly not rotated to posteriad (Liu et al., 2007)';
+	TEXT TAXON=39 CHARACTER=15 TEXT='Park et al., 2018 interpret the mouth has moved to a ventral position, yet faces anteriad, therefore has not been rotated to point posteriad.';
+	TEXT TAXON=50 CHARACTER=15 TEXT='Figure 2J from Moysiuk & Caron shows the mouth faces anteriorly in comparison to the ventral facing mouth of e.g., Anomalocaris (see Figures 5 and 8 from Daley & Edgecombe 2015). Therefore we code as anterior.';
+	TEXT TAXON=51 CHARACTER=15 TEXT='Hurdia specimens are often markedly disarticulated, and therefore difficult to code orientation of circumoral elements (Daley et al., 2013). We conservatively code Hurdia ambiguous as there are no specimens in a ventral position to determine mouth orientation (supplementary data Daley et al., 2009)';
+	TEXT TAXON=52 CHARACTER=15 TEXT='Figure 3 Budd 2021 show two specimens of Peytioa nathorsti with ventral pointing circumoral mouthparts, therefore we code as ventral.';
+	TEXT TAXON=54 CHARACTER=15 TEXT='Cong et al., 2014 interpret a ventrally facing mouth';
+	TEXT TAXON=55 CHARACTER=15 TEXT='We code as ambiguous as the mouthpart orientation is not clear from the fossil evidence given in Figure 1F,H of Khul et al 2009';
+	TEXT TAXON=56 CHARACTER=127 TEXT='Tail flukes appear more paddle-like than blade like (Supplementary Fig 4C from Yang et al., 2018)';
+	TEXT TAXON=10 CHARACTER=109 TEXT='Vannier and Martin., 2017 5a, 5b indicate Paucipodia''s claws are sub-terminal however, there is a possibility that this is taphonomic (c.f. Murdoch et al., 2014), as the musculature attached to the claws may have shrunk relative to the cuticle, giving the false impression of sub-terminal claws and since previous studies describes Paucipodia''s claws as terminal (Hou et al., 2004), we code claw position as ambiguous.';
+	TEXT TAXON=1 CHARACTER=29 TEXT='teeth gap; see e.g. Fig 2A Schmidt-Rhaesa et al., 2017';
+	TEXT TAXON=37 CHARACTER=29 TEXT='No gap (Liu et al 2006)';
+	TEXT TAXON=40 CHARACTER=29 TEXT='directly adjacent (Vinther et al., 2016)';
+	TEXT TAXON=5 CHARACTER=34 TEXT='No claws on differentiated protocerebral appendages (see Whittington 1978)';
+	TEXT TAXON=6 CHARACTER=34 TEXT='Potential claws not preserved, therefore ambiguous (Dzik 2011)';
+	TEXT TAXON=9 CHARACTER=34 TEXT='Although protocerebral appendage is undifferentiated, claws are not preserved (Dzik and Krumbiegel 1989) and as such this cell is coded as ambiguous.';
+	TEXT TAXON=21 CHARACTER=34 TEXT='As protocerebral appendages modfied, treat as ambiguous as similar condition to when all claws lost (see character description)/';
+	TEXT TAXON=24 CHARACTER=34 TEXT='Claws absent in multiple anterior appendages, therefore coded as ambiguous (although posterior appendages are clawed) (Howard et al., 2020)';
+	TEXT TAXON=34 CHARACTER=34 TEXT='In tardigrades, the presence of stylet glands, responsible for the moulting and production of stylet and stylet supports are likely transformed claw glands (Morbjerg et al., 2018). As such stylets and stylet supports are interpreted as modified claws (Halberg et al., 2009; Nielsen 2001).';
+	TEXT TAXON=35 CHARACTER=34 TEXT='In tardigrades, the presence of stylet glands, responsible for the moulting and production of stylet and stylet supports are likely transformed claw glands (Morbjerg et al., 2018). As such stylets and stylet supports are interpreted as modified claws (Halberg et al., 2009; Nielsen 2001).';
+	TEXT TAXON=36 CHARACTER=34 TEXT='Liu et al.,2007 suggest claws present on differentiated protocerebral appendages of Megadictyon';
+	TEXT TAXON=40 CHARACTER=34 TEXT='Following Vinther et al., 2016 we code terminal claws on protocerebral appendages to be absent. The terminal structures are not well differentiated from the pointed outgrowths along the inner edge of the appendages and no terminal claw can be readily distinguished, see Figure 1 Vinther et al., 2016 (contra. Vannier et al., 2014).';
+	TEXT TAXON=44 CHARACTER=34 TEXT='Opabinia''s protocerebral spines are not homologous to lobopodian-style claws.';
+	TEXT TAXON=48 CHARACTER=10 TEXT='Following Budd 2021';
+	TEXT TAXON=49 CHARACTER=10 TEXT='Following Budd 2021';
+	TEXT TAXON=50 CHARACTER=10 TEXT='No intermediate plate between p-elements observed (Moysiuk & Caron 2019)';
+	TEXT TAXON=51 CHARACTER=10 TEXT='Following Budd 2021';
+	TEXT TAXON=52 CHARACTER=10 TEXT='Following Budd 2021';
+	TEXT TAXON=58 CHARACTER=10 TEXT='Following Budd 2021';
+	TEXT TAXON=5 CHARACTER=108 TEXT='See claws in Smith & Ortega-Hernandez 2014';
+	TEXT TAXON=10 CHARACTER=108 TEXT='See Vannier & Martin 2017';
+	TEXT TAXON=11 CHARACTER=108 TEXT='see Ramskold & Chen 1998';
+	TEXT TAXON=12 CHARACTER=108 TEXT='Hou et al., 2007';
+	TEXT TAXON=13 CHARACTER=108 TEXT='The claws of Onychodictyon gracilis appear to have an enlarged base (see Liu et al. 2008 fig 2A6), although few other claws have been described.';
+	TEXT TAXON=21 CHARACTER=108 TEXT='Smith & Ortega-Hernandez 2014';
+	TEXT TAXON=25 CHARACTER=108 TEXT='Ma et al., 2009 Figure 10 show posterior lobopods have an enlarged base';
+	TEXT TAXON=34 CHARACTER=108 TEXT='Coded as ambiguous as difficult to score for this character due to modification/organisation of claws (see Addabbo et al., 1999).';
+	TEXT TAXON=35 CHARACTER=108 TEXT='Eutardigrades have a two-branched claw with differing morphologies, however, the base of most claws appear enlarged (including Halobiotidae, Doryphoribiidae, Eohysibiidae, Rhichtersiidae see Gasiorek et al., 2019) hence we code this as present for this taxon.';
+	TEXT TAXON=58 CHARACTER=108 TEXT='No enlarged base (Garcia-Bellido & Collins 2006)';
+	TEXT TAXON=59 CHARACTER=108 TEXT='see Briggs & Collins 1999';
+	TEXT TAXON=44 CHARACTER=5 TEXT='Following Dhungana & Smith 2022';
+	TEXT TAXON=53 CHARACTER=60 TEXT='Following Moysiuk & Caron 2021';
+	TEXT TAXON=55 CHARACTER=61 TEXT='Schinerhannes possibly has straight endites (Moysiuk & Caron 2019), although from the original material (Khul et al., 2009), this is difficult to ascertain, hence conservatively we code ambiguously.';
+	TEXT TAXON=41 CHARACTER=51 TEXT='see Hou et al .,Fig 12';
+	TEXT TAXON=35 CHARACTER=42 TEXT='As the mouth is terminal, and the appendages have been assumed to be incorporated into the mouth, we code that the frontal appendages have not shifted posteriorly.';
+	TEXT TAXON=34 CHARACTER=18 TEXT='We code tardigrades as having a small contact area as the peribuccal lamellae are only basally attached to the body (e.g., Guidetti et al., 2013 Figure 3B)';
+	TEXT TAXON=35 CHARACTER=18 TEXT='We code tardigrades as having a small contact area as the peribuccal lamellae are only basally attached to the body (e.g., Guidetti et al., 2013 Figure 3B)';
+	TEXT TAXON=36 CHARACTER=18 TEXT='Due to the limited material we code this as ambiguous';
+	TEXT TAXON=40 CHARACTER=18 TEXT='As reconstructed by Vinther et al., 2016 (e.g. Figure 3D) the ''triangular plates'' are only basally in contact with the body, therefore we code this as a small contact area.';
+	TEXT TAXON=50 CHARACTER=35 TEXT='Following De Vivo et al., 2021';
+	TEXT TAXON=51 CHARACTER=35 TEXT='Following De Vivo et al., 2021';
+	TEXT TAXON=52 CHARACTER=35 TEXT='Following De Vivo et al., 2021';
+	TEXT TAXON=55 CHARACTER=62 TEXT='Following Moysiuk & Caron 2021';
+	TEXT TAXON=42 CHARACTER=53 TEXT='Kylinxia is closer in morphology to the condition in Anomlocaririds rather than Hurdids, therefore we code as narrower.';
+	TEXT TAXON=46 CHARACTER=53 TEXT='As lateral spine (gnathal) series are not homologous to the ventral spine series of radiodonts (Moysiuk & Caron 2021) we code taxa with lateral spine series only as inapplicable.';
+      ENDBLOCK;
+            BEGIN ASSUMPTIONS;
+      TYPESET * UNTITLED = unord: 1 - 151;
+      ENDBLOCK;
+      
