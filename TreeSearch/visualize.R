@@ -2,12 +2,21 @@ source("common.R")
 source("plot.R")
 library("Rogue")
 
+outgroup <- c("Tubiluchus_priapulida") # Specify outgroup taxa to root tree
+
 latest <- LatestMatrix()
 dat <- ReadAsPhyDat(latest)
 treeFiles <- list.files(pattern = paste0(".+_", latest, ".trees"))
 
 for (treeFile in treeFiles) {
   trees <- read.nexus(treeFile)
+  
+  # Ignore outgroup taxa that aren't in tree
+  outgroup <- intersect(outgroup, TipLabels(trees)[[1]])
+  if (length(outgroup)) {
+    # Root trees on outgroup
+    trees <- RootTree(trees, outgroup)
+  }
   rogues <- QuickRogue(trees, p = 1)
   cons <- ConsensusWithout(trees, rogues[-1, "taxon"])
   
