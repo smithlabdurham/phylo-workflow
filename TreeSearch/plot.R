@@ -136,11 +136,7 @@ ColPlot <- function (tr, taxnames = '', direction = 'rightwards',
   roman <- c('Tardigrada', 'Onychophora', 'Priapulida', 'Collins monster', 'Collins',
              'Collins_monster', 'Collins_monster_Emu_Bay', 'Siberian Orsten tardigrade', 'Siberian_Orsten_tardigrade'
              , 'Modern_priapulid')
-  bold <- c('Onychophora', 'Hallucigenia', 'Aysheaia', 'Tardigrada', 'Orstenotubulus',
-            'Hallucigenia_sparsa', 'Hallucigenia sparsa', 'Eutardigrada', 'Heterotardigrada',
-            'Peripatus_', 'Peripatus_(Onychophora)', 'Actinarctus_', 'Actinarctus_(Heterotardigrada)', 'Macrobiotus_', 'Macrobiotus_(Eutardigrada)',
-            'Peripatus ', 'Euperipatoides_Onychophora', 'Peripatus_Onychophora', 'Actinarctus ', 'Actinarctus_Heterotardigrada', 'Macrobiotus ', 'Macrobiotus_Eutardigrada',
-            'Peripatus ', 'Peripatus (Onychophora)', 'Actinarctus ', 'Actinarctus (Heterotardigrada)', 'Macrobiotus ', 'Macrobiotus (Eutardigrada)')
+  bold <- c("Opabinia")
   tip.col <- TipCol(tip.label)
   
   for (tax in names(taxnames)) {
