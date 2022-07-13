@@ -26,7 +26,7 @@ for (treeFile in treeFiles) {
   if (nrow(rogues) > 1) {
     legend("topleft", rogues[-1, "taxon"], bty = "n", lty = 2)
   }
-  k <- gsub(".*?(\\d[\\d\\.]*)_.*", "\\1", treeFile, perl = TRUE)
+  k <- gsub(".*?iw(\\d[\\d\\.]*)_.*", "\\1", treeFile, perl = TRUE)
   if (k == "") {
     k <- Inf
   } else {
