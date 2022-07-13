@@ -17,7 +17,7 @@ TipCol <- function (tip.label) {
       'Hurdia', 'Wheeler_Opabiniid', "Utaurora"),
     c('Schinderhannes', 'Lyrarapax_unguispinus', 'Pambdelurion_whittingtoni',
       'Opabinia_regalis', 'Anomalocaris_canadensis', 'Peytoia_nathorsti',
-      'Peytoia_infercambriensis',
+      'Peytoia_infercambriensis', "Stanleycaris",
       'Hurdia_victoria', 'Cucumericrus', 'Kylinxia',
       'Amplectobelua_symbrachiata', 'Cambroraster_falcatus', 'Parvibellus_atavus',
       'Aegirocassis_benmoulai', 'Lyrarapax_unguispinus', 'Schinderhannes_bartlesi')
