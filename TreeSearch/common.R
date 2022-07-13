@@ -4,7 +4,10 @@ library("TreeSearch")
 
 # Define functions
 ResultsFile <- function(latest, weighting, k = NULL) {
-  paste0(weighting, if (!is.null(k)) signif(k), "_", latest, ".trees")
+  paste0(
+    sub("/(.*?)$", paste0("/", weighting, if (!is.null(k)) signif(k), "_\\1"), latest),
+    ".trees"
+  )
 }
 
 LatestMatrix <- function(path = ".") {
