@@ -1,12 +1,23 @@
-source("common.R")
-source("plot.R")
+# Print current working directory, which should contain the scripts,
+# matrix and trees.
+getwd()
+
+# If getwd() does not contain the relevant files, set wd to working directory
+wd <- "."
+
+source(paste0(wd, "/common.R"))
+source(paste0(wd, "/plot.R"))
 library("Rogue")
 
 outgroup <- c("Tubiluchus_priapulida") # Specify outgroup taxa to root tree
 
-latest <- LatestMatrix()
+latest <- LatestMatrix(wd)
 dat <- ReadAsPhyDat(latest)
-treeFiles <- list.files(pattern = paste0(".+_", latest, ".trees"))
+treeFiles <- list.files(
+  path = wd,
+  pattern = paste0(".+_", sub("^.*/", "", latest), ".trees"),
+  full.names = TRUE
+)
 
 for (treeFile in treeFiles) {
   trees <- read.nexus(treeFile)
@@ -32,10 +43,13 @@ for (treeFile in treeFiles) {
   } else {
     k <- as.numeric(k)
   }
-  legend("topright", c(
-    gsub("_.+", "", treeFile),
-    paste("Score:", signif(TreeLength(trees[1], dat, concavity = k)))
-    ), bty = "n"
+  legend(
+    "topright",
+    c(
+      sub("^(?:.*/)*([^/_]+)_.+", "\\1", treeFile, perl = TRUE),
+      paste("Score:", signif(TreeLength(trees[1], dat, concavity = k)))
+    ),
+    bty = "n" # No bounding box
   )
   
   
@@ -48,16 +62,34 @@ for (treeFile in treeFiles) {
   presOrder <- c("seed", "start", paste0("ratch", 1:10000), "final")
   presOrder <- c(presOrder, setdiff(names(firstHit), presOrder))
   treeCols <- cols[match(whenHit, intersect(presOrder, whenHit))]
+
+  # Prepare plotting area
   par(mar = rep(0, 4))
+  plot(map, type = "n", axes = FALSE, xlab = "", ylab = "", asp = 1)
+  
+  # Add minimum spanning tree
+  TreeTools::MSTEdges(distances, plot = TRUE, map[, 1], map[, 2],
+                      col = '#00000030', lty = 2)
+  
+  # Connect trees by order found
+  lines(map[, 1], map[, 2], col = "#ffccaa", lty = 1)
+  
+  # Add points
   TreeDist::Plot3(map,
                   col = treeCols,
                   pch = 16, cex = 2,
-                  axes = FALSE, xlab = "", ylab = "", asp = 1)
-  TreeTools::MSTEdges(distances, plot = TRUE, map[, 1], map[, 2],
-                      col = '#00000030', lty = 2)
+                  add = TRUE)
+  
+  # Add legends
   legend("topright", 
          intersect(presOrder, names(firstHit)),
          col = cols, pch = 16, bty = "n")
+  legend("topleft", 
+         c("Minimum spanning tree (mapping distortion)",
+           "Order in which trees found"),
+         lty = c(2, 1),
+         col = c("#00000030", "#ffccaaaa"),
+         bty = "n")
   
   dev.off()
 }
