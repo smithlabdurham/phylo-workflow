@@ -22,7 +22,7 @@ write.nexus(best, file = resultsFile)
 for (repetition in seq_len(searchRepeats)) for (k in kValues) {
   resultsFile <- ResultsFile(latest, "iw", k)
   if (file.exists(resultsFile)) {
-    startTree <- c(resultsFile)[[1]]
+    startTree <- read.nexus(c(resultsFile))[[1]]
   } else {
     startTree <- AdditionTree(dat, concavity = k)
   }
