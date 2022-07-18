@@ -1,7 +1,9 @@
 source("common.R")
 
-# Load data from locally downloaded copy of MorphoBank matrix
+searchRepeats <- 3 # Number of times to continue search at each k
+kValues <- c(10, 40, 3, 20, 6) # Concavity constants for implied weighting
 
+# Load data from locally downloaded copy of MorphoBank matrix
 latest <- LatestMatrix()
 dat <- ReadAsPhyDat(latest)
 message("* Read ", latest)
@@ -13,19 +15,17 @@ if (file.exists(resultsFile)) {
   startTree <- AdditionTree(dat)
 }
 
-best <- MaximizeParsimony(dat, startTree)
+best <- MaximizeParsimony(dataset = dat, tree = startTree)
 write.nexus(best, file = resultsFile)
 
-kValues <- c(10, 40, 3, 20, 6)
 
-for (k in kValues) {
+for (repetition in seq_len(searchRepeats)) for (k in kValues) {
   resultsFile <- ResultsFile(latest, "iw", k)
   if (file.exists(resultsFile)) {
     startTree <- c(resultsFile)[[1]]
   } else {
     startTree <- AdditionTree(dat, concavity = k)
   }
-  best <- MaximizeParsimony(dat, concavity = k)
+  best <- MaximizeParsimony(dataset = dat, tree = startTree, concavity = k)
   write.nexus(best, file = resultsFile)
 }
-
