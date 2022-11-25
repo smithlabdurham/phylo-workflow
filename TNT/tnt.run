@@ -1,38 +1,39 @@
 macro=;
-/* Make sure you create a folder called TNT in the same directory before you run this script */
-/* Change the outgroup below before you run the script */
-/* To use extended implied weighting, data must be read with implied weights on */
-/* Type piwe= into the command line before opening the dataset. */
-/* Then if this file is in the same directory as your data file, */
-/* type tnt into the TNT command line to run this script. */
+piwe=;
+mxram 4096;
+
+proc ENTER_INPUT_FILENAME_HERE;
+outgroup ENTER_OUTGROUP_LABEL_HERE;
+
+/* If this file is in the same directory as your data file, */
+/* simply type tnt into the TNT command line to run this script. */
 
 xmult:rat25 drift25 hits 15 level 4 chklevel 5;
 /* 15 hits gives a quick but less comprehensive run */
 
-outgroup Tubiluchus_priapulida;
 var: nt;
 
 macro-;
-piwe-    ;xmult;tsav *TNT/ew.tre;sav;tsav/;nelsen *;set nt ntrees;ttag=;resample=sym replications 100 frequency from 'nt';log TNT/ew.sym;ttag/;log/; keep 0; ttag-; hold 10000;
+piwe-    ;xmult;tsav *ew.tre;sav;tsav/;nelsen *;set nt ntrees;ttag=;resample=sym replications 100 frequency from 'nt';log ew.sym;ttag/;log/; keep 0; ttag-; hold 10000;
 /* nelsen /L for consensus w/o taxon L */
 xpiwe=;
-piwe=3   ;xmult;tsav *TNT/xpiwe3.tre;sav;   tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe3.sym;   ttag/;log/; keep 0; ttag-; hold 10000;
-piwe=4.5 ;xmult;tsav *TNT/xpiwe4.5.tre;sav; tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe4.5.sym; ttag/;log/; keep 0; ttag-; hold 10000;
-piwe=7   ;xmult;tsav *TNT/xpiwe7.tre;sav;   tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe7.sym;   ttag/;log/; keep 0; ttag-; hold 10000;
-piwe=10.5;xmult;tsav *TNT/xpiwe10.5.tre;sav;tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe10.5.sym;ttag/;log/; keep 0; ttag-; hold 10000;
-piwe=16  ;xmult;tsav *TNT/xpiwe16.tre;sav;  tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe16.sym;  ttag/;log/; keep 0; ttag-; hold 10000;
-piwe=24  ;xmult;tsav *TNT/xpiwe24.tre;sav;  tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe24.sym;  ttag/;log/; keep 0; ttag-; hold 10000;
+piwe=3   ;xmult;tsav *xpiwe3.tre;sav;   tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log xpiwe3.sym;   ttag/;log/; keep 0; ttag-; hold 10000;
+piwe=4.5 ;xmult;tsav *xpiwe4.5.tre;sav; tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log xpiwe4.5.sym; ttag/;log/; keep 0; ttag-; hold 10000;
+piwe=7   ;xmult;tsav *xpiwe7.tre;sav;   tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log xpiwe7.sym;   ttag/;log/; keep 0; ttag-; hold 10000;
+piwe=10.5;xmult;tsav *xpiwe10.5.tre;sav;tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log xpiwe10.5.sym;ttag/;log/; keep 0; ttag-; hold 10000;
+piwe=16  ;xmult;tsav *xpiwe16.tre;sav;  tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log xpiwe16.sym;  ttag/;log/; keep 0; ttag-; hold 10000;
+piwe=24  ;xmult;tsav *xpiwe24.tre;sav;  tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log xpiwe24.sym;  ttag/;log/; keep 0; ttag-; hold 10000;
 
 /* 1000 hits gives a slow but incredibly comprehensive set of results */
 xmult:hits 1000;
 
-piwe-    ;xmult;tsav *TNT/ew.tre;sav;tsav/;nelsen *;set nt ntrees;ttag=;resample=sym replications 5000 frequency from 'nt';log TNT/ew.sym;ttag/;ttag/;log/; keep 0; ttag-; hold 10000;
+piwe-    ;xmult;tsav *ew.tre;sav;tsav/;nelsen *;set nt ntrees;ttag=;resample=sym replications 5000 frequency from 'nt';log ew.sym;ttag/;ttag/;log/; keep 0; ttag-; hold 10000;
 xpiwe=;
-piwe=3   ;xmult;tsav *TNT/xpiwe3.tre;sav;   tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe3.sym;   ttag/;log/; keep 0; ttag-; hold 10000;
-piwe=4.5 ;xmult;tsav *TNT/xpiwe4.5.tre;sav; tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe4.5.sym; ttag/;log/; keep 0; ttag-; hold 10000;
-piwe=7   ;xmult;tsav *TNT/xpiwe7.tre;sav;   tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe7.sym;   ttag/;log/; keep 0; ttag-; hold 10000;
-piwe=10.5;xmult;tsav *TNT/xpiwe10.5.tre;sav;tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe10.5.sym;ttag/;log/; keep 0; ttag-; hold 10000;
-piwe=16  ;xmult;tsav *TNT/xpiwe16.tre;sav;  tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe16.sym;  ttag/;log/; keep 0; ttag-; hold 10000;
-piwe=24  ;xmult;tsav *TNT/xpiwe24.tre;sav;  tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log TNT/xpiwe24.sym;  ttag/;log/; keep 0; ttag-; hold 10000;
+piwe=3   ;xmult;tsav *xpiwe3.tre;sav;   tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log xpiwe3.sym;   ttag/;log/; keep 0; ttag-; hold 10000;
+piwe=4.5 ;xmult;tsav *xpiwe4.5.tre;sav; tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log xpiwe4.5.sym; ttag/;log/; keep 0; ttag-; hold 10000;
+piwe=7   ;xmult;tsav *xpiwe7.tre;sav;   tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log xpiwe7.sym;   ttag/;log/; keep 0; ttag-; hold 10000;
+piwe=10.5;xmult;tsav *xpiwe10.5.tre;sav;tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log xpiwe10.5.sym;ttag/;log/; keep 0; ttag-; hold 10000;
+piwe=16  ;xmult;tsav *xpiwe16.tre;sav;  tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log xpiwe16.sym;  ttag/;log/; keep 0; ttag-; hold 10000;
+piwe=24  ;xmult;tsav *xpiwe24.tre;sav;  tsav/;nelsen *;set nt ntrees;ttag=;resample=frequency from 'nt';log xpiwe24.sym;  ttag/;log/; keep 0; ttag-; hold 10000;
 
 macro -;
