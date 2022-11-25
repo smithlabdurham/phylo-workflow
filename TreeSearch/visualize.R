@@ -22,7 +22,7 @@ for (treeFile in treeFiles) {
   trees <- read.nexus(treeFile)
   
   # Ignore outgroup taxa that aren't in tree
-  outgroup <- intersect(outgroup, TipLabels(trees)[[1]])
+  outgroup <- intersect(outgroup, TipLabels(c(trees)[[1]]))
   if (length(outgroup)) {
     # Root trees on outgroup
     trees <- RootTree(trees, outgroup)
