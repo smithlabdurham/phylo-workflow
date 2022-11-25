@@ -5,14 +5,14 @@ tokens proposed by Brazeau, Guillerme & Smith
 ([2019](https://doi.org/10.1093/sysbio/syy083))
 
 
-## Installing TreeSearch
+## Install TreeSearch
 
 - Download and install [R](https://cran.r-project.org/bin/windows/base/)
 
 - Open R and type `install.packages("TreeSearch")` to download TreeSearch.
 
 
-## Inputting data
+## Input data
 
 - Copy the Nexus file containing character data into the `TreeSearch` folder
   - Ensure that the file has the ending `.nex`
@@ -81,9 +81,9 @@ command line.
 - For each `searchRepeats`, tree search will resume from the relevant `.trees`
   file.  Keep an eye on the output; once you are satisfied that tree score
   has reached an optimal value, you might consider tree search complete.
-  (See [vignette](https://ms609.github.io/TreeSearch/articles/tree-search.html))
-  for other ways to explore the completeness of tree search.)
 
 - `visualize.R` will take the latest output from the `.trees` file to plot
   a summary tree and a mapping of search progress in tree space to a like-named
   `.pdf` file.
+  See [vignette](https://ms609.github.io/TreeSearch/articles/tree-search.html)
+  for suggestions for interpreting the completeness of tree search.
