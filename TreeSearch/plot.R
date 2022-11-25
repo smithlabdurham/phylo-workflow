@@ -1,72 +1,32 @@
 TipCol <- function (tip.label) {
-  dreary <- red <- dull <- lime <- indigo <- ruby <- black <- jade <- straw <- fuschia <- character(0)
-  dreary <- c('Priapulida', 'Ottoia_prolifica', 'Modern_priapulid',
-              'Tubiluchus_Priapulida', 'Tubiluchus_priapulida', 'Cricocosmia')
+  pal <- palette.colors(pal = "Talbeau 10")
+  blue <- amber <- red <- teal <- green <- gold <- lilac <- pink <- brown <-
+    grey <- character(0)
   
-  gold <- c('Leanchoilia', 'Alalcomenaeus', 'Kuamaia_lata',
-            'Misszhouia_longicaudata', 'Supella_longipalpa',
-            'Chengjiangocaris', 'Eoredlichia', 'Fuxianhuia', 'Isoxys',
-            'Euarthropoda')
-  straw <- c(
-    c('Hadranax', 'Kerygmachela', 'Pambdelurion'),
-    c('Siberion', 'Megadictyon', 'Jianshanopodia')
-  )
-  bronze <- c(
-    c('Anomalocaris', 'Opabinia', 'Peytoia', 'Parapeytoia', 'Laggania',
-      'Caryosyntrips_camurus', 'Caryosyntrips', 'C.f._Peytoia_USNM_57490',
-      'Hurdia', 'Wheeler_Opabiniid', "Utaurora"),
-    c('Schinderhannes', 'Lyrarapax_unguispinus', 'Pambdelurion_whittingtoni',
-      'Opabinia_regalis', 'Anomalocaris_canadensis', 'Peytoia_nathorsti',
-      'Peytoia_infercambriensis', "Stanleycaris",
-      'Hurdia_victoria', 'Cucumericrus', 'Kylinxia',
-      'Amplectobelua_symbrachiata', 'Cambroraster_falcatus', 'Parvibellus_atavus',
-      'Aegirocassis_benmoulai', 'Lyrarapax_unguispinus', 'Schinderhannes_bartlesi')
-  )
-  racing <- c('Actinarctus_(heterotardigrada)', 'Macrobiotus_(eutardigrada)',
-              'Halobiotus_(eutardigrada)',
-              'Halobiotus', 'Actinarctus',
-              'Actinarctus_(Heterotardigrada)', 'Macrobiotus_(Eutardigrada)',
-              'Actinarctus_Heterotardigrada',     'Halobiotus_crispae_Eutardigrada',
-              'Halobiotus_Eutardigrada', 'Macrobiotus_Eutardigrada',
-              'Actinarctus_', 'Tardigrada', 'Macrobiotus_',
-              'Siberian Orsten tardigrade', 'Siberian_Orsten_tardigrade',
-              'Siberian_orsten_tardigrade')
-  jade <-  'Onychodictyon_ferox'
-  galazios <- NULL
-  hallucishaniids <- c('Hallucigenia_sparsa', 'Hallucigenia_fortis',
-                       'Hallucigenia_hongmeia', 'Carbotubulus', 'Luolishania',
-                       'Thanahita_distos', 'Facivermis_yunnanicus',
-                       'Ovatiovermis_cribratus', 'Collinsovermis_monstruosus',
-                       'Miraluolishania', 'Collins_monster_Emu_Bay', 'Collins_monster_emu_bay',
-                       'Acinocricus', 'Collinsium')
-  onyCrown <- c('Euperipatoides_Onychophora', 'Euperipatoides_(Onychophora)',
-                'Euperipatoides', 'Ooperipatellus', 'Plicatoperipatus',
-                'Ooperipatellus_Onychophora', 'Plicatoperipatus_Onychophora',
-                'Tertiapatus_dominicanus')
-  onies <- c(onyCrown, 'Antennacanthopodia', 'Cardiodictyon', 'Microdictyon',
-             'Paucipodia', 'Onychodictyon_gracilis',
-             'Helenodora', 'Ilyodes', 'Tritonychus_phanerosarkus', 'Tritonychus',
-             'Orstenotubulus')
-  aquamarine <- c('Aysheaia', 'Siberion', 'Paucipodia',
-                  'Xenusion', 'Diania')
+  # List taxa against their desired colours here
+  blue  <- c("taxon_1", "taxon_2")
+  amber <- c("taxon_3", "taxon_4")
+  red   <- c("taxon_5", "taxon_6")
+  teal  <- c("taxon_7", "taxon_8")
+  green <- c("taxon_9", "taxon_10")
+  gold  <- c("taxon_11", "taxon_12")
+  lilac <- c("taxon_13", "taxon_14")
+  pink  <- c("taxon_15", "taxon_16")
+  brown <- c("taxon_17", "taxon_18")
+  grey  <- c("taxon_19", "taxon_20")
   
-  tip.col <- rep('black', length(tip.label))
-  tip.col[tip.label %in% straw] <- '#ac9c16'
-  tip.col[tip.label %in% gold] <- '#d2951d'
-  tip.col[tip.label %in% bronze] <- '#a2751c'
-  tip.col[tip.label %in% lime] <- '#99be16'
-  tip.col[tip.label %in% racing] <- '#25ac89'
-  tip.col[tip.label %in% ruby] <- '#c02349'
-  tip.col[tip.label %in% fuschia] <- '#c82298'
-  tip.col[tip.label %in% red] <- '#e1001b'
-  tip.col[tip.label %in% hallucishaniids] <- '#a62bc5'
-  tip.col[tip.label %in% black] <- '#000000'
-  tip.col[tip.label %in% dreary] <- '#566666'
-  tip.col[tip.label %in% dull] <- '#8e8e8e'
-  tip.col[tip.label %in% jade] <- '#25ac89'
-  tip.col[tip.label %in% galazios] <- '#009bdd'
-  tip.col[tip.label %in% aquamarine] <- '#004d98'
-  tip.col[tip.label %in% onies] <- '#aa6cb9'
+  # This sets up the colour vector
+  tip.col <- rep("#000000", length(tip.label))
+  tip.col[tip.label %in% blue] <- pal[1]
+  tip.col[tip.label %in% amber] <- pal[2]
+  tip.col[tip.label %in% red] <- pal[3]
+  tip.col[tip.label %in% teal] <- pal[4]
+  tip.col[tip.label %in% green] <- pal[5]
+  tip.col[tip.label %in% gold] <- pal[6]
+  tip.col[tip.label %in% lilac] <- pal[7]
+  tip.col[tip.label %in% pink] <- pal[8]
+  tip.col[tip.label %in% brown] <- pal[9]
+  tip.col[tip.label %in% grey] <- pal[10]
   tip.col
 }
 
