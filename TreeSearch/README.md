@@ -57,8 +57,8 @@ Alternatively, for potentially better performance, run the search at the
 command line.
 
 - Open `analyse.R` in your favourite
- [text editor](https://notepad-plus-plus.org/downloads/) and check -- and if
-  desired modify -- the values of `searchRepeats`, `kValues` and `timeout`
+ [text editor](https://notepad-plus-plus.org/downloads/) and check – if
+  desired, modify – the values of `searchRepeats`, `kValues` and `timeout`
 
 - Launch a command line terminal in the TreeSearch folder
   - Windows: Open the start menu and type "cmd" for "Command prompt", then type
