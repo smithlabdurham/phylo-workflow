@@ -13,7 +13,7 @@ ResultsFile <- function(latest, weighting, k = NULL) {
 LatestMatrix <- function(path = ".") {
   rev(list.files(
     path = path, 
-    pattern = "*.nex",
+    pattern = "*.nex[^\\.]*$",
     full.names = TRUE
   ))[1]
 }
