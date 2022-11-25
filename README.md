@@ -8,4 +8,4 @@ Analytical 'point and click' scripts for phylogenetic analysis to ensure reprodu
   into your own user account
 
 - For each analytical approach, follow the `README.md` instructions provided
-  in each subfolder
+  in the relevant subfolder
