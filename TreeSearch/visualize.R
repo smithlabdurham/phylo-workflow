@@ -4,12 +4,11 @@ getwd()
 
 # If getwd() does not contain the relevant files, set wd to working directory
 wd <- "."
+outgroup <- c("Tubiluchus_priapulida") # Specify taxa on which to root tree
 
 source(paste0(wd, "/common.R"))
 source(paste0(wd, "/plot.R"))
 library("Rogue")
-
-outgroup <- c("Tubiluchus_priapulida") # Specify outgroup taxa to root tree
 
 latest <- LatestMatrix(wd)
 dat <- ReadAsPhyDat(latest)
