@@ -33,7 +33,7 @@ To run the script in the TNT GUI,
 
 - Use "File → Open input file" to open `tnt.run`
 
-¬[Load script](doc/load.png)
+![Load script](doc/load.png)
 
 - The analysis should begin immediately.
 
