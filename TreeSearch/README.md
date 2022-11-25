@@ -9,7 +9,8 @@ tokens proposed by Brazeau, Guillerme & Smith
 
 - Download and install [R](https://cran.r-project.org/bin/windows/base/)
 
-- Open R and type `install.packages("TreeSearch")` to download TreeSearch.
+- Open R and type `install.packages("TreeSearch")` to download
+  [TreeSearch](https://ms609.github.io/TreeSearch/)
 
 
 ## Input data
