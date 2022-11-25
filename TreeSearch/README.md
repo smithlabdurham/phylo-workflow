@@ -94,3 +94,10 @@ command line.
   `.pdf` file.
   See [vignette](https://ms609.github.io/TreeSearch/articles/tree-search.html)
   for suggestions for interpreting the completeness of tree search.
+
+## Customizing visualization
+
+- The file `plot.R` allows colours to be specified for certain tips when
+  plotted by `visualize.R`.  List the desired taxa against their colour names
+  in the `TipCol()` function definition.
+  
