@@ -26,9 +26,15 @@ tokens proposed by Brazeau, Guillerme & Smith
 
 ## Run the analyses
 
-### Point and click usage
+### Point and click usage (Windows)
 
-- Double-click `analyze.lnk` to launch the analysis (Windows)
+- (First time only) Right-click the shortcut `Analyze` and select "Properties".
+  In `Target`, replace `C:\Program Files\AppJ\R\R-4.1.1\bin\x64\Rscript.exe` with
+  the path `Rscript.exe` in your own `R` installation.
+  Do the same for the `Visualize` shortcut.
+  
+
+- Double-click `analyze.lnk` to launch the analysis
 
 - Once tree search is complete, double-click `visualize.lnk` to plot
   results to PDF.
