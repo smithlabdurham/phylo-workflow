@@ -19,19 +19,19 @@ Analyse a dataset using Fitch parsimony under equal and implied weights in TNT.
 
 ## Run analysis
 
-- Download [TNT](https://www.lillo.org.ar/phylogeny/tnt/) and extract the folder
-  `TNT-bin` to a memorable location on your computer, for example
-  `c:/programs/phylogeny/TNT-bin`
+You will need to download [TNT](https://www.lillo.org.ar/phylogeny/tnt/)
+and extract the folder `TNT-bin` to a memorable location on your computer,
+for example (Windows) `c:/programs/phylogeny/TNT-bin`
 
 
 ### Interactively
 
-To run the script in the TNT GUI,
+To run the script in the TNT GUI:
 
-- Double-click `wTNT.exe` (Windows) or `gTNT` (Linux, Mac) in the `TNT-bin`
-  folder, to launch TNT
+- Launch TNT by double-clicking `wTNT.exe` (Windows) or `gTNT` (Linux, Mac),
+  found in the `TNT-bin` folder.
 
-- Use "File → Open input file" to open `tnt.run`
+- Use "File → Open input file" to open `tnt.run`.
 
 ![Load script](doc/load.png)
 
@@ -40,12 +40,14 @@ To run the script in the TNT GUI,
 
 ### From the command line
 
+To run the script from the command line:
+
 - Add the `TNT-bin` folder to your `PATH` system environment variable.
   - OR: copy the `tnt` executable from the `TNT-bin` directory to the `TNT`
   folder that contains this `README.md` file and `tnt.run`.
 
 - Launch the command line / terminal
-  - In windows, open the Start Menu and type "CMD" for "Command prompt"
+  - In Windows, open the Start Menu and type "CMD" for "Command prompt"
 
 - Navigate to the folder containing the script file.
   - `cd ..` goes up a directory; `cd mydir` moves to the subdirectory `mydir`
