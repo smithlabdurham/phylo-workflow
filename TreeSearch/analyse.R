@@ -3,7 +3,7 @@ source("common.R")
 searchRepeats <- 3 # Number of times to continue search at each k
 kValues <- c(10, 40, 3, 20, 6) # Concavity constants for implied weighting
 
-# Load data from locally downloaded copy of MorphoBank matrix
+# Load data from locally downloaded matrix
 latest <- LatestMatrix()
 dat <- ReadAsPhyDat(latest)
 message("* Read ", latest)
