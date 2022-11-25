@@ -30,7 +30,10 @@ tokens proposed by Brazeau, Guillerme & Smith
 - Open `analyse.R` and, optionally, set the values of `searchRepeats` and
   `kValues`
 
+![constants](doc/constants.png)
+
 - In RStudio, select "Source → Source as Background job" and `Start` the script.
+
 ![Source as Background job](doc/RunInBg.png)
 
 
