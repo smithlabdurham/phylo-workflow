@@ -27,6 +27,7 @@ for (repetition in seq_len(searchRepeats)) for (k in kValues) {
   } else {
     startTree <- AdditionTree(dat, concavity = k)
   }
-  best <- MaximizeParsimony(dataset = dat, tree = startTree, concavity = k, maxTime = timeout)
+  best <- MaximizeParsimony(dataset = dat, tree = startTree, concavity = k,
+                            maxTime = timeout)
   write.nexus(best, file = resultsFile)
 }
