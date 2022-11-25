@@ -1,4 +1,3 @@
-macro=;
 piwe=;
 mxram 4096;
 
@@ -8,6 +7,7 @@ outgroup ENTER_OUTGROUP_LABEL_HERE;
 /* If this file is in the same directory as your data file, */
 /* simply type tnt into the TNT command line to run this script. */
 
+macro=;
 xmult:rat25 drift25 hits 15 level 4 chklevel 5;
 /* 15 hits gives a quick but less comprehensive run */
 
