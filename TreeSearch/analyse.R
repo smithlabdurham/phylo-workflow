@@ -6,8 +6,8 @@ timeout <- 60 # Minutes after which to terminate each search
 
 # Load data from locally downloaded matrix
 latest <- LatestMatrix()
+message("* Reading ", latest)
 dat <- ReadAsPhyDat(latest)
-message("* Read ", latest)
 
 resultsFile <- ResultsFile(latest, "ew")
 if (file.exists(resultsFile)) {

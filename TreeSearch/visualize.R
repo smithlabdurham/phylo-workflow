@@ -3,7 +3,7 @@
 getwd()
 
 # If getwd() does not contain the relevant files, set wd to working directory
-wd <- "."
+wd <- "./"
 outgroup <- c("Tubiluchus_priapulida") # Specify taxa on which to root tree
 
 source(paste0(wd, "/common.R"))
