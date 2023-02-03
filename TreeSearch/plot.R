@@ -1,5 +1,5 @@
 TipCol <- function (tip.label) {
-  pal <- palette.colors(pal = "Talbeau 10")
+  pal <- palette.colors(pal = "Tableau 10")
   blue <- amber <- red <- teal <- green <- gold <- lilac <- pink <- brown <-
     grey <- character(0)
   
