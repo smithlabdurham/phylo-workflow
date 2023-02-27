@@ -17,3 +17,20 @@ LatestMatrix <- function(path = ".") {
     full.names = TRUE
   ))[1]
 }
+
+LatestTree <- function(dat, fileStart = "", path = ".") {
+  candidate <- read.nexus(rev(list.files(
+    path = path,
+    pattern = paste0("^", fileStart, ".*.nex.trees[^\\.]*$"),
+    full.names = TRUE
+  ))[1])[[1]]
+  if (length(setdiff(TipLabels(candidate), TipLabels(dat)))) {
+    if (fileStart == "") {
+      NULL
+    } else {
+      LatestTree(dat, fileStart = "", path)
+    }
+  } else {
+    candidate
+  }
+}
