@@ -19,18 +19,27 @@ LatestMatrix <- function(path = ".") {
 }
 
 LatestTree <- function(dat, fileStart = "", path = ".") {
-  candidate <- read.nexus(rev(list.files(
-    path = path,
-    pattern = paste0("^", fileStart, ".*.nex.trees[^\\.]*$"),
-    full.names = TRUE
-  ))[1])[[1]]
-  if (length(setdiff(TipLabels(candidate), TipLabels(dat)))) {
+  .Failed <- function() {
     if (fileStart == "") {
       NULL
     } else {
       LatestTree(dat, fileStart = "", path)
     }
-  } else {
-    candidate
+  }
+  
+  latestFile <- rev(list.files(
+    path = path,
+    pattern = paste0("^", fileStart, ".*.nex.trees[^\\.]*$"),
+    full.names = TRUE
+  ))[1]
+  if (is.na(latestFile)) {
+    .Failed()
+  } else { 
+    candidate <- read.nexus(latestFile)[[1]]
+    if (length(setdiff(TipLabels(candidate), TipLabels(dat)))) {
+      .Failed()
+    } else {
+      candidate
+    }
   }
 }
