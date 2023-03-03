@@ -36,6 +36,9 @@ BEGIN MRBAYES;
   [ Configure MCMC parameters ]
   mcmcp ngen=5000000 samplefreq=500 nruns=4 nchains=8 burninfrac=0.1;
   
+  [ End run automatically ]
+  set autoclose=yes;
+  
   [ Run the analysis ]
   mcmc;
   

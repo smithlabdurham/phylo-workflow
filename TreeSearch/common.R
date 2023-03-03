@@ -10,11 +10,11 @@ ResultsFile <- function(latest, weighting, k = NULL) {
   )
 }
 
-LatestMatrix <- function(path = ".") {
+LatestMatrix <- function(path = ".", full.names = TRUE) {
   rev(list.files(
     path = path, 
     pattern = "*.nex[^\\.]*$",
-    full.names = TRUE
+    full.names = full.names
   ))[1]
 }
 
