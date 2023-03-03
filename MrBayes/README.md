@@ -34,10 +34,14 @@ BEGIN MRBAYES;
   prset brlenspr=unconstrained: gammadir(1, 0.35, 1, 1);
   
   [ Configure MCMC parameters ]
-  mcmcp ngen=5000000 samplefreq=500 nruns=2 nchains=8 burninfrac=0.1;
+  mcmcp ngen=5000000 samplefreq=500 nruns=4 nchains=8 burninfrac=0.1;
   
   [ Run the analysis ]
-  mcmc; 
+  mcmc;
+  
+  [ Summarise results ]
+  sump; [ Summarize parameters in .pstat file ]
+  sumt; [ Summarize trees in .con.tree and .trprobs files ]
   
 END;
 
