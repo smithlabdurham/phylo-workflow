@@ -101,3 +101,8 @@ command line.
   plotted by `visualize.R`.  List the desired taxa against their colour names
   in the `TipCol()` function definition.
   
+# Character visualization
+
+A report listing character details and their reconstruction on an optimal tree
+can be produced as a PDF, Word or HTML file using `Character_report.Rmd`.
+Open that file in [RStudio](https://posit.co/downloads/) for details.
