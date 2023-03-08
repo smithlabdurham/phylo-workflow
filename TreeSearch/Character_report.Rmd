@@ -127,7 +127,7 @@ for (i in seq_len(n_char)) {
   # Plot character reconstruction:
   xx <- PlotCharacter(
     tree, dataset, char = i,
-    lwd = 2 # Set width of branches
+    edge.width = 2 # Set width of branches
   )
   par(oPar)
   
