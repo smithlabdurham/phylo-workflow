@@ -65,6 +65,7 @@ n_char <- ncol(my_chars)
 char_parts <- strsplit(char_names, ": ")
 char_nesting <- vapply(char_parts, length, 0L)
 char_notes <- ReadNotes(matrixFile)
+char_states <- attr(my_chars, "state.labels")
 
 taxa_names <- unique(rownames(my_chars))
 taxa_plaintext <- gsub("_", " ", taxa_names, fixed = TRUE)
@@ -123,6 +124,19 @@ for (i in seq_len(n_char)) {
   
   # Plot character details:
   cat(paste0("  \n\n > **Character ", i, ": ", Italicize(char_names[i]), "**  \n>\n"))
+  
+  states <- char_states[[i]]
+  Bullet <- function (n, text) {
+    cat(paste0("`", n, ".` ", Italicize(text), "\n"))
+  }
+  for (i in seq_along(states)) {
+    if (i == 1 && states[1] == "") {
+      Bullet("-", "Inapplicable")
+    } else {
+      Bullet(i - 1, states[i])
+    }
+  }
+  
   cat("  \n\n")
   char_notes_i <- char_notes[[i]]
   state_notes_i <- char_notes_i[[2]]
