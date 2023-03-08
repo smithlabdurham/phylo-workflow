@@ -44,6 +44,9 @@ italic_words <- c("sensu", "stricto", "lato")
 # Taxa to omit
 # Taxa listed here will not be listed in the character descriptions
 ignored_taxa <- c()
+
+# List any character prefixes to use as sub-headings
+subheadings <- c()
 ```
 
 This report defines each character in the matrix (file: ``r matrixFile``),
@@ -100,19 +103,6 @@ Italicize <- function (string) {
 ```{R character-mapping, echo=FALSE, fig.height=6.2, fig.width=7.1, results="asis"}
 prev_char_parts <- "NONE"
 
-subheadings <- c("Digestive tract: Anus: Presence",
-                 "Gametes: Spermatozoa: Nucleus: Shape",
-                 "Gametes: Egg: Size",
-                 paste("Sclerites:",
-                       c("Bivalved", "Dorsal valve: Growth direction",
-                         "Ventral valve: Growth direction",
-                         "Ornament: Concentric ornament",
-                         "Composition: Mineralogy",
-                         "Structure: Stratiform lamellae expressed at surface")),
-                 paste("Larva:", c("Cilia: Metatroch", 
-                    "Apical organ: Muscles extending to the hyposphere")))
-
-#for (i in 14:17) {
 for (i in seq_len(n_char)) {
   
   # Print character heading:
@@ -138,11 +128,11 @@ for (i in seq_len(n_char)) {
   Bullet <- function (n, text) {
     cat(paste0("`", n, "` ", Italicize(text), "\n>\n"))
   }
-  for (i in seq_along(states)) {
-    if (i == 1 && states[1] == "") {
+  for (j in seq_along(states)) {
+    if (j == 1 && states[1] == "") {
       Bullet("-", "Inapplicable")
     } else {
-      Bullet(i - 1, states[i])
+      Bullet(j - 1, states[j])
     }
   }
   
