@@ -29,7 +29,13 @@ dataset <- ReadAsPhyDat(matrixFile) # Use instead ReadTntAsPhyDat() for .tnt fil
 tree <- LatestTree(dataset)
 # To load a specific tree, see instructions at 
 # https://ms609.github.io/TreeTools/articles/load-trees.html
- 
+
+# Root the tree on the first taxon in the dataset
+tree <- RootTree(
+  tree,
+  names(dataset)[1] # Alternatively, replace with "OutgroupName"
+)
+
 # Words to italicize
 # Taxon names from the dataset will be added automatically to this list
 # Add any words that should be italicized in character notes here.
