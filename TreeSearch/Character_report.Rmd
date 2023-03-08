@@ -1,0 +1,154 @@
+---
+title: "Character visualisations"
+author: ""
+date: "`r Sys.Date()`"
+bibliography: REFERENCES.bib
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa-old-doi-prefix.csl
+---
+
+<!--
+
+This document can be compiled into a PDF, HTML or MS Word document by clicking
+the "knit" button that appears when the file is opened in RStudio
+(https://posit.co/downloads/)
+
+Modify the file for your purposes by editing the code block below.
+
+-->
+
+```{r initialization, echo = FALSE, message = FALSE}
+source("common.R") # Leave this line here: it loads necessary functions
+
+matrixFile <- LatestMatrix() # To use a specific file, write its path here
+# For example: 
+# matrixFile <- "C:\path\to\file.nex"
+
+dataset <- ReadAsPhyDat(matrixFile) # Use instead ReadTntAsPhyDat() for .tnt files
+
+# Load a tree on which to map characters
+tree <- LatestTree(dataset)
+# To load a specific tree, see instructions at 
+# https://ms609.github.io/TreeTools/articles/load-trees.html
+ 
+# Words to italicize
+# Taxon names from the dataset will be added automatically to this list
+# Add any words that should be italicized in character notes here.
+italic_words <- c("sensu", "stricto", "lato")
+
+# Taxa to omit
+# Taxa listed here will not be listed in the character descriptions
+ignored_taxa <- c()
+```
+
+This report defines each character in the matrix, justifying the score of 
+particular taxa where relevant.
+Each character has been mapped onto a tree, with each tip labelled according to
+its coding in the matrix.
+These states have been used to reconstruct the condition of each internal node,
+using the parsimony method of @Brazeau2019 as implemented in the _R_ package
+"TreeSearch" [@Smith2023].
+
+As different trees may give different reconstructions, the character mappings 
+do not definitively establish how any given character evolved; rather, they
+serve to display how each character has been coded, and thus how it fits
+onto a given tree.
+```{R prepare-the-tree, echo = FALSE}
+tree <- DropTip(tree, ignored_taxa)
+# Uniform edge length in plot
+tree$edge.length <- rep(1, nrow(tree$edge))
+```
+
+```{R load-the-characters, echo = FALSE, message = FALSE}
+my_chars <- ReadCharacters(matrixFile)
+char_names <- gsub("^'(.+)'$", "\\1", colnames(my_chars))
+n_char <- ncol(my_chars)
+char_parts <- strsplit(char_names, ": ")
+char_nesting <- vapply(char_parts, length, 0L)
+char_notes <- ReadNotes(matrixFile)
+char_states <- attr(my_chars, "state.labels")
+
+taxa_names <- unique(rownames(my_chars))
+taxa_plaintext <- gsub("_", " ", taxa_names, fixed = TRUE)
+taxa_italic <- paste0("_", taxa_plaintext, "_")
+```
+
+```{R define-functions, echo = FALSE}
+if (!requireNamespace("MorphoBank", quietly = TRUE)) {
+  devtools::install_github("ms609/MorphoBank")
+}
+library(
+  "MorphoBank",
+  exclude = c("ReadNotes", "MorphoBankDecode", "EndSentence")
+)
+
+Italicize <- function (string) {
+  string <- gsub(paste0("\\b(",
+                        paste0(gsub("_", "|", fixed = TRUE,
+                                    c(taxa_names, italic_words)),
+                               collapse="|"),
+                        ")\\b"), "_\\1_", string, perl=TRUE, ignore.case=FALSE)
+  gsub("\\b([A-Z]\\.) _([a-z])", "_\\1 \\2", string, perl=TRUE)
+}
+```
+
+```{R character-mapping, echo=FALSE, fig.height=6.2, fig.width=7.1, results="asis"}
+prev_char_parts <- "NONE"
+
+subheadings <- c("Digestive tract: Anus: Presence",
+                 "Gametes: Spermatozoa: Nucleus: Shape",
+                 "Gametes: Egg: Size",
+                 paste("Sclerites:",
+                       c("Bivalved", "Dorsal valve: Growth direction",
+                         "Ventral valve: Growth direction",
+                         "Ornament: Concentric ornament",
+                         "Composition: Mineralogy",
+                         "Structure: Stratiform lamellae expressed at surface")),
+                 paste("Larva:", c("Cilia: Metatroch", 
+                    "Apical organ: Muscles extending to the hyposphere")))
+
+#for (i in 14:17) {
+for (i in seq_len(n_char)) {
+  
+  # Print character heading:
+  this_char_parts <- char_parts[[i]]
+  next_char_parts <- if (i == n_char) "LAST_CHARACTER" else char_parts[[i + 1L]]
+  PrintCharacterHeading(char_names[i], i, prev_char_parts, this_char_parts, 
+                        next_char_parts, subheadings)
+  prev_char_parts <- this_char_parts
+  
+  # Set margin & font size
+  oPar <- par(mar = rep(0, 4), cex = 0.8)
+  # Plot character reconstruction:
+  xx <- PlotCharacter(tree, dataset, char = i)
+  par(oPar)
+  
+  # Plot character details:
+  cat(paste0("  \n\n > **Character ", i, ": ", Italicize(char_names[i]), "**  \n>\n"))
+  
+  states <- char_states[[i]]
+  Bullet <- function (n, text) {
+    cat(paste0("`", n, "` ", Italicize(text), "\n>\n"))
+  }
+  for (i in seq_along(states)) {
+    if (i == 1 && states[1] == "") {
+      Bullet("-", "Inapplicable")
+    } else {
+      Bullet(i - 1, states[i])
+    }
+  }
+  
+  cat("  \n\n")
+  char_notes_i <- char_notes[[i]]
+  state_notes_i <- char_notes_i[[2]]
+  state_notes_i <- state_notes_i[!names(state_notes_i) %in% ignored_taxa]
+  if (length(char_notes_i[[1]]) > 0) {
+    cat(Italicize(char_notes_i[[1]]), "  \n")
+  }
+  if (length(state_notes_i) > 0) {
+    PrintStateNotes(state_notes_i, taxa_names, taxa_italic, i, Italicize)
+  }
+  cat("  \n") # Clear line, ready for next block
+}
+```
+
+# References
