@@ -127,7 +127,7 @@ for (i in seq_len(n_char)) {
   
   states <- char_states[[i]]
   Bullet <- function (n, text) {
-    cat(paste0("`", n, ".` ", Italicize(text), "\n"))
+    cat(paste0("`", n, "` ", Italicize(text), "\n>\n"))
   }
   for (i in seq_along(states)) {
     if (i == 1 && states[1] == "") {
