@@ -125,7 +125,10 @@ for (i in seq_len(n_char)) {
   # Set margin & font size
   oPar <- par(mar = rep(0, 4), cex = 0.8)
   # Plot character reconstruction:
-  xx <- PlotCharacter(tree, dataset, char = i)
+  xx <- PlotCharacter(
+    tree, dataset, char = i,
+    lwd = 2 # Set width of branches
+  )
   par(oPar)
   
   # Plot character details:
