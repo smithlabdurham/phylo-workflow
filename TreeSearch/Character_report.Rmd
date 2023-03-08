@@ -46,8 +46,8 @@ italic_words <- c("sensu", "stricto", "lato")
 ignored_taxa <- c()
 ```
 
-This report defines each character in the matrix, justifying the score of 
-particular taxa where relevant.
+This report defines each character in the matrix (file: ``r matrixFile``),
+justifying the score of particular taxa where relevant.
 Each character has been mapped onto a tree, with each tip labelled according to
 its coding in the matrix.
 These states have been used to reconstruct the condition of each internal node,
