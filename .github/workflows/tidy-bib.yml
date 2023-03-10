@@ -1,0 +1,83 @@
+name: tidy-bibliography
+
+on:
+  push:
+    paths:
+      - "TreeSearch/**.bib"
+      
+jobs:
+  check-bib:
+    name: Check for modified bibliography
+
+    runs-on: ubuntu-22.04
+    outputs:
+      bib_mod: ${{ steps.check-bib.outputs.bib_mod }}
+
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - name: Check for modification
+        id: check-bib
+        run: |
+          echo "bib_mod=false" >> $GITHUB_OUTPUT
+          git diff --name-only HEAD^ HEAD > files.txt
+          while IFS= read -r file
+          do
+            if [[ $file == **.bib ]]; then
+              echo "Modified .bib file found"
+              echo "bib_mod=true" >> $GITHUB_OUTPUT
+              break
+            fi
+          done < files.txt
+
+
+  tidy-bib:
+    name: Tidy bibliographies
+
+    needs: check-bib
+    if: needs.check-bib.outputs.bib_mod == 'true'
+
+    runs-on: ubuntu-22.04
+
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Download bibtool
+        run: |
+          wget http://mirrors.ctan.org/biblio/bibtex/utils/bibtool/BibTool-2.68.tar.gz
+          gunzip < BibTool-2.68.tar.gz | tar -xf -
+          cd BibTool
+          cp makefile.unx makefile
+          ./configure
+          sudo make
+          sudo make install
+          sudo make install-sh
+          sudo make clean
+
+      - name: Sort bibliography
+        run: |
+          shopt -s nullglob # Don't enter loop if no matches
+          for bib in TreeSearch/*.bib
+          do
+            echo "  > Sorting: $bib"
+            bibtool -s -i "$bib" -o "$bib" --preserve.key.case=on
+          done
+
+      - name: Deploy revised bibliography
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git config --global pull.ff only
+          git fetch
+          git pull --ff-only
+          git add *.bib
+          git diff-index --quiet HEAD || git commit -m "Sort bib entries"
+          git push
