@@ -71,6 +71,10 @@ jobs:
             bibtool -s -i "$bib" -o "$bib" --preserve.key.case=on
           done
 
+      - name: Delete bibtool
+        run: |
+          rm -r BibTool # Uninstall, or its .bib files will be committed
+
       - name: Deploy revised bibliography
         run: |
           git config --local user.email "actions@github.com"
