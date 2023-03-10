@@ -3,44 +3,11 @@ name: tidy-bibliography
 on:
   push:
     paths:
+      - ".github/workflows/tidy-bib.yml"
       - "TreeSearch/**.bib"
-      
-jobs:
-  check-bib:
-    name: Check for modified bibliography
-
-    runs-on: ubuntu-22.04
-    outputs:
-      bib_mod: ${{ steps.check-bib.outputs.bib_mod }}
-
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
-
-      - name: Check for modification
-        id: check-bib
-        run: |
-          echo "bib_mod=false" >> $GITHUB_OUTPUT
-          git diff --name-only HEAD^ HEAD > files.txt
-          while IFS= read -r file
-          do
-            if [[ $file == **.bib ]]; then
-              echo "Modified .bib file found"
-              echo "bib_mod=true" >> $GITHUB_OUTPUT
-              break
-            fi
-          done < files.txt
-
 
   tidy-bib:
     name: Tidy bibliographies
-
-    needs: check-bib
-    if: needs.check-bib.outputs.bib_mod == 'true'
 
     runs-on: ubuntu-22.04
 
