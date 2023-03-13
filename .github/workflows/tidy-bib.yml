@@ -21,6 +21,7 @@ on:
         run: |
           wget http://mirrors.ctan.org/biblio/bibtex/utils/bibtool/BibTool-2.68.tar.gz
           gunzip < BibTool-2.68.tar.gz | tar -xf -
+          rm BibTool-2.68.tar.gz
           cd BibTool
           cp makefile.unx makefile
           ./configure
@@ -49,6 +50,6 @@ on:
           git config --global pull.ff only
           git fetch
           git pull --ff-only
-          git add *.bib
+          git add TreeSearch/*.bib
           git diff-index --quiet HEAD || git commit -m "Sort bib entries"
           git push
