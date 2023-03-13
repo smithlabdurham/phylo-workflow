@@ -122,11 +122,15 @@ for (i in seq_len(n_char)) {
   par(oPar)
   
   # Plot character details:
-  cat(paste0("  \n\n > **Character ", i, ": ", Italicize(char_names[i]), "**  \n>\n"))
+  cat(paste0(
+    "  \n\n > **Character ", i, ": ",
+    Italicize(char_names[i]),
+    "**  \n >\n"
+  ))
   
   states <- char_states[[i]]
   Bullet <- function (n, text) {
-    cat(paste0("`", n, "` ", Italicize(text), "\n>\n"))
+    cat(paste0(" > `", n, "` ", Italicize(text), "\n >\n"))
   }
   for (j in seq_along(states)) {
     if (j == 1 && states[1] == "") {
