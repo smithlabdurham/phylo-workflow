@@ -43,3 +43,10 @@ LatestTree <- function(dat, fileStart = "", path = ".") {
     }
   }
 }
+
+KValue <- function(treeFile) {
+  k <- gsub(".*?iw(\\d[\\d\\.]*)_.*", "\\1", treeFile, perl = TRUE)
+  
+  # Return:
+  ifelse(k == treeFile, Inf, suppressWarnings(as.numeric(k)))
+}
