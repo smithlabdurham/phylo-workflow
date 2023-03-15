@@ -113,18 +113,19 @@ ColPlot <- function (tr, taxnames = '', direction = 'rightwards',
   Plot(tr, direction = direction, font = font, ec = ec, tip.col = tip.col, ...)
 }
 
-RoguePlot <- function(trees, outgroup) {
+RoguePlot <- function(trees, outgroup, p = 1) {
   # Ignore outgroup taxa that aren't in tree
   outgroup <- intersect(outgroup, TipLabels(c(trees)[[1]]))
   if (length(outgroup)) {
     # Root trees on outgroup
     trees <- RootTree(trees, outgroup)
   }
-  rogues <- Rogue::QuickRogue(trees, p = 1)
-  cons <- ConsensusWithout(trees, rogues[-1, "taxon"])
+  rogues <- Rogue::QuickRogue(trees, p = p)
+  cons <- ConsensusWithout(trees, rogues[-1, "taxon"], p = p)
   
   ColPlot(cons, ec = "black")
   if (nrow(rogues) > 1) {
     legend("topleft", rogues[-1, "taxon"], bty = "n", lty = 2)
   }
+  invisible(cons)
 }
