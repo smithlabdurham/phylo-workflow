@@ -1,0 +1,12 @@
+cff-version: 1.1.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Martin
+    given-names: Smith
+    orcid: https://orcid.org/0000-0001-5660-1727
+  - family-names: Alavya
+    given-names: Dhungana
+    orcid: https://orcid.org/0000-0002-2927-5580
+title: Workflows for phylogenetic analysis of morphological data
+version: 0.1.0
+date-released: 2023-04-17
