@@ -1,6 +1,8 @@
-# phylo-workflow
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7838056.svg)](https://doi.org/10.5281/zenodo.7838056)
 
-Analytical 'point and click' scripts for phylogenetic analysis to ensure reproducibility of results
+# Phylogenetic analysis workflow
+
+Analytical 'point and click' scripts for phylogenetic analysis of morphological data to ensure reproducibility of results
 
 ## Usage instructions
 
