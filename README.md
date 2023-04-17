@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7838056.svg)](https://doi.org/10.5281/zenodo.7838056)
 
-# Phylogenetic analysis workflow
+# Workflows for phylogenetic analysis of morphological data
 
 Analytical 'point and click' scripts for phylogenetic analysis of morphological data to ensure reproducibility of results
 
