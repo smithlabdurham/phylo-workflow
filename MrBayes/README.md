@@ -21,8 +21,16 @@ Analysis using MrBayes
  
   - quotations around taxon names
   - spaces in taxon names (replace with underscore)
- 
- - Add a MrBayes block containing the details of the desired analysis to the 
+  - `CharStateLabels` blocks
+  - Many specifications of the `Format;` command
+
+  MrBayes will report anything it cannot handle; generally, aim for a parsimonious Nexus file.
+  If MrBayes closes unexpectedly, taking any error messages with it, try launching it from the command line:
+  
+  - On Windows, launch the command prompt by typing `cmd` into the start menu; navigate to this directory 
+    (using `cd ../path/to/directory`), then launch MrBayes with e.g. `mb.3.2.7-win64.exe exe MyNexusFile.nex`.
+
+- Add a MrBayes block containing the details of the desired analysis to the 
    end of the file.
    Example:
    
@@ -53,7 +61,7 @@ END;
 A model "real life" analysis with an explanation of parameter choices can be found at:
 https://ms609.github.io/hyoliths/bayesian.html
 
-## Run the file
+## Run the analysis
 
 Launch MrBayes (by double-clicking the executable?) and type
 ` exe NAME_OF_MATRIX_FILE.NEX`.  Press enter to begin the analysis.
