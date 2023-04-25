@@ -5,7 +5,11 @@ Analyse a dataset using Fitch parsimony under equal and implied weights in TNT.
 ## Set up
 
 - Copy the input file in TNT or NEXUS format into the `TNT` directory
-
+  * TNT only has a basic NEXUS parser.
+    The matrix must be contained within a single "`begin data;`" block – not separate "taxa" and "characters" blocks.
+  * To get a NEXUS file into a TNT-readable format, Goloboff (2023, _Introduction to Phylogenetics_) recommends
+    opening the file in PAUP* and saving it using the command `export file = newfilename format = nexus interleaved = no`;
+    or opening the file in Mesquite and saving the file in TNT format.
 - Open `tnt.run` with your favourite
   [text editor](https://notepad-plus-plus.org/downloads/)
 
