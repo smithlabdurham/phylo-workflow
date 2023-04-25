@@ -31,9 +31,13 @@ To run the script in the TNT GUI:
 - Launch TNT by double-clicking `wTNT.exe` (Windows) or `gTNT` (Linux, Mac),
   found in the `TNT-bin` folder.
 
-- Use "File → Open input file" to open `tnt.run`.
+- Use "File → Open input file" to open `tnt.run`. 
+  You may need to select `ALL files` in stead of `TNT files` from the bottom dropdown box.
 
 ![Load script](doc/load.png)
+
+![All files](https://user-images.githubusercontent.com/1695515/234302431-3ced1ab2-7ff4-41bd-b5ce-202f1766e0c4.png)
+
 
 - The analysis should begin immediately.
 
