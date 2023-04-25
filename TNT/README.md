@@ -32,7 +32,7 @@ To run the script in the TNT GUI:
   found in the `TNT-bin` folder.
 
 - Use "File → Open input file" to open `tnt.run`. 
-  You may need to select `ALL files` in stead of `TNT files` from the bottom dropdown box.
+  You may need to select `ALL files` instead of `TNT files` from the bottom dropdown box.
 
 ![Load script](doc/load.png)
 
