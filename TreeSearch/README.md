@@ -28,13 +28,13 @@ tokens proposed by Brazeau, Guillerme & Smith
 
 ### Point and click usage (Windows)
 
-- (First time only) Right-click the shortcut `Analyze` and select "Properties".
+- (First time only) Right-click the shortcut `Analyse` and select "Properties".
   In `Target`, replace `C:\Program Files\AppJ\R\R-4.1.1\bin\x64\Rscript.exe` with
   the path `Rscript.exe` in your own `R` installation.
   Do the same for the `Visualize` shortcut.
   
 
-- Double-click `analyze.lnk` to launch the analysis
+- Double-click `analyse.lnk` to launch the analysis
 
 - Once tree search is complete, double-click `visualize.lnk` to plot
   results to PDF.
