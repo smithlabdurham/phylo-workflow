@@ -1,5 +1,5 @@
 piwe=;
-mxram 4096;
+mxram 1024;
 
 proc ENTER_INPUT_FILENAME_HERE;
 outgroup ENTER_OUTGROUP_LABEL_HERE;
