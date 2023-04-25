@@ -4,6 +4,7 @@ searchRepeats <- 3 # Number of times to continue search at each k
 kValues <- c(10, 40, 3, 20, 6) # Concavity constants for implied weighting
 timeout <- 60 # Minutes after which to terminate each search
 ratchets <- 8 # Ratchet iterations
+hits <- 100 # Maximum times to hit best tree
 
 # Load data from locally downloaded matrix
 latest <- LatestMatrix()
