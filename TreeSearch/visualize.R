@@ -4,13 +4,16 @@ getwd()
 
 # If getwd() does not contain the relevant files, set wd to working directory
 wd <- "./"
-outgroup <- c("Tubiluchus_priapulida") # Specify taxa on which to root tree
+outgroup <- c("") # Specify taxa on which to root tree
 
 source(paste0(wd, "/common.R"))
 source(paste0(wd, "/plot.R"))
 
 latest <- LatestMatrix(wd)
 dat <- ReadAsPhyDat(latest)
+if (outgroup == "") {
+  outgroup <- names(dat)[1]
+}
 treeFiles <- list.files(
   path = wd,
   pattern = paste0(".+_", sub("^.*/", "", latest), ".trees"),
@@ -77,4 +80,3 @@ for (treeFile in treeFiles) {
   
   dev.off()
 }
-
