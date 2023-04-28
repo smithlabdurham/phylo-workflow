@@ -30,7 +30,7 @@ for (treeFile in treeFiles) {
     trees <- RootTree(trees, og)
   }
   rogues <- Rogue::QuickRogue(trees, p = 1)
-  cons <- ConsensusWithout(trees, rogues[-1, "taxon"])
+  cons <- SortTree(ConsensusWithout(trees, rogues[-1, "taxon"]))
   
   pdf(gsub(".trees", ".pdf", treeFile, fixed = TRUE), 
       width = 8, height = 10)
