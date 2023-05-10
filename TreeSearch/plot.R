@@ -121,7 +121,7 @@ RoguePlot <- function(trees, outgroup, p = 1) {
     trees <- RootTree(trees, outgroup)
   }
   rogues <- Rogue::QuickRogue(trees, p = p)
-  cons <- ConsensusWithout(trees, rogues[-1, "taxon"], p = p)
+  cons <- SortTree(ConsensusWithout(trees, rogues[-1, "taxon"], p = p))
   
   ColPlot(cons, ec = "black")
   if (nrow(rogues) > 1) {
