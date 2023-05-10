@@ -86,17 +86,19 @@ Plot <- function (tr, pdf = FALSE, direction = 'rightwards', font = 3,
   
 }
 
-ColPlot <- function (tr, taxnames = '', direction = 'rightwards',
+ColPlot <- function (tr, taxnames = "", direction = "rightwards",
                      ec = 0, ...) {
+  # List taxa that should be displayed in upright (non-italic) font
+  roman <- c("taxon_1", "taxon_10")
+  
+  # List taxa that should be highlighted in bold type
+  bold <- c("taxon_1", "taxon_2")
+  
   tr1 <- tr
   tip.label <- tr$tip.label
   nTip <- length(tip.label)
   nNode <- tr$Nnode
-  # Taxon names and nodes
-  roman <- c('Tardigrada', 'Onychophora', 'Priapulida', 'Collins monster', 'Collins',
-             'Collins_monster', 'Collins_monster_Emu_Bay', 'Siberian Orsten tardigrade', 'Siberian_Orsten_tardigrade'
-             , 'Modern_priapulid')
-  bold <- c("Opabinia")
+  
   tip.col <- TipCol(tip.label)
   
   for (tax in names(taxnames)) {
