@@ -28,6 +28,7 @@ Analysis using MrBayes
       `Dimensions NCHAR=1234 <here insert: NTAX=1234>;`
     - Delete the `Taxa` block
     - Rename the `Characters` block to `Data`, i.e. replace `Begin Characters;` with `Begin Data;`
+  - Ambiguous states that include the gap character, e.g. `{-,1}`.  Replace these with `?`.
 
   MrBayes will report anything it cannot handle; generally, aim for a parsimonious Nexus file.
   If MrBayes closes unexpectedly, taking any error messages with it, try launching it from the command line:
