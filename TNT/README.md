@@ -62,3 +62,8 @@ To run the script from the command line:
   - `cd ..` goes up a directory; `cd mydir` moves to the subdirectory `mydir`
 
 - type `tnt tnt.run;` to begin the analysis.
+
+# Visualize results
+
+- `visualize.R` can be run from R or RStudio.  It will take the latest output from the `.tre` files to plot
+  a summary tree for each concavity constant.  (It currently lacks finesse.)
