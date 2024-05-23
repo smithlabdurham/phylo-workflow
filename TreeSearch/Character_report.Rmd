@@ -93,12 +93,18 @@ library(
 )
 
 Italicize <- function (string) {
-  string <- gsub(paste0("\\b(",
-                        paste0(gsub("_", "|", fixed = TRUE,
-                                    c(taxa_names, italic_words)),
-                               collapse="|"),
-                        ")\\b"), "_\\1_", string, perl=TRUE, ignore.case=FALSE)
-  gsub("\\b([A-Z]\\.) _([a-z])", "_\\1 \\2", string, perl=TRUE)
+  string <- gsub(
+    paste0("\\b(", paste0(
+      gsub("_", "|", fixed = TRUE,
+           c(setdiff(taxa_names, roman_taxa), italic_words)),
+      collapse = "|"), ")\\b"
+      ),
+    "_\\1_",
+    string,
+    perl = TRUE,
+    ignore.case = FALSE
+  )
+  gsub("\\b([A-Z]\\.) _([a-z])", "_\\1&nbsp;\\2", string, perl = TRUE)
 }
 ```
 
