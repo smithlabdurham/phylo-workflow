@@ -35,7 +35,7 @@ LatestTree <- function(dat, fileStart = "", path = ".") {
   if (is.na(latestFile)) {
     .Failed()
   } else { 
-    candidate <- read.nexus(latestFile)[[1]]
+    candidate <- read.nexus(latestFile, force.multi = TRUE)[[1]]
     if (length(setdiff(TipLabels(candidate), TipLabels(dat)))) {
       .Failed()
     } else {
