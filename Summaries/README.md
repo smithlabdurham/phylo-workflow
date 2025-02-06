@@ -31,6 +31,7 @@ Open the file in RStudio, check the variables listed at the top of the script,
 and click 'Source' to run the entire script.  This will create a file
 `Tree-summary.pdf`.
 
+
 ## Analysis overview
 
 `map_trees.Rmd` creates a PDF document containing:
@@ -50,6 +51,7 @@ and click 'Source' to run the entire script.  This will create a file
   
 Rogue taxa are omitted from consensus trees to maximise the information
 displayed.
+
 
 ### Running the script
 
