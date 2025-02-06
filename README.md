@@ -11,3 +11,6 @@ Analytical 'point and click' scripts for phylogenetic analysis of morphological 
 
 - For each analytical approach, follow the `README.md` instructions provided
   in the relevant subfolder
+
+- Once analyses are complete, enter the `Summaries` subfolder for instructions
+  to visualize and summarize all results.
