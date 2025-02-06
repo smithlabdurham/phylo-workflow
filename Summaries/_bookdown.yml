@@ -1,0 +1,3 @@
+language:
+  label:
+    fig: !expr function(x) sprintf("Supplementary Figure %s. ", x)
