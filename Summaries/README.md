@@ -14,6 +14,7 @@ https://github.com/smithlabdurham/phylo-workflow/discussions).
 
 We recommend opening `Summarize.Rproj` in RStudio to run these scripts.
 
+
 ## Tree summaries
 
 `Plot-Trees.R` creates a PDF file containing consensus trees of TreeSearch and
