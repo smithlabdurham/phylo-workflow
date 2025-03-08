@@ -151,9 +151,16 @@ for (i in seq_len(n_char)) {
   }
   
   cat("  \n\n")
-  char_notes_i <- char_notes[[i]]
-  state_notes_i <- char_notes_i[[2]]
-  state_notes_i <- state_notes_i[!names(state_notes_i) %in% ignored_taxa]
+  char_notes_i <- if (length(char_notes) >= i) {
+    char_notes[[i]]
+  } else {
+    list(character(0))
+  }
+  state_notes_i <- if (length(char_notes_i) > 1) {
+    char_notes_i[[2]][!names(char_notes_i[[2]]) %in% ignored_taxa]
+  } else {
+    character(0)
+  }
   if (length(char_notes_i[[1]]) > 0) {
     cat(Italicize(char_notes_i[[1]]), "  \n")
   }
