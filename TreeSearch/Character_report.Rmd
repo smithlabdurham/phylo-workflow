@@ -46,6 +46,8 @@ tree <- RootTree(
 # Taxon names from the dataset will be added automatically to this list
 # Add any words that should be italicized in character notes here.
 italic_words <- c("sensu", "stricto", "lato")
+# Tip labels that should not be italicized when displayed
+roman_taxa <- c("Outgroup")
 
 # Taxa to omit
 # Taxa listed here will not be listed in the character descriptions
