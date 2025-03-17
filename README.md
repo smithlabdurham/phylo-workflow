@@ -6,7 +6,8 @@ Analytical 'point and click' scripts for phylogenetic analysis of morphological 
 
 ## Usage instructions
 
-- [Fork](https://github.com/smithlabdurham/phylo-workflow/fork) this repository
+- Click the "Use this template" button on GitHub, or
+  [Fork](https://github.com/smithlabdurham/phylo-workflow/fork) this repository
   into your own user or organization account.
 
 - For each analytical approach, follow the `README.md` instructions provided
