@@ -82,26 +82,35 @@ tsFiles <- tsFiles[file.exists(tsFiles)]
 escapeDataset <- gsub("([\\-\\.])", "\\\\\\1", dataset)
 mbFiles <- list.files("../MrBayes", paste0("^", escapeDataset, "\\.run\\d+\\.t$"),
                       full.names = TRUE)
+rbFiles <- list.files("../RevBayes", paste0("^", escapeDataset, "\\.mkv_run_\\d+\\.trees$"),
+                      full.names = TRUE)
 
 
 tsTrees <- setNames(lapply(tsFiles, read.nexus), paste0("ts", tsPrefix))
 
-mbTrees <- setNames(
-  lapply(mbFiles,
-         function (mbFile) tryCatch(
-           read.nexus(mbFile),
-           error = function (err) if (err$message == "NA/NaN argument") {
-             # Unterminated tree block, perhaps because a search is ongoing
-             withEnd <- tempfile()
-             on.exit(unlink(withEnd))
-             writeLines(c(readLines(mbFile), "\nEND;"), withEnd)
-             read.nexus(withEnd)
-           })),
-  paste0("mb", seq_along(mbFiles))
+mbTrees <- lapply(
+  mbFiles,
+  function (mbFile) tryCatch(
+    read.nexus(mbFile),
+    error = function (err) if (err$message == "NA/NaN argument") {
+      # Unterminated tree block, perhaps because a search is ongoing
+      withEnd <- tempfile()
+      on.exit(unlink(withEnd))
+      writeLines(c(readLines(mbFile), "\nEND;"), withEnd)
+      read.nexus(withEnd)
+    })) |> setNames(paste0("mb", seq_along(mbFiles)))
+
+rbTrees <- do.call(c, lapply(
+  rbFiles,
+  function(rbFile) {
+    read.tree(text = read.table(rbFile, header = TRUE, sep = "\t")[["phylogeny"]])
+  }) |>
+    setNames(paste0("rb", seq_along(rbFiles))) |>
+    RootTree(outgroup)
 )
 
 # Remove burnin
-burnOff <- lapply(mbTrees, function (trees) {
+burnOff <- lapply(mbTrees, function(trees) {
   nTree <- length(trees)
   trees[(nTree * burninF):nTree]
 })
@@ -119,6 +128,7 @@ set.seed(1) # Consistent sampling
 #tntSample <- lapply(tntTrees, Sample, parsSample)
 tsSample <- lapply(tsTrees, Sample, parsSample)
 mbSample <- lapply(burnOff, Sample, bayesSample)
+rbSample <- lapply(rbTrees, Sample, bayesSample)
 ```
 
 # Summary of phylogenetic results
@@ -138,11 +148,11 @@ Splits in Bayesian trees are labelled with their posterior probability; in parsi
 
 ## Bayesian analysis
 
-The following taxa were identified as rogues:
+In MrBayes analyses, the following taxa were identified as rogues:
 
 <!-- Setting eval = FALSE will cause this chunk to be omitted. -->
 <!-- results="show" will display a list of rogue taxa -->
-```{r bayes-rogues, echo = FALSE, message = FALSE}
+```{r mrbayes-rogues, echo = FALSE, message = FALSE}
 #| eval = TRUE,
 #| results = "hide"
 set.seed(1) # Ensure consistent result from heuristic search
@@ -150,7 +160,7 @@ set.seed(1) # Ensure consistent result from heuristic search
 Rogue::QuickRogue(burntOff)
 ```
 
-```{r plot-bayes, echo = FALSE}
+```{r plot-mrbayes, echo = FALSE}
 #| fig.height = 6.4,
 #| fig.cap = "Majority rule consensus of Bayesian trees;
 #|   splits labelled with posterior probabilities."
@@ -158,6 +168,50 @@ par(mar = rep(0, 4), cex = 0.8)
 cons <- SortTree(RootTree(consensus(Sample(burntOff, 1000), p = 0.5), outgroup))
 plot(cons)
 splitFreqs <- SplitFrequency(cons, burntOff) / length(burntOff)
+tooBright <- 9
+LabelSplits(
+  cons,
+  round(splitFreqs * 100),
+  col = SupportColour(
+    splitFreqs,
+    scale = c(rep("white", 50 - tooBright),
+              hcl.colors(51 + tooBright, "plasma", rev = TRUE))
+    ),
+  frame = "none",
+  pos = 1,
+  cex = 0.8
+)
+
+PlotTools::SpectrumLegend(
+  "bottomright",
+  legend = c(100, 75, 50),
+  title = "PP / %",
+  palette = hcl.colors(51 + tooBright, "plasma",
+                       rev = TRUE)[-seq_len(tooBright)],
+  xpd = NA, bty = "n"
+)
+```
+
+In RevBayes analyses, the following taxa were identified as rogues:
+
+<!-- Setting eval = FALSE will cause this chunk to be omitted. -->
+<!-- results="show" will display a list of rogue taxa -->
+```{r revbayes-rogues, echo = FALSE, message = FALSE}
+#| eval = TRUE,
+#| results = "hide"
+set.seed(1) # Ensure consistent result from heuristic search
+# This will display any rogue taxa found
+Rogue::QuickRogue(rbTrees)
+```
+
+```{r plot-revbayes, echo = FALSE}
+#| fig.height = 6.4,
+#| fig.cap = "Majority rule consensus of Bayesian trees;
+#|   splits labelled with posterior probabilities."
+par(mar = rep(0, 4), cex = 0.8)
+cons <- SortTree(RootTree(consensus(Sample(rbTrees, 1000), p = 0.5), outgroup))
+plot(cons)
+splitFreqs <- SplitFrequency(cons, rbTrees) / length(rbTrees)
 tooBright <- 9
 LabelSplits(
   cons,
