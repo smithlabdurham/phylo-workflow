@@ -79,3 +79,18 @@ After this tuning phase, each analysis continues until the effective sample size
 > the effective sample size, subject to a potential scale reduction factor below
 > 1.02 (Gelman and Rubin 1992; Vats and Knudson 2021).
 > (This step is not yet implemented in this workflow.)
+
+
+# References
+
+* Fabreti LG, Höhna S. Convergence assessment for Bayesian phylogenetic analysis using MCMC simulation. Methods in Ecology and Evolution 2022;13:77–90.
+* Gelman A, Rubin DB. Inference from iterative simulation using multiple sequences. Statistical Science 1992;7:457–72.
+* Harrison LB, Larsson HCE. Among-Character Rate Variation Distributions in Phylogenetic Analysis of Discrete Morphological Characters. Systematic Biology 2015;64:307–24.
+* Höhna S, Landis MJ, Heath TA et al. RevBayes: Bayesian phylogenetic inference using graphical models and an interactive model-specification language. Syst Biol 2016;65:726–36.
+* Lanfear R, Hua X, Warren DL. Estimating the effective sample size of tree topologies from Bayesian phylogenetic analyses. Genome Biology and Evolution 2016;8:2319–32.
+* Lewis PO. A likelihood approach to estimating phylogeny from discrete morphological character data. Systematic Biology 2001;50:913–25.
+* Magee A, Karcher M, Matsen FA et al. How trustworthy is your tree? Bayesian phylogenetic effective sample size through the lens of Monte Carlo error. Bayesian Analysis 2024;19:565–93.
+* Vats D, Knudson C. Revisiting the Gelman–Rubin diagnostic. Statistical Science 2021;36:518–29.
+* Wagner PJ. Modelling rate distributions using character compatibility: implications for morphological evolution among fossil invertebrates. Biology Letters 2012;8:143–6.
+* Wright AM, Wynd BM. Modeling of rate heterogeneity in datasets compiled for use with parsimony. 2024, DOI: 10.1101/2024.06.26.600858.
+* Zhang C, Rannala B, Yang Z. Robustness of compound Dirichlet priors for Bayesian inference of branch lengths. Systematic Biology 2012;61:779–84.
