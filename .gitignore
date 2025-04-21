@@ -5,4 +5,9 @@
 .Ruserdata
 *.bak
 *.exe
+
+# RevBayes output files
 RevBayes/history.txt
+*.ckp
+*_run_*.log
+*_run_*.trees
