@@ -6,7 +6,7 @@ maxPSRF = 1.01 # Scale Reduction Factor at which to assume convergence
 
 chars <- readDiscreteCharacterData(inputFile)
 logFile = inputFile + ".mkv.log"
-paramFile = ".mkv.p.log"
+paramFile = inputFile + ".mkv.p.log"
 treeFile = inputFile + ".mkv.trees"
 ckpFile = inputFile + ".mkv.ckp"
 
