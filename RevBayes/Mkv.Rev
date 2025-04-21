@@ -87,10 +87,10 @@ for (k in 2:maxK) {
 mymodel = model(phylogeny)
 
 monitors = VectorMonitors()
-monitors.append( mnScreen(printgen = 300, prior = FALSE, posterior = FALSE) )
-monitors.append( mnModel(filename = logFile, printgen = 36) )
-monitors.append( mnModel(filename = paramFile, printgen = 6, stochasticOnly = TRUE, exclude = ["rel_br_lengths"]) )
-monitors.append( mnFile(filename = treeFile, printgen = 12, phylogeny) )
+monitors.append( mnScreen(printgen = 50, prior = FALSE, posterior = FALSE) )
+monitors.append( mnModel(filename = logFile, printgen = 10) )
+monitors.append( mnModel(filename = paramFile, printgen = 1, stochasticOnly = TRUE, exclude = ["rel_br_lengths"]) )
+monitors.append( mnFile(filename = treeFile, printgen = 1, phylogeny) )
 
 mymc3 = mcmcmc(
   mymodel, monitors, moves,
