@@ -80,34 +80,45 @@ tsPrefix <- tsPrefix[file.exists(tsFiles)]
 tsFiles <- tsFiles[file.exists(tsFiles)]
 
 escapeDataset <- gsub("([\\-\\.])", "\\\\\\1", dataset)
-mbFiles <- list.files("../MrBayes", paste0("^", escapeDataset, "\\.run\\d+\\.t$"),
-                      full.names = TRUE)
 rbFiles <- list.files("../RevBayes", paste0("^", escapeDataset, "\\.mkv_run_\\d+\\.trees$"),
                       full.names = TRUE)
+mbFiles <- list.files("../MrBayes", paste0("^", escapeDataset, "\\.run\\d+\\.t$"),
+                      full.names = TRUE)
 
+tsTrees <- if (length(tsFiles)) {
+  setNames(lapply(tsFiles, read.nexus), paste0("ts", tsPrefix))
+} else {
+  NULL
+}
 
-tsTrees <- setNames(lapply(tsFiles, read.nexus), paste0("ts", tsPrefix))
+rbTrees <- if (length(rbFiles)) {
+  do.call(c, lapply(
+    rbFiles,
+    function(rbFile) {
+      read.tree(text = read.table(rbFile, header = TRUE, sep = "\t")[["phylogeny"]])
+    }) |>
+      setNames(paste0("rb", seq_along(rbFiles))) |>
+      RootTree(outgroup)
+  )
+} else {
+  NULL
+}
 
-mbTrees <- lapply(
-  mbFiles,
-  function (mbFile) tryCatch(
-    read.nexus(mbFile),
-    error = function (err) if (err$message == "NA/NaN argument") {
-      # Unterminated tree block, perhaps because a search is ongoing
-      withEnd <- tempfile()
-      on.exit(unlink(withEnd))
-      writeLines(c(readLines(mbFile), "\nEND;"), withEnd)
-      read.nexus(withEnd)
-    })) |> setNames(paste0("mb", seq_along(mbFiles)))
-
-rbTrees <- do.call(c, lapply(
-  rbFiles,
-  function(rbFile) {
-    read.tree(text = read.table(rbFile, header = TRUE, sep = "\t")[["phylogeny"]])
-  }) |>
-    setNames(paste0("rb", seq_along(rbFiles))) |>
-    RootTree(outgroup)
-)
+mbTrees <- if (length(mbFiles)) {
+  lapply(
+    mbFiles,
+    function (mbFile) tryCatch(
+      read.nexus(mbFile),
+      error = function (err) if (err$message == "NA/NaN argument") {
+        # Unterminated tree block, perhaps because a search is ongoing
+        withEnd <- tempfile()
+        on.exit(unlink(withEnd))
+        writeLines(c(readLines(mbFile), "\nEND;"), withEnd)
+        read.nexus(withEnd)
+      })) |> setNames(paste0("mb", seq_along(mbFiles)))
+} else {
+  NULL
+}
 
 # Remove burnin
 burnOff <- lapply(mbTrees, function(trees) {
