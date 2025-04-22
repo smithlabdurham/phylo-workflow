@@ -110,7 +110,7 @@ if (fileExists(inputFile + "_run_1_chain_0.ckp")) {
   mymc3.initializeFromCheckpoint(ckpFile)
   # runHours = 24
 } else {
-  mymc3.burnin(generations = 500, tuningInterval = 250)
+  mymc3.burnin(generations = 300, tuningInterval = 100)
   # runHours = 71
 }
 
