@@ -22,8 +22,10 @@ distMethod <- "CID"
 # What taxon / taxa should be used to root the tree?
 outgroup <- "Tubiluchus"
 
-# Path to TreeSearch directory
-treeSearchDir <- "../TreeSearch"
+# Paths to results directories
+treeSearchDir <- "../TreeSearch" # Must contain the input matrix file
+mbDir <- "../MrBayes"            # Location of MrBayes results, if they exist
+rbDir <- "../RevBayes"           # Location of RevBayes results, if they exist
 
 # Run time scales with the square of the number of trees visualized.
 # How many trees should be sampled from each set of parsimony results?
@@ -88,9 +90,9 @@ tsPrefix <- tsPrefix[file.exists(tsFiles)]
 tsFiles <- tsFiles[file.exists(tsFiles)]
 
 escapeDataset <- gsub("([\\-\\.])", "\\\\\\1", dataset)
-rbFiles <- list.files("../RevBayes", paste0("^", escapeDataset, "\\.mkv_run_\\d+\\.trees$"),
+rbFiles <- list.files(rbDir, paste0("^", escapeDataset, "\\.mkv_run_\\d+\\.trees$"),
                       full.names = TRUE)
-mbFiles <- list.files("../MrBayes", paste0("^", escapeDataset, "\\.run\\d+\\.t$"),
+mbFiles <- list.files(mbDir, paste0("^", escapeDataset, "\\.run\\d+\\.t$"),
                       full.names = TRUE)
 
 tsTrees <- if (length(tsFiles)) {
@@ -419,6 +421,10 @@ lengths <- c(
 )
 
 names <- rep(names(lengths), lengths)
+
+if (is.null(allTrees)) {
+  stop("No trees have been loaded; check that results exist")
+}
 
 distances <- switch(
   distMethod,
