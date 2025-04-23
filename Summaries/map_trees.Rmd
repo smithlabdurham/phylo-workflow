@@ -38,12 +38,21 @@ burninF <- 0.10
 # What k values from implied weight parsimony should be visualized?
 # If NULL, all values will be used.
 concavities <- NULL
+# Trees with these low values of K will be visualized separately.
+# Set to NULL to visualize all implied weighting trees together.
+lowK <- c(3, 6)
 
 # Set output parameters
 pageHeight <- (254 / 25.4)
 pageWidth <- 176 / 25.4
 colWidth <- 84 / 25.4
 midWidth <- 120 / 25.4
+
+# Define colour scale for concordance values
+concHead <- 51
+concScale <- c(rep("#FFFFFF", concHead),
+               hcl.colors(101 - concHead, "plasma", rev = TRUE))
+concLegScale <- concScale[-seq_len(concHead)]
 ```
 
 ```{r set-up-session, echo=FALSE, message=FALSE}
@@ -100,6 +109,14 @@ tsTrees <- if (length(tsFiles)) {
 } else {
   NULL
 }
+lowKNames <- paste0("tsiw", lowK)
+highKTrees <- tsTrees[setdiff(names(tsTrees), c(lowKNames, "tsew"))]
+lowKTrees <- tsTrees[intersect(names(tsTrees), lowKNames)]
+
+# Determine whether there's anything to analyse in subsequent chunks
+evalHighK <- !is.null(highKTrees) && length(highKTrees) > 0
+evalLowK <- !is.null(lowKTrees) && length(lowKTrees) > 0
+evalEW <- !is.null(tsTrees[["tsew"]])
 
 rbTrees <- if (length(rbFiles)) {
   do.call(c, lapply(
@@ -262,14 +279,12 @@ PlotTools::SpectrumLegend(
 ## Maximum parsimony
 
 ```{r pars-highk, echo = FALSE}
-#| eval = !is.null(tsTrees)
-trees <- RootTree(do.call(c, tsTrees[
-  setdiff(names(tsTrees), c("tsiw3", "tsiw6", "tsew"))
-  ]), outgroup)
+#| eval = evalHighK
+trees <- RootTree(do.call(c, highKTrees), outgroup)
 ```
 
 ```{r highk-rogues, echo = FALSE}
-#| eval = !is.null(tsTrees),
+#| eval = evalHighK,
 #| message = FALSE,
 #| results = "hide"
 set.seed(1) # Ensure consistent result from heuristic search
@@ -279,7 +294,7 @@ rogues <- Rogue::QuickRogue(trees, p = 1)
 
 
 ```{r plot-pars-highk, echo = FALSE}
-#| eval = !is.null(tsTrees),
+#| eval = evalHighK,
 #| message = FALSE,
 #| warn = FALSE,
 #| fig.height = 6.4,
@@ -297,10 +312,6 @@ PlotTools::SpectrumLegend(
 )
 
 concordance <- QuartetConcordance(rg$cons, dat)
-concHead <- 51
-concScale <- c(rep("#FFFFFF", concHead),
-               hcl.colors(101 - concHead, "plasma", rev = TRUE))
-concLegScale <- concScale[-seq_len(concHead)]
 LabelSplits(
   tree = rg$cons,
   labels = round(concordance * 100),
@@ -322,18 +333,18 @@ PlotTools::SpectrumLegend(
 (ref:pars-highk-cap) Strict consensus of all implied weights parsimony trees, 6 < _k_ < $\infty$. Splits are labelled with their quartet concordance [@Minh2020mbe].
 
 
-```{r h3-rogues, echo = FALSE}
-#| eval = !is.null(tsTrees),
+```{r lowK-rogues, echo = FALSE}
+#| eval = evalLowK,
 #| message = FALSE,
 #| results = "hide"
 set.seed(1) # Consistent result from heuristic search
-trees <- RootTree(c(tsTrees$tsiw3, tsTrees$tsiw6), outgroup)
+trees <- RootTree(do.call(c, lowKTrees), outgroup)
 rogues <- Rogue::QuickRogue(trees, p = 1)
 ```
 
 
-```{r plot-pars-k3, echo = FALSE}
-#| eval = !is.null(tsTrees),
+```{r plot-pars-lowK, echo = FALSE}
+#| eval = evalLowK,
 #| message = FALSE,
 #| fig.height = 6.4,
 #| fig.cap = "(ref:pars-k3-cap)"
@@ -366,14 +377,15 @@ PlotTools::SpectrumLegend(
 (ref:pars-k3-cap) Strict consensus of results for $k \in {3, 6}$, after removal of rogue taxa. Splits are labelled with their quartet concordance [@Minh2020mbe].
 
 ```{r ew-rogues, echo = FALSE, results = "hide"}
-#| eval = !is.null(tsTrees)
+#| eval = evalEW
 set.seed(1) # Ensure consistent result from heuristic search
-trees <- RootTree(tsTrees$tsew, outgroup)
-Rogue::QuickRogue(trees, p = 1)
+trees <- RootTree(tsTrees[["tsew"]], outgroup)
+rogues <- Rogue::QuickRogue(trees, p = 1)
+rogues
 ```
 
 ```{r plot-pars-ew, echo = FALSE}
-#| eval = !is.null(tsTrees),
+#| eval = evalEW,
 #| message = FALSE,
 #| fig.height = 6.4,
 #| fig.cap = "(ref:pars-ew-cap)"
@@ -397,8 +409,55 @@ PlotTools::SpectrumLegend(
   xpd = NA, bty = "n"
 )
 ```
-
 (ref:pars-ew-cap) Strict consensus of results for equal weights parsimony, after removal of rogue taxa.  Splits are labelled with their quartet concordance [@Minh2020mbe].
+
+```{r plot-pars-ew-rogue, echo = FALSE}
+#| eval = evalEW && nrow(rogues) > 1,
+#| message = FALSE,
+#| fig.height = 6.4,
+#| fig.cap = "(ref:pars-ew-rogue-cap)"
+
+rogueTaxa <- rogues[-1, "taxon"]
+par(mar = rep(0, 4), cex = 0.8)
+if (length(rogueTaxa) == 1) {
+  rp <- RoguePlot(trees, rogueTaxa)
+  cons <- rp[["cons"]]
+  PlotTools::SpectrumLegend(
+    "bottomleft", 
+    palette = colorRampPalette(c(par("fg"), "#009E73"), space = "Lab")(100),
+    legend = rp[["legendLabels"]],
+    cex = 0.4, bty = "n", title = paste("Position of", rogueTaxa, "in")
+  )
+} else {
+  cons <- SortTree(RootTree(ConsensusWithout(trees, rogueTaxa),
+                            setdiff(outgroup, rogueTaxa)))
+  plot(cons)
+  legend("bottomleft", bty = "n",
+         lty = 2, text.font = 3, cex = 0.8,
+         title = "Rogue taxa", title.font = 1,
+         rogueTaxa)
+}
+concordance <- QuartetConcordance(cons, dat)
+LabelSplits(
+  tree = cons,
+  labels = round(concordance * 100),
+  col = SupportColor(concordance, scale = concScale),
+  frame = "none",
+  pos = 3,
+  cex = 0.8
+)
+PlotTools::SpectrumLegend(
+  "bottomright",
+  legend = c(100, 75, 50),
+  title = "Concordance / %",
+  palette = concLegScale,
+  xpd = NA, bty = "n"
+)
+```
+
+(ref:pars-ew-rogue-cap) Strict consensus of results for equal weights parsimony, after removal of rogue taxa.  Splits are labelled with their quartet concordance [@Minh2020mbe].
+
+
 
 <!-- compute distances for clustering and mapping -->
 
