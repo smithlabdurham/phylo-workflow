@@ -53,8 +53,6 @@ Each such partition is analysed under a symmetric Markov _k_-state model
 Between-character rate heterogeneity is modelled using a log-normal distribution
 with arithmetic mean 1 (Wagner 2012; Harrison and Larsson 2015) discretized into
 six rate categories (Wright and Wynd 2024).
-Within partitions, we model between-site rate variation with a log-normal
-distribution (Wagner 2012) discretized into six categories (Wright and Wynd 2024).
 We use a uniform prior on tree topologies, and a compound dirichlet prior on
 edge length variability (Zhang, Rannala and Yang 2012), with a prior
 expectation of one change per site.
