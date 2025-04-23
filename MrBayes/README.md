@@ -21,14 +21,15 @@ Analysis using MrBayes
  
   - quotations around taxon names
   - spaces in taxon names (replace with underscore)
-  - `CharStateLabels` blocks
+  - `CharLabels` or `CharStateLabels` blocks
   - Many specifications of the `Format;` command
   - Separate `Taxa` and `Characters` blocks:
     - Move the text `NTAX=1234` from the `Taxa` block, inserting it in the `Characters` block by adding to the line
       `Dimensions NCHAR=1234 <here insert: NTAX=1234>;`
     - Delete the `Taxa` block
     - Rename the `Characters` block to `Data`, i.e. replace `Begin Characters;` with `Begin Data;`
-  - Ambiguous states that include the gap character, e.g. `{-,1}`.  Replace these with `?`.
+  - Ambiguous states that include the gap character, e.g. `{-,1}`.  Replace these with `?`;
+  - Non-ASCII characters (as might be found in a custom `Notes` block).
 
   MrBayes will report anything it cannot handle; generally, aim for a parsimonious Nexus file.
   If MrBayes closes unexpectedly, taking any error messages with it, try launching it from the command line:
