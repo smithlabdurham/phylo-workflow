@@ -17,6 +17,7 @@ sophisticated models.
 
 - Place a copy of the matrix for analysis, in NEXUS format, in this directory.
 - Ensure the matrix does not contain an `ASSUMPTIONS` block ([Issue #732](https://github.com/revbayes/revbayes/issues/732)).
+- If a `STATELABELS` block exists, ensure it terminates with a comma ([Issue #731](https://github.com/revbayes/revbayes/issues/731)) – or delete it.
 
 
 ## Modify analytical script
