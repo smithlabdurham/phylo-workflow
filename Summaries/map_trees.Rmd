@@ -507,17 +507,22 @@ mstEnds <- MSTEdges(distances)
 blackGap <- 4L
 
 tsPal <- setNames(
-  colorRampPalette(c(pal[1], "black"), space = "Lab")(
+  colorRampPalette(c(pal[[1]], "black"), space = "Lab")(
     length(concavities) + 1 + blackGap
   ),
-  paste0("ts", c(paste0("iw", sort(concavities)), "ew", rep(NA, blackGap)))
+  paste0("ts", c(if (length(concavities) > 0) paste0("iw", sort(concavities)),
+                 "ew", rep(NA, blackGap)))
 )
 
-mbPal <- setNames(colorRampPalette(c(pal[2], "black"),
+mbPal <- setNames(colorRampPalette(c(pal[[2]], "black"),
                                     space = "Lab")(length(mbFiles) + blackGap),
                    paste0("mb", c(seq_along(mbFiles), rep(NA, blackGap))))
 
-cols <- c(tsPal, mbPal)[names]
+rbPal <- setNames(colorRampPalette(c(pal[[3]], "black"),
+                                    space = "Lab")(length(mbFiles) + blackGap),
+                   paste0("mb", c(seq_along(mbFiles), rep(NA, blackGap))))
+
+cols <- c(tsPal, mbPal, rbPal)[names]
 ```
 ```{r calculate-clusterings, echo = FALSE}
 possibleClusters <- 2:(2 * length(concavities) + 4)
@@ -553,8 +558,12 @@ bestK <- which.max(kSils)
 kSil <- kSils[[bestK]]
 kCluster <- kClusters[[bestK]]$cluster
 
-dbClusters <- lapply(c(5, 10, 25, 50), function(pts) 
-  dbscan::hdbscan(distances, minPts = pts))
+dbClusters <- lapply(c(5, 10, 25, 50), function(pts) {
+  tryCatch(dbscan::hdbscan(distances, minPts = pts),
+           error = function(e) {
+             structure(list("cluster_scores" = NA), class = "hdbscan")
+           })
+})
 dbN <- vapply(dbClusters, function(clust) length(clust[["cluster_scores"]]),
               double(1))
 dbClusters <- dbClusters[dbN > 1]
@@ -609,7 +618,9 @@ Plotting the consensus tree for each cluster can reveal resolution that is consi
 #| fig.height = 6.4,
 #| fig.cap = "(ref:clust-cons-cap)"
 
-par(mfrow = c(1, 2), mar = rep(0.2, 4), cex = 0.7)
+calcPP <- sum(lengths(c(burntOff, rbTrees))) > 0
+PlotGrid <- function(n) rep(ceiling(sqrt(n)), 2)
+par(mfrow = PlotGrid(length(cl)), mar = rep(0.2, 4), cex = 0.7)
 cl <- table(cluster[cluster > 0])
 
 for (i in as.integer(names(cl[order(cl, decreasing = TRUE)]))) {
@@ -621,25 +632,30 @@ for (i in as.integer(names(cl[order(cl, decreasing = TRUE)]))) {
          sprintf("Consensus of %g%% of trees",
                  signif(100 * length(trees) / length(allTrees), 3)),
          bty = "n")
-  splitFreqs <- SplitFrequency(cons, burntOff) / length(burntOff)
-  tooBright <- 26
-  LabelSplits(cons, round(splitFreqs * 100),
-              col = SupportColour(
-                splitFreqs,
-                scale = hcl.colors(101 + tooBright, "plasma",
-                                   rev = TRUE)[-seq_len(tooBright)]
-              ),
-              frame = "none", pos = 1, cex = 0.8)
+  if (calcPP) {
+    splitFreqs <- SplitFrequency(cons, c(burntOff, rbTrees)) / 
+      length(c(burntOff, rbTrees))
+    tooBright <- 26
+    LabelSplits(cons, round(splitFreqs * 100),
+                col = SupportColour(
+                  splitFreqs,
+                  scale = hcl.colors(101 + tooBright, "plasma",
+                                     rev = TRUE)[-seq_len(tooBright)]
+                ),
+                frame = "none", pos = 1, cex = 0.8)
+  }
 }
 
-PlotTools::SpectrumLegend(
-  "bottomright",
-  legend = c(100, 75, 50, 25, 0),
-  title = "PP / %",
-  palette = hcl.colors(101 + tooBright, "plasma",
-                       rev = TRUE)[-seq_len(tooBright)],
-  xpd = NA, bty = "n"
-)
+if (calcPP) {
+  PlotTools::SpectrumLegend(
+    "bottomright",
+    legend = c(100, 75, 50, 25, 0),
+    title = "PP / %",
+    palette = hcl.colors(101 + tooBright, "plasma",
+                         rev = TRUE)[-seq_len(tooBright)],
+    xpd = NA, bty = "n"
+  )
+}
 ```
 
 (ref:clust-cons-cap) 50% majority rule consensus trees for each cluster demonstrate the topographic changes underpinning the differences between clusters.
@@ -697,7 +713,7 @@ qual <- vapply(seq_len(ncol(mapping)), function (k) {
   MappingQuality(distances, newDist, 10)
 }, double(4))
 
-nDim <- which.max(qual["TxC", ] > 0.9)
+nDim <- max(2, which.max(qual["TxC", ] > 0.9))
 ```
 
 The quality of the two-dimensional mapping (trustworthiness = `r signif(qual["Trustworthiness", 2], 3)`; continuity = `r signif(qual["Continuity", 2], 3)`), allows an evaluation of whether all aspects of the distances between pairs of trees are faithfully depicted. `r nDim` dimensions are required to meet the recommendation [@SmithSpace] of trustworthiness × continuity \> 0.9.
