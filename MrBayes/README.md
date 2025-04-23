@@ -42,7 +42,7 @@ Analysis using MrBayes
 
 BEGIN MRBAYES;
   [ Configure priors ]
-  lset coding=informative rates=gamma;
+  lset coding=informative rates=lnorm nlnormcat=6;
   prset brlenspr=unconstrained: gammadir(1, 0.35, 1, 1);
   
   [ Configure MCMC parameters ]
