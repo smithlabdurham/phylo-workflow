@@ -190,12 +190,14 @@ In MrBayes analyses, the following taxa were identified as rogues:
 
 <!-- Setting eval = FALSE will cause this chunk to be omitted. -->
 <!-- results="show" will display a list of rogue taxa -->
-```{r mrbayes-rogues, echo = FALSE, message = FALSE}
+```{r mrbayes-rogues, echo = FALSE}
 #| eval = !is.null(burntOff),
+#| message = FALSE,
 #| results = "hide"
 set.seed(1) # Ensure consistent result from heuristic search
 # This will display any rogue taxa found
-Rogue::QuickRogue(burntOff)
+rogues <- Rogue::QuickRogue(burntOff)
+rogues
 ```
 
 ```{r plot-mrbayes, echo = FALSE}
@@ -235,12 +237,14 @@ In RevBayes analyses, the following taxa were identified as rogues:
 
 <!-- Setting eval = FALSE will cause this chunk to be omitted. -->
 <!-- results="show" will display a list of rogue taxa -->
-```{r revbayes-rogues, echo = FALSE, message = FALSE}
+```{r revbayes-rogues, echo = FALSE}
 #| eval = !is.null(rbTrees),
+#| message = FALSE,
 #| results = "hide"
 set.seed(1) # Ensure consistent result from heuristic search
 # This will display any rogue taxa found
-Rogue::QuickRogue(rbTrees)
+rogues <- Rogue::QuickRogue(rbTrees)
+rogues
 ```
 
 ```{r plot-revbayes, echo = FALSE}
@@ -289,6 +293,7 @@ trees <- RootTree(do.call(c, highKTrees), outgroup)
 #| results = "hide"
 set.seed(1) # Ensure consistent result from heuristic search
 rogues <- Rogue::QuickRogue(trees, p = 1)
+rogues
 ```
 
 
@@ -340,22 +345,61 @@ PlotTools::SpectrumLegend(
 set.seed(1) # Consistent result from heuristic search
 trees <- RootTree(do.call(c, lowKTrees), outgroup)
 rogues <- Rogue::QuickRogue(trees, p = 1)
+rogues
 ```
-
-
 ```{r plot-pars-lowK, echo = FALSE}
 #| eval = evalLowK,
 #| message = FALSE,
 #| fig.height = 6.4,
-#| fig.cap = "(ref:pars-k3-cap)"
+#| fig.cap = "(ref:pars-lowK-cap)"
 par(mar = rep(0, 4), cex = 0.8)
-cons <- SortTree(ConsensusWithout(trees, rogues$taxon[-1]))
+cons <- SortTree(RootTree(consensus(trees), outgroup))
 plot(cons)
-legend("bottomleft", bty = "n",
-       lty = 2, text.font = 3, cex = 0.8,
-       title = "Rogue taxa", title.font = 1,
-       rogues$taxon[-1])
+concordance <- QuartetConcordance(cons, dat)
+LabelSplits(
+  tree = cons,
+  labels = round(concordance * 100),
+  col = SupportColor(concordance, scale = concScale),
+  frame = "none",
+  pos = 3,
+  cex = 0.8
+)
+PlotTools::SpectrumLegend(
+  "bottomright",
+  legend = c(100, 75, 50),
+  title = "Concordance / %",
+  palette = concLegScale,
+  xpd = NA, bty = "n"
+)
+```
+(ref:pars-lowK-cap) Strict consensus of results for implied weights parsimony with low concavity values (`r paste(lowK, collapse = ", ")`).  Splits are labelled with their quartet concordance [@Minh2020mbe].
 
+```{r plot-pars-lowK-rogue, echo = FALSE}
+#| eval = evalLowK && nrow(rogues) > 1,
+#| message = FALSE,
+#| fig.height = 6.4,
+#| fig.cap = "(ref:pars-lowK-rogue-cap)"
+
+rogueTaxa <- rogues[-1, "taxon"]
+par(mar = rep(0, 4), cex = 0.8)
+if (length(rogueTaxa) == 1) {
+  rp <- RoguePlot(trees, rogueTaxa, sort = TRUE)
+  cons <- rp[["cons"]]
+  PlotTools::SpectrumLegend(
+    "bottomleft", 
+    palette = colorRampPalette(c(par("fg"), "#009E73"), space = "Lab")(100),
+    legend = rp[["legendLabels"]],
+    cex = 0.4, bty = "n", title = paste("Position of", rogueTaxa, "in")
+  )
+} else {
+  cons <- SortTree(RootTree(ConsensusWithout(trees, rogueTaxa),
+                            setdiff(outgroup, rogueTaxa)))
+  plot(cons)
+  legend("bottomleft", bty = "n",
+         lty = 2, text.font = 3, cex = 0.8,
+         title = "Rogue taxa", title.font = 1,
+         rogueTaxa)
+}
 concordance <- QuartetConcordance(cons, dat)
 LabelSplits(
   tree = cons,
@@ -374,7 +418,7 @@ PlotTools::SpectrumLegend(
 )
 ```
 
-(ref:pars-k3-cap) Strict consensus of results for $k \in {3, 6}$, after removal of rogue taxa. Splits are labelled with their quartet concordance [@Minh2020mbe].
+(ref:pars-lowK-rogue-cap) Strict consensus of results for implied weights parsimony with low concavity values (`r paste(lowK, collapse = ", ")`), after removal of rogue taxa. Splits are labelled with their quartet concordance [@Minh2020mbe].
 
 ```{r ew-rogues, echo = FALSE, results = "hide"}
 #| eval = evalEW
@@ -620,8 +664,8 @@ Plotting the consensus tree for each cluster can reveal resolution that is consi
 
 calcPP <- sum(lengths(c(burntOff, rbTrees))) > 0
 PlotGrid <- function(n) rep(ceiling(sqrt(n)), 2)
-par(mfrow = PlotGrid(length(cl)), mar = rep(0.2, 4), cex = 0.7)
 cl <- table(cluster[cluster > 0])
+par(mfrow = PlotGrid(length(cl)), mar = rep(0.2, 4), cex = 0.7)
 
 for (i in as.integer(names(cl[order(cl, decreasing = TRUE)]))) {
   trees <- allTrees[cluster == i]
