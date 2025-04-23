@@ -119,16 +119,14 @@ evalLowK <- !is.null(lowKTrees) && length(lowKTrees) > 0
 evalEW <- !is.null(tsTrees[["tsew"]])
 
 rbTrees <- if (length(rbFiles)) {
-  do.call(c, lapply(
-    rbFiles,
+  lapply(rbFiles,
     function(rbFile) {
-      read.tree(text = gsub(" ", "_", fixed = TRUE,
-                            read.table(rbFile, header = TRUE,
-                                       sep = "\t")[["phylogeny"]]))
+      treeTable <- read.table(rbFile, header = TRUE, sep = "\t")
+      read.tree(text = gsub(" ", "_", fixed = TRUE, treeTable[["phylogeny"]])) |>
+        setNames(paste0("it", treeTable[["Iteration"]]))
     }) |>
-      setNames(paste0("rb", seq_along(rbFiles))) |>
-      RootTree(outgroup)
-  )
+  RootTree(outgroup) |>
+   setNames(paste0("rb", seq_along(rbFiles)))
 } else {
   NULL
 }
@@ -152,9 +150,16 @@ mbTrees <- if (length(mbFiles)) {
 # Remove burnin
 burnOff <- lapply(mbTrees, function(trees) {
   nTree <- length(trees)
-  trees[(nTree * burninF):nTree]
+  trees[((nTree * burninF) + 1):nTree]
 })
 burntOff <- RootTree(do.call(c, burnOff), outgroup)
+
+rbOff <- lapply(rbTrees, function(trees) {
+  nTree <- length(trees)
+  trees[(1 + (nTree * 0)):nTree]
+})
+rbBurntOff<- RootTree(do.call(c, rbOff), outgroup)
+
 
 Sample <- function (x, n) {
   if (length(x) > n) {
@@ -168,7 +173,7 @@ set.seed(1) # Consistent sampling
 #tntSample <- lapply(tntTrees, Sample, parsSample)
 tsSample <- lapply(tsTrees, Sample, parsSample)
 mbSample <- lapply(burnOff, Sample, bayesSample)
-rbSample <- lapply(rbTrees, Sample, bayesSample)
+rbSample <- lapply(rbOff, Sample, bayesSample)
 ```
 
 # Summary of phylogenetic results
@@ -461,12 +466,14 @@ pal <- hcl.colors(4, palette = "Dynamic")
 
 allTrees <- c(
   do.call(c, tsSample),
-  do.call(c, mbSample)
+  do.call(c, mbSample),
+  do.call(c, rbSample)
 )
 
 lengths <- c(
   vapply(tsSample, length, 1),
-  vapply(mbSample, length, 1)
+  vapply(mbSample, length, 1),
+  vapply(rbSample, length, 1)
 )
 
 names <- rep(names(lengths), lengths)
@@ -509,8 +516,8 @@ mbPal <- setNames(colorRampPalette(c(pal[[2]], "black"),
                    paste0("mb", c(seq_along(mbFiles), rep(NA, blackGap))))
 
 rbPal <- setNames(colorRampPalette(c(pal[[3]], "black"),
-                                    space = "Lab")(length(mbFiles) + blackGap),
-                   paste0("mb", c(seq_along(mbFiles), rep(NA, blackGap))))
+                                    space = "Lab")(length(rbFiles) + blackGap),
+                   paste0("rb", c(seq_along(rbFiles), rep(NA, blackGap))))
 
 cols <- c(tsPal, mbPal, rbPal)[names]
 ```
@@ -608,7 +615,7 @@ Plotting the consensus tree for each cluster can reveal resolution that is consi
 #| fig.height = 6.4,
 #| fig.cap = "(ref:clust-cons-cap)"
 
-calcPP <- sum(lengths(c(burntOff, rbTrees))) > 0
+calcPP <- sum(lengths(c(burntOff, rbOff))) > 0
 PlotGrid <- function(n) rep(ceiling(sqrt(n)), 2)
 cl <- table(cluster[cluster > 0])
 par(mfrow = PlotGrid(length(cl)), mar = rep(0.2, 4), cex = 0.7)
@@ -623,8 +630,8 @@ for (i in as.integer(names(cl[order(cl, decreasing = TRUE)]))) {
                  signif(100 * length(trees) / length(allTrees), 3)),
          bty = "n")
   if (calcPP) {
-    splitFreqs <- SplitFrequency(cons, c(burntOff, rbTrees)) / 
-      length(c(burntOff, rbTrees))
+    splitFreqs <- SplitFrequency(cons, c(burntOff, rbBurntOff)) / 
+      length(c(burntOff, rbBurntOff))
     tooBright <- 26
     LabelSplits(cons, round(splitFreqs * 100),
                 col = SupportColour(
@@ -689,8 +696,9 @@ legend(
   title = "Bayesian / Mk",
   bty = "n",
   pch = 1,
-  col = mbPal[seq_along(mbFiles)],
-  paste("Run", seq_along(mbFiles)),
+  col = c(mbPal[seq_along(mbFiles)], rbPal[seq_along(rbFiles)]),
+  c(if (length(mbFiles) > 0) paste("MrBayes run", seq_along(mbFiles)),
+    if (length(rbFiles) > 0) paste("RevBayes run", seq_along(rbFiles))),
   cex = 0.75, pt.cex = 1.2
 )
 ```
