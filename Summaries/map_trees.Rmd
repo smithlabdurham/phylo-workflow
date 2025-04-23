@@ -122,7 +122,9 @@ rbTrees <- if (length(rbFiles)) {
   do.call(c, lapply(
     rbFiles,
     function(rbFile) {
-      read.tree(text = read.table(rbFile, header = TRUE, sep = "\t")[["phylogeny"]])
+      read.tree(text = gsub(" ", "_", fixed = TRUE,
+                            read.table(rbFile, header = TRUE,
+                                       sep = "\t")[["phylogeny"]]))
     }) |>
       setNames(paste0("rb", seq_along(rbFiles))) |>
       RootTree(outgroup)
@@ -411,8 +413,10 @@ PlotParsRogues(trees, rogues[-1, "taxon"])
 
 (ref:pars-lowK-rogue-cap) Strict consensus of results for implied weights parsimony with low concavity values (`r paste(lowK, collapse = ", ")`), after removal of rogue taxa. Splits are labelled with their quartet concordance [@Minh2020mbe].
 
-```{r ew-rogues, echo = FALSE, results = "hide"}
-#| eval = evalEW
+```{r ew-rogues, echo = FALSE}
+#| eval = evalEW,
+#| message = FALSE,
+#| results = "hide"
 
 set.seed(1) # Ensure consistent result from heuristic search
 trees <- RootTree(tsTrees[["tsew"]], outgroup)
