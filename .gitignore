@@ -11,3 +11,4 @@ RevBayes/history.txt
 *.ckp
 *_run_*.log
 *_run_*.trees
+/Summaries/map_trees_files
