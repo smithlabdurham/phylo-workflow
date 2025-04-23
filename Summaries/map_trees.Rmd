@@ -1,6 +1,6 @@
 ---
 title: "Tree mapping"
-date: '`r Sys.time()`'
+date: '`r format(Sys.time(), usetz = TRUE)`'
 output:
   bookdown::pdf_document2:
     toc: no
