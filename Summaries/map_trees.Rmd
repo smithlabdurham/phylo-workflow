@@ -327,7 +327,7 @@ PlotParsRogues <- function(trees, rogueTaxa) {
       "bottomleft", 
       palette = colorRampPalette(c(par("fg"), "#009E73"), space = "Lab")(100),
       legend = rp[["legendLabels"]],
-      cex = 0.4, bty = "n", title = paste("Position of", rogueTaxa, "in")
+      cex = 0.8, bty = "n", title = paste("Position of", rogueTaxa, "in")
     )
   } else {
     cons <- SortTree(RootTree(ConsensusWithout(trees, rogueTaxa),
