@@ -316,12 +316,50 @@ PlotParsCons <- function(trees) {
     xpd = NA, bty = "n"
   )
 }
+
+PlotParsRogues <- function(trees, rogueTaxa) {
+  if (length(rogueTaxa) == 1) {
+    rp <- RoguePlot(trees, rogueTaxa, sort = TRUE)
+    cons <- rp[["cons"]]
+    PlotTools::SpectrumLegend(
+      "bottomleft", 
+      palette = colorRampPalette(c(par("fg"), "#009E73"), space = "Lab")(100),
+      legend = rp[["legendLabels"]],
+      cex = 0.4, bty = "n", title = paste("Position of", rogueTaxa, "in")
+    )
+  } else {
+    cons <- SortTree(RootTree(ConsensusWithout(trees, rogueTaxa),
+                              setdiff(outgroup, rogueTaxa)))
+    plot(cons)
+    legend("bottomleft", bty = "n",
+           lty = 2, text.font = 3, cex = 0.8,
+           title = "Rogue taxa", title.font = 1,
+           rogueTaxa)
+  }
+  concordance <- QuartetConcordance(cons, dat)
+  LabelSplits(
+    tree = cons,
+    labels = round(concordance * 100),
+    col = SupportColor(concordance, scale = concScale),
+    frame = "none",
+    pos = 3,
+    cex = 0.8
+  )
+  PlotTools::SpectrumLegend(
+    "bottomright",
+    legend = c(100, 75, 50),
+    title = "Concordance / %",
+    palette = concLegScale,
+    xpd = NA, bty = "n"
+  )
+}
 ```
 ```{r plot-pars-highK, echo = FALSE}
 #| eval = evalHighK,
 #| message = FALSE,
 #| fig.height = 6.4,
 #| fig.cap = "(ref:pars-highK-cap)"
+
 par(mar = rep(0, 4), cex = 0.8)
 PlotParsCons(trees)
 ```
@@ -333,42 +371,8 @@ PlotParsCons(trees)
 #| fig.height = 6.4,
 #| fig.cap = "(ref:pars-highK-rogue-cap)"
 
-rogueTaxa <- rogues[-1, "taxon"]
 par(mar = rep(0, 4), cex = 0.8)
-if (length(rogueTaxa) == 1) {
-  rp <- RoguePlot(trees, rogueTaxa, sort = TRUE)
-  cons <- rp[["cons"]]
-  PlotTools::SpectrumLegend(
-    "bottomleft", 
-    palette = colorRampPalette(c(par("fg"), "#009E73"), space = "Lab")(100),
-    legend = rp[["legendLabels"]],
-    cex = 0.4, bty = "n", title = paste("Position of", rogueTaxa, "in")
-  )
-} else {
-  cons <- SortTree(RootTree(ConsensusWithout(trees, rogueTaxa),
-                            setdiff(outgroup, rogueTaxa)))
-  plot(cons)
-  legend("bottomleft", bty = "n",
-         lty = 2, text.font = 3, cex = 0.8,
-         title = "Rogue taxa", title.font = 1,
-         rogueTaxa)
-}
-concordance <- QuartetConcordance(cons, dat)
-LabelSplits(
-  tree = cons,
-  labels = round(concordance * 100),
-  col = SupportColor(concordance, scale = concScale),
-  frame = "none",
-  pos = 3,
-  cex = 0.8
-)
-PlotTools::SpectrumLegend(
-  "bottomright",
-  legend = c(100, 75, 50),
-  title = "Concordance / %",
-  palette = concLegScale,
-  xpd = NA, bty = "n"
-)
+PlotParsRogues(trees, rogues[-1, "taxon"])
 ```
 
 (ref:pars-highK-rogue-cap) Strict consensus of results for implied weights parsimony with high concavity values (`r paste(sort(setdiff(concavities, lowK)), collapse = ", ")`), after removal of rogue taxa. Splits are labelled with their quartet concordance [@Minh2020mbe].
@@ -378,6 +382,7 @@ PlotTools::SpectrumLegend(
 #| eval = evalLowK,
 #| message = FALSE,
 #| results = "hide"
+
 set.seed(1) # Consistent result from heuristic search
 trees <- RootTree(do.call(c, lowKTrees), outgroup)
 rogues <- Rogue::QuickRogue(trees, p = 1)
@@ -388,6 +393,7 @@ rogues
 #| message = FALSE,
 #| fig.height = 6.4,
 #| fig.cap = "(ref:pars-lowK-cap)"
+
 par(mar = rep(0, 4), cex = 0.8)
 PlotParsCons(trees)
 ```
@@ -399,48 +405,15 @@ PlotParsCons(trees)
 #| fig.height = 6.4,
 #| fig.cap = "(ref:pars-lowK-rogue-cap)"
 
-rogueTaxa <- rogues[-1, "taxon"]
 par(mar = rep(0, 4), cex = 0.8)
-if (length(rogueTaxa) == 1) {
-  rp <- RoguePlot(trees, rogueTaxa, sort = TRUE)
-  cons <- rp[["cons"]]
-  PlotTools::SpectrumLegend(
-    "bottomleft", 
-    palette = colorRampPalette(c(par("fg"), "#009E73"), space = "Lab")(100),
-    legend = rp[["legendLabels"]],
-    cex = 0.4, bty = "n", title = paste("Position of", rogueTaxa, "in")
-  )
-} else {
-  cons <- SortTree(RootTree(ConsensusWithout(trees, rogueTaxa),
-                            setdiff(outgroup, rogueTaxa)))
-  plot(cons)
-  legend("bottomleft", bty = "n",
-         lty = 2, text.font = 3, cex = 0.8,
-         title = "Rogue taxa", title.font = 1,
-         rogueTaxa)
-}
-concordance <- QuartetConcordance(cons, dat)
-LabelSplits(
-  tree = cons,
-  labels = round(concordance * 100),
-  col = SupportColor(concordance, scale = concScale),
-  frame = "none",
-  pos = 3,
-  cex = 0.8
-)
-PlotTools::SpectrumLegend(
-  "bottomright",
-  legend = c(100, 75, 50),
-  title = "Concordance / %",
-  palette = concLegScale,
-  xpd = NA, bty = "n"
-)
+PlotParsRogues(trees, rogues[-1, "taxon"])
 ```
 
 (ref:pars-lowK-rogue-cap) Strict consensus of results for implied weights parsimony with low concavity values (`r paste(lowK, collapse = ", ")`), after removal of rogue taxa. Splits are labelled with their quartet concordance [@Minh2020mbe].
 
 ```{r ew-rogues, echo = FALSE, results = "hide"}
 #| eval = evalEW
+
 set.seed(1) # Ensure consistent result from heuristic search
 trees <- RootTree(tsTrees[["tsew"]], outgroup)
 rogues <- Rogue::QuickRogue(trees, p = 1)
@@ -452,6 +425,7 @@ rogues
 #| message = FALSE,
 #| fig.height = 6.4,
 #| fig.cap = "(ref:pars-ew-cap)"
+
 par(mar = rep(0, 4), cex = 0.8)
 PlotParsCons(trees)
 ```
@@ -463,42 +437,8 @@ PlotParsCons(trees)
 #| fig.height = 6.4,
 #| fig.cap = "(ref:pars-ew-rogue-cap)"
 
-rogueTaxa <- rogues[-1, "taxon"]
 par(mar = rep(0, 4), cex = 0.8)
-if (length(rogueTaxa) == 1) {
-  rp <- RoguePlot(trees, rogueTaxa, sort = TRUE)
-  cons <- rp[["cons"]]
-  PlotTools::SpectrumLegend(
-    "bottomleft", 
-    palette = colorRampPalette(c(par("fg"), "#009E73"), space = "Lab")(100),
-    legend = rp[["legendLabels"]],
-    cex = 0.4, bty = "n", title = paste("Position of", rogueTaxa, "in")
-  )
-} else {
-  cons <- SortTree(RootTree(ConsensusWithout(trees, rogueTaxa),
-                            setdiff(outgroup, rogueTaxa)))
-  plot(cons)
-  legend("bottomleft", bty = "n",
-         lty = 2, text.font = 3, cex = 0.8,
-         title = "Rogue taxa", title.font = 1,
-         rogueTaxa)
-}
-concordance <- QuartetConcordance(cons, dat)
-LabelSplits(
-  tree = cons,
-  labels = round(concordance * 100),
-  col = SupportColor(concordance, scale = concScale),
-  frame = "none",
-  pos = 3,
-  cex = 0.8
-)
-PlotTools::SpectrumLegend(
-  "bottomright",
-  legend = c(100, 75, 50),
-  title = "Concordance / %",
-  palette = concLegScale,
-  xpd = NA, bty = "n"
-)
+PlotParsRogues(trees, rogues[-1, "taxon"])
 ```
 
 (ref:pars-ew-rogue-cap) Strict consensus of results for equal weights parsimony, after removal of rogue taxa.  Splits are labelled with their quartet concordance [@Minh2020mbe].
