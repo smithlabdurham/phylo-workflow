@@ -420,7 +420,7 @@ PlotTools::SpectrumLegend(
 rogueTaxa <- rogues[-1, "taxon"]
 par(mar = rep(0, 4), cex = 0.8)
 if (length(rogueTaxa) == 1) {
-  rp <- RoguePlot(trees, rogueTaxa)
+  rp <- RoguePlot(trees, rogueTaxa, sort = TRUE)
   cons <- rp[["cons"]]
   PlotTools::SpectrumLegend(
     "bottomleft", 
