@@ -16,7 +16,7 @@ sophisticated models.
 ## Download matrix
 
 - Place a copy of the matrix for analysis, in NEXUS format, in this directory.
-  Ensure the matrix does not contain an `ASSUMPTIONS` block.
+- Ensure the matrix does not contain an `ASSUMPTIONS` block ([Issue #732](https://github.com/revbayes/revbayes/issues/732)).
 
 
 ## Modify analytical script
