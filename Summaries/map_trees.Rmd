@@ -29,9 +29,9 @@ rbDir <- "../RevBayes"           # Location of RevBayes results, if they exist
 
 # Run time scales with the square of the number of trees visualized.
 # How many trees should be sampled from each set of parsimony results?
-parsSample <- 24
-# How many trees should be sampled from each Bayesian analysis?
-bayesSample <- 120
+nMapPars <- 24
+# How many trees should be sampled from each run of each Bayesian analysis?
+nMapBayes <- 24
 # How many trees should be sampled when computing posterior probabilities?
 ppSample <- 500
 # What proportion of Bayesian trees should be discarded as burnin? (0.0-1.0)
@@ -178,10 +178,10 @@ Sample <- function (x, n) {
 }
 
 set.seed(1) # Consistent sampling
-#tntSample <- lapply(tntTrees, Sample, parsSample)
-tsSample <- lapply(tsTrees, Sample, parsSample)
-mbSample <- lapply(mbBurnOff, Sample, bayesSample)
-rbSample <- lapply(rbBurnOff, Sample, bayesSample)
+#tntSample <- lapply(tntTrees, Sample, nMapPars)
+tsSample <- lapply(tsTrees, Sample, nMapPars)
+mbSample <- lapply(mbBurnOff, Sample, nMapBayes)
+rbSample <- lapply(rbBurnOff, Sample, nMapBayes)
 ```
 
 # Summary of phylogenetic results
@@ -691,7 +691,7 @@ if (calcPP) {
 
 To evaluate the consistency of phylogenetic results, we map the phylogenetic trees obtained by different methods using the Quartet distance [@Estabrook1985; @SmithSpace], using the R [@R] packages "Quartet" [@Quartet; @Sand2014] and "TreeDist" [@TreeDist].  Distances in the mapping correspond to the degree of difference between tree topologies; dashed lines depict the shortest path to connect all trees, depicting any distortion introduced by the mapping [@SmithSpace].
 
-The mapping is conducted on a subsample of `r parsSample` trees from each parsimony search, and `r bayesSample` samples from the Bayesian posterior tree set.
+The mapping is conducted on a subsample of `r nMapPars` trees from each parsimony search, and `r nMapBayes` samples from the posterior tree set of each Bayesian run.
 
 
 ```{r plot-mapping, echo = FALSE}
