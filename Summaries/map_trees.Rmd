@@ -161,7 +161,7 @@ mbPosterior <- do.call(c, mbBurnOff)[
 
 rbBurnOff <- lapply(rbTrees, function(trees) {
   nTree <- length(trees)
-  trees[(1 + (nTree * 0)):nTree]
+  trees[(1 + (nTree * burninF)):nTree]
 })
 nRb <- sum(lengths(rbBurnOff))
 rbPosterior <- do.call(c, rbBurnOff)[
@@ -201,7 +201,17 @@ Splits in Bayesian trees are labelled with their posterior probability; in parsi
 
 ## Bayesian analysis
 
-```{r bayes-plot-functions, echo = FALSE}
+```{r install-treess, echo = FALSE}
+#| eval = (!is.null(mbPosterior) || !is.null(rbPosterior)) &&
+#|  !requireNamespace("treess", quietly = TRUE)
+
+message("Installing packages necessary to calculate tree ESS")
+if (!requireNamespace("devtools", quietly = TRUE)) {
+  install.packages("devtools")
+}
+devtools::install_github("afmagee/treess")
+```
+```{r bayes-functions, echo = FALSE}
 BayesCons <- function(posterior) {
   cons <- SortTree(RootTree(consensus(posterior, p = 0.5), outgroup))
   plot(cons)
@@ -262,6 +272,23 @@ BayesRogues <- function(posterior, rogueTaxa) {
     xpd = NA, bty = "n"
   )
 }
+
+BayesESS <- function(posterior, analysisName) {
+  ess <- treess::treess(list(posterior), TreeDist::RobinsonFoulds,
+                        methods = c("frechetCorrelationESS", "medianPseudoESS"))[[1]]
+  cat(paste("Posterior sample of", length(rbPosterior), analysisName,
+            "trees has Frechet Correlation ESS of",
+            signif(ess[["frechetCorrelationESS"]], 4),
+            "and Median Pseudo ESS of",
+            signif(ess[["medianPseudoESS"]], 4),
+            "[@Lanfear2016;@Magee2024]"
+            ))
+}
+```
+
+```{r mrbayes-tree-ess, echo = FALSE, asis = TRUE}
+#| eval = !is.null(mbPosterior) && requireNamespace("treess", quietly = TRUE)
+BayesESS(mbPosterior, "MrBayes")
 ```
 ```{r plot-mrbayes, echo = FALSE}
 #| eval = !is.null(mbPosterior),
@@ -290,7 +317,10 @@ BayesRogues(mbPosterior, mbRogues[-1, "taxon"])
 ```
 
 
-
+```{r revbayes-tree-ess, echo = FALSE, asis = TRUE}
+#| eval = !is.null(rbPosterior) && requireNamespace("treess", quietly = TRUE)
+BayesESS(rbPosterior, "RevBayes")
+```
 ```{r plot-revbayes, echo = FALSE}
 #| eval = !is.null(rbPosterior),
 #| fig.height = 6.4,
