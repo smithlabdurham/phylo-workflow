@@ -276,7 +276,7 @@ BayesRogues <- function(posterior, rogueTaxa) {
 BayesESS <- function(posterior, analysisName) {
   ess <- treess::treess(list(posterior), TreeDist::RobinsonFoulds,
                         methods = c("frechetCorrelationESS", "medianPseudoESS"))[[1]]
-  cat(paste("Posterior sample of", length(rbPosterior), analysisName,
+  cat(paste("The posterior sample of", length(rbPosterior), analysisName,
             "trees has Frechet Correlation ESS of",
             signif(ess[["frechetCorrelationESS"]], 4),
             "and Median Pseudo ESS of",
@@ -286,7 +286,7 @@ BayesESS <- function(posterior, analysisName) {
 }
 ```
 
-```{r mrbayes-tree-ess, echo = FALSE, asis = TRUE}
+```{r mrbayes-tree-ess, echo = FALSE, results = "asis"}
 #| eval = !is.null(mbPosterior) && requireNamespace("treess", quietly = TRUE)
 BayesESS(mbPosterior, "MrBayes")
 ```
@@ -317,7 +317,7 @@ BayesRogues(mbPosterior, mbRogues[-1, "taxon"])
 ```
 
 
-```{r revbayes-tree-ess, echo = FALSE, asis = TRUE}
+```{r revbayes-tree-ess, echo = FALSE, , results = "asis"}
 #| eval = !is.null(rbPosterior) && requireNamespace("treess", quietly = TRUE)
 BayesESS(rbPosterior, "RevBayes")
 ```
