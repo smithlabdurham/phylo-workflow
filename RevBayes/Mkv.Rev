@@ -6,7 +6,7 @@ maxPSRF = 1.01 # Scale Reduction Factor at which to assume convergence
 
 chars <- readDiscreteCharacterData(inputFile)
 logFile = inputFile + ".mkv.log"
-paramFile = ".mkv.p.log"
+paramFile = inputFile + ".mkv.p.log"
 treeFile = inputFile + ".mkv.trees"
 ckpFile = inputFile + ".mkv.ckp"
 
@@ -87,10 +87,10 @@ for (k in 2:maxK) {
 mymodel = model(phylogeny)
 
 monitors = VectorMonitors()
-monitors.append( mnScreen(printgen = 300, prior = FALSE, posterior = FALSE) )
-monitors.append( mnModel(filename = logFile, printgen = 36) )
-monitors.append( mnModel(filename = paramFile, printgen = 6, stochasticOnly = TRUE, exclude = ["rel_br_lengths"]) )
-monitors.append( mnFile(filename = treeFile, printgen = 12, phylogeny) )
+monitors.append( mnScreen(printgen = 50, prior = FALSE, posterior = FALSE) )
+monitors.append( mnModel(filename = logFile, printgen = 10) )
+monitors.append( mnModel(filename = paramFile, printgen = 1, stochasticOnly = TRUE, exclude = ["rel_br_lengths"]) )
+monitors.append( mnFile(filename = treeFile, printgen = 1, phylogeny) )
 
 mymc3 = mcmcmc(
   mymodel, monitors, moves,
@@ -110,7 +110,7 @@ if (fileExists(inputFile + "_run_1_chain_0.ckp")) {
   mymc3.initializeFromCheckpoint(ckpFile)
   # runHours = 24
 } else {
-  mymc3.burnin(generations = 500, tuningInterval = 250)
+  mymc3.burnin(generations = 300, tuningInterval = 100)
   # runHours = 71
 }
 

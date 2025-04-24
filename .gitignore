@@ -1,8 +1,25 @@
+# Software temporary files
 .DS_Store
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
 *.bak
+
+# Executables (e.g. RevBayes, MrBayes)
 *.exe
+
+# Knitr intermediate files
+/Summaries/map_trees_files
+*.aux
+*.knit.md
+map_trees.log
+*.tex
+
+# RevBayes output files
 RevBayes/history.txt
+*.ckp
+*_run_*.log
+*_run_*.trees
+
+# Other ignored files
