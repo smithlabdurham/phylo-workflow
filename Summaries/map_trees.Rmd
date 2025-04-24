@@ -273,7 +273,7 @@ BayesRogues <- function(posterior, rogueTaxa) {
   )
 }
 
-BayesESS <- function(posterior, analysisName) {
+BayesESS <- function(posterior, analysisName = character(0)) {
   ess <- treess::treess(list(posterior), TreeDist::RobinsonFoulds,
                         methods = c("frechetCorrelationESS", "medianPseudoESS"))[[1]]
   cat(paste("The posterior sample of", length(posterior), analysisName,
