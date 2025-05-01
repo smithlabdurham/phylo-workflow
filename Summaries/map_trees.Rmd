@@ -24,7 +24,7 @@ outgroup <- c("Eolorica", "Echinoderes", "Tubiluchus")
 
 # Which taxa should be illustrated using PhyloPic?
 # Either specify taxa from which to fetch images:
-pic <- c("Euperipatoides", "Beorn", "Hurdia")
+pic <- c("Cricocosmia", "Beorn", "Hurdia")
 # Or specify a vector of images named by their associated taxon,
 # or an empty string where default images should be used.
 pic <- list(
@@ -294,19 +294,35 @@ if (!requireNamespace("devtools", quietly = TRUE)) {
 devtools::install_github("afmagee/treess")
 ```
 ```{r bayes-functions, echo = FALSE}
+# Sumbitted to rphylopic, https://github.com/palaeoverse/rphylopic/pull/110
 add_phylopic_tree <- function(tree, tip, img = NULL,
-                              name = if (is.null(img) && is.null(uuid)) tip else NULL, 
-                              uuid = NULL,
-                              relWidth = 0.06) {
+                              name = if (is.null(img) && is.null(uuid)) tip 
+                                else NULL, 
+                              uuid = NULL, width, relWidth = 0.06,
+                              padding = 1/200,
+                              hjust = 0,
+                              ...) {
+  coords <- tryCatch(get("last_plot.phylo", envir = .PlotPhyloEnv),
+                     error = function(e) {
+                       plot(tree)
+                       get("last_plot.phylo", envir = .PlotPhyloEnv)
+                     })
   rightEdge <- par("usr")[[2]]
-  coords <- get("last_plot.phylo", envir = .PlotPhyloEnv)
+  leftEdge <- par("usr")[[1]]
+  plotWidth <- rightEdge - leftEdge
+  if (missing(width)) {
+    width <- plotWidth * relWidth
+  }
+  padX <- padding * plotWidth
   add_phylopic_base(
     img = img,
     name = name,
     uuid = uuid,
-    x = rightEdge * (1 - relWidth),
+    x = rightEdge - width - padX,
     y = coords[["yy"]][[match(tip, tree[["tip.label"]])]],
-    width = rightEdge * relWidth
+    hjust = hjust,
+    width = width,
+    ...
   )
 }
 
@@ -935,10 +951,22 @@ for (i in 2:nDim) for (j in seq_len(i - 1)) {
 ```{r acknowledge-pics, echo = FALSE, output = "asis"}
 #| eval = length(pic) > 0
 
-cat("Taxon silhouettes were obtained from PhyloPic [@Gearty2023].")
-# and are used with permission of...
-get_attribution()
-
+picID <- unlist(pic[!is.na(pic)])
+picID <- picID[order(names(picID))]
+att <- unlist(get_attribution(picID), recursive = FALSE)
+contrib <- sort(setdiff(unique(unlist(sapply(att, `[[`, "contributor"))), "Unknown"))
+licenses <- sort(unique(vapply(att, `[[`, character(1), "license_abbr")))
+AndLast <- function(x) paste(c(paste(x[-length(x)], collapse = ", "),
+                               x[[length(x)]]), collapse = " and ")
+cat(paste(
+  "Taxon silhouettes by",
+  AndLast(contrib),
+  "were obtained from PhyloPic [@Gearty2023] and are reproduced under",
+  if (length(licenses) == 1) paste("a", licenses, "license")
+  else paste(AndLast(licenses), "licenses."),
+  "Original files: ",
+  paste0("[", names(picID), "](https://www.phylo.pic/images/", picID, ")", collapse = ", ")
+))
 ```
 
 # References
