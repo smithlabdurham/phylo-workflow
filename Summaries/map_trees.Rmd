@@ -20,7 +20,24 @@ bibliography:
 distMethod <- "CID"
 
 # What taxon / taxa should be used to root the tree?
-outgroup <- "Tubiluchus"
+outgroup <- c("Eolorica", "Echinoderes", "Tubiluchus")
+
+# Which taxa should be illustrated using PhyloPic?
+# Either specify taxa from which to fetch images:
+pic <- c("Euperipatoides", "Beorn", "Hurdia")
+# Or specify a vector of images named by their associated taxon,
+# or an empty string where default images should be used.
+pic <- list(
+  # You can specify the full URL of an image page:
+  "Tubiluchus" = "https://www.phylopic.org/images/19b4474b-698e-4b5a-8f90-6ed4c580819c/tubiluchus",
+  # Or just the UUID component of the URL:
+  "Eolorica" = "03219505-5777-42e6-9660-9ddb80746144",
+  # Or a taxon name:
+  "Echinoderes" = "Kinorhyncha",
+  # Blank entries will be searched from the Phylopic database:
+  "Cricocosmia" = "",
+  "Euperipatoides" = ""
+)
 
 # Paths to results directories
 treeSearchDir <- "../TreeSearch" # Must contain the input matrix file
@@ -31,9 +48,9 @@ rbDir <- "../RevBayes"           # Location of RevBayes results, if they exist
 # How many trees should be sampled from each set of parsimony results?
 nMapPars <- 24
 # How many trees should be sampled from each run of each Bayesian analysis?
-nMapBayes <- 24
+nMapBayes <- 48
 # How many trees should be sampled when computing posterior probabilities?
-ppSample <- 500
+ppSample <- 1000
 # What proportion of Bayesian trees should be discarded as burnin? (0.0-1.0)
 burninF <- 0.10
 
@@ -182,6 +199,54 @@ set.seed(1) # Consistent sampling
 tsSample <- lapply(tsTrees, Sample, nMapPars)
 mbSample <- lapply(mbBurnOff, Sample, nMapBayes)
 rbSample <- lapply(rbBurnOff, Sample, nMapBayes)
+```
+
+```{r load-pics, echo = FALSE, message = TRUE}
+#| eval = length(pic) > 0
+
+if (!requireNamespace("rphylopic", quietly = TRUE)) {
+  install.packages("rphylopic")
+}
+
+library("rphylopic")
+if (is.null(names(pic))) {
+  pic <- setNames(rep_len("", length(pic)), pic)
+}
+
+UuidValid <- function(uuid) {
+  httr::HEAD(
+    paste0("https://phylopic.org/images/", uuid)
+  )[["status_code"]] == 200
+}
+
+GetPic <- function(uuid) {
+  uuidExpr <-
+    "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"
+  if (grepl(uuidExpr, uuid, perl = TRUE)) {
+    uuid <- sub(sprintf("^.*?(%s).*$", uuidExpr), perl = TRUE, "\\1", uuid)
+  }
+  if (UuidValid(uuid)) {
+    return(uuid)
+  }
+  
+  if (uuid != "") {
+    lookup <- tryCatch(get_uuid(uuid),
+                       error = function(e) {
+                         NA_character_
+                       })
+    if (!is.na(lookup)) {
+      return(lookup)
+    }
+  }
+  
+  tryCatch(get_uuid(uuid), 
+           error = function(e) {
+             message("No silhouette found for ", taxon)
+             NA_character_
+           })
+}
+pic[] <- vapply(pic, GetPic, character(1))
+
 ```
 
 # Summary of phylogenetic results
@@ -818,6 +883,16 @@ for (i in 2:nDim) for (j in seq_len(i - 1)) {
     text(mean(clusterX), mean(clusterY), clI, col = "#54de25bb", font = 2)
   }
 }
+
+```
+
+
+```{r acknowledge-pics, echo = FALSE, output = "asis"}
+#| eval = length(pic) > 0
+
+cat("Taxon silhouettes were obtained from PhyloPic [@Gearty2023].")
+# and are used with permission of...
+get_attribution()
 
 ```
 
