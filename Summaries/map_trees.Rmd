@@ -34,9 +34,9 @@ pic <- list(
   "Eolorica" = "03219505-5777-42e6-9660-9ddb80746144",
   # Or a taxon name:
   "Echinoderes" = "Kinorhyncha",
+  "Euperipatoides" = "Onychophora",
   # Blank entries will be searched from the Phylopic database:
-  "Cricocosmia" = "",
-  "Euperipatoides" = ""
+  "Cricocosmia" = ""
 )
 
 # Paths to results directories
@@ -214,6 +214,9 @@ if (is.null(names(pic))) {
 }
 
 UuidValid <- function(uuid) {
+  if (!is.character(uuid) || is.na(uuid) || nchar(uuid) != 36) {
+    return(FALSE)
+  }
   httr::HEAD(
     paste0("https://phylopic.org/images/", uuid)
   )[["status_code"]] == 200
@@ -229,7 +232,9 @@ GetPic <- function(uuid) {
     return(uuid)
   }
   
-  if (uuid != "") {
+  if (is.na(uuid) || uuid == "") {
+    uuid <- names(uuid)
+  } else  {
     lookup <- tryCatch(get_uuid(uuid),
                        error = function(e) {
                          NA_character_
@@ -239,14 +244,20 @@ GetPic <- function(uuid) {
     }
   }
   
-  tryCatch(get_uuid(uuid), 
-           error = function(e) {
-             message("No silhouette found for ", taxon)
-             NA_character_
-           })
+  if (is.na(uuid) || uuid == "") {
+    NA_character_
+  } else {
+    tryCatch(get_uuid(uuid), 
+             error = function(e) {
+               message("No silhouette found for ", uuid)
+               NA_character_
+             })
+  }
 }
-pic[] <- vapply(pic, GetPic, character(1))
 
+for (i in seq_along(pic)) { # not vapply, as we need to retain names
+  pic[[i]] <- GetPic(pic[i])
+}
 ```
 
 # Summary of phylogenetic results
