@@ -342,9 +342,9 @@ BayesESS <- function(posterior, analysisName = character(0)) {
   ess <- treess::treess(list(posterior), TreeDist::RobinsonFoulds,
                         methods = c("frechetCorrelationESS", "medianPseudoESS"))[[1]]
   cat(paste("The posterior sample of", length(posterior), analysisName,
-            "trees has Frechet Correlation ESS of",
+            "trees has a Frechet Correlation ESS of",
             signif(ess[["frechetCorrelationESS"]], 4),
-            "and Median Pseudo ESS of",
+            "and a Median Pseudo ESS of",
             signif(ess[["medianPseudoESS"]], 4),
             "[@Lanfear2016;@Magee2024]"
             ))
@@ -743,7 +743,7 @@ Plotting the consensus tree for each cluster can reveal resolution that is consi
 calcPP <- sum(lengths(c(mbPosterior, rbPosterior))) > 0
 PlotGrid <- function(n) rep(ceiling(sqrt(n)), 2)
 cl <- table(cluster[cluster > 0])
-par(mfrow = PlotGrid(length(cl)), mar = rep(0.2, 4), cex = 0.7)
+par(mfrow = PlotGrid(length(cl)), mar = rep(0.2, 4), cex = 0.5)
 
 for (i in as.integer(names(cl[order(cl, decreasing = TRUE)]))) {
   trees <- allTrees[cluster == i]
