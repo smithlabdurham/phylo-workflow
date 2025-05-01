@@ -38,7 +38,7 @@ pic <- list(
   # Blank entries will be searched from the Phylopic database:
   "Cricocosmia" = ""
 )
-picWidth <- 12
+picWidth <- 0.06 # Relative width of silhouette images
 
 # Paths to results directories
 treeSearchDir <- "../TreeSearch" # Must contain the input matrix file
@@ -212,7 +212,7 @@ if (!requireNamespace("rphylopic", quietly = TRUE)) {
   install.packages("rphylopic")
 }
 
-library("rphylopic")
+suppressPackageStartupMessages(library("rphylopic"))
 if (is.null(names(pic))) {
   pic <- setNames(rep_len("", length(pic)), pic)
 }
