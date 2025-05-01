@@ -38,6 +38,7 @@ pic <- list(
   # Blank entries will be searched from the Phylopic database:
   "Cricocosmia" = ""
 )
+picWidth <- 12
 
 # Paths to results directories
 treeSearchDir <- "../TreeSearch" # Must contain the input matrix file
@@ -201,6 +202,9 @@ mbSample <- lapply(mbBurnOff, Sample, nMapBayes)
 rbSample <- lapply(rbBurnOff, Sample, nMapBayes)
 ```
 
+```{r load-no-pics, echo = FALSE, message = FALSE}
+silhouettes <- NULL
+```
 ```{r load-pics, echo = FALSE, message = TRUE}
 #| eval = length(pic) > 0
 
@@ -258,6 +262,8 @@ GetPic <- function(uuid) {
 for (i in seq_along(pic)) { # not vapply, as we need to retain names
   pic[[i]] <- GetPic(pic[i])
 }
+
+silhouettes <- lapply(pic[!is.na(pic)], get_phylopic)
 ```
 
 # Summary of phylogenetic results
@@ -288,9 +294,28 @@ if (!requireNamespace("devtools", quietly = TRUE)) {
 devtools::install_github("afmagee/treess")
 ```
 ```{r bayes-functions, echo = FALSE}
+add_phylopic_tree <- function(tree, tip, img = NULL,
+                              name = if (is.null(img) && is.null(uuid)) tip else NULL, 
+                              uuid = NULL,
+                              relWidth = 0.06) {
+  rightEdge <- par("usr")[[2]]
+  coords <- get("last_plot.phylo", envir = .PlotPhyloEnv)
+  add_phylopic_base(
+    img = img,
+    name = name,
+    uuid = uuid,
+    x = rightEdge * (1 - relWidth),
+    y = coords[["yy"]][[match(tip, tree[["tip.label"]])]],
+    width = rightEdge * relWidth
+  )
+}
+
 BayesCons <- function(posterior) {
   cons <- SortTree(RootTree(consensus(posterior, p = 0.5), outgroup))
   plot(cons)
+  for (i in seq_along(silhouettes)) {
+    add_phylopic_tree(cons, names(silhouettes)[[i]], img = silhouettes[[i]])
+  }
   splitFreqs <- SplitFrequency(cons, posterior) / length(posterior)
   tooBright <- 9
   LabelSplits(
@@ -319,6 +344,9 @@ BayesCons <- function(posterior) {
 BayesRogues <- function(posterior, rogueTaxa) {
   cons <- SortTree(RootTree(ConsensusWithout(posterior, rogueTaxa, p = 0.5), outgroup))
   plot(cons)
+  for (i in seq_along(silhouettes)) {
+    add_phylopic_tree(cons, names(silhouettes)[[i]], img = silhouettes[[i]])
+  }
   splitFreqs <- SplitFrequency(cons, posterior) / length(posterior)
   tooBright <- 9
   LabelSplits(
@@ -442,6 +470,9 @@ highKRogues
 PlotParsCons <- function(trees) {
   cons <- SortTree(RootTree(consensus(trees), outgroup))
   plot(cons)
+  for (i in seq_along(silhouettes)) {
+    add_phylopic_tree(cons, names(silhouettes)[[i]], img = silhouettes[[i]])
+  }
   concordance <- QuartetConcordance(cons, dat)
   LabelSplits(
     tree = cons,
@@ -478,6 +509,9 @@ PlotParsRogues <- function(trees, rogueTaxa) {
            lty = 2, text.font = 3, cex = 0.8,
            title = "Rogue taxa", title.font = 1,
            rogueTaxa)
+  }
+  for (i in seq_along(silhouettes)) {
+    add_phylopic_tree(cons, names(silhouettes)[[i]], img = silhouettes[[i]])
   }
   concordance <- QuartetConcordance(cons, dat)
   LabelSplits(
