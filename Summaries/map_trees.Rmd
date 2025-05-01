@@ -38,7 +38,13 @@ pic <- list(
   # Blank entries will be searched from the Phylopic database:
   "Cricocosmia" = ""
 )
+
 picWidth <- 0.06 # Relative width of silhouette images
+# To size some taxa differently, use:
+picWidth <- function(taxon) switch(taxon,
+  "Eolorica" = 0.03,
+  0.06 # Default for unlisted taxa
+)
 
 # Paths to results directories
 treeSearchDir <- "../TreeSearch" # Must contain the input matrix file
@@ -326,11 +332,14 @@ add_phylopic_tree <- function(tree, tip, img = NULL,
   )
 }
 
+silWidth <- if (is.function(picWidth)) picWidth else function(taxon) picWidth
+
 BayesCons <- function(posterior) {
   cons <- SortTree(RootTree(consensus(posterior, p = 0.5), outgroup))
   plot(cons)
   for (i in seq_along(silhouettes)) {
-    add_phylopic_tree(cons, names(silhouettes)[[i]], img = silhouettes[[i]])
+    add_phylopic_tree(cons, names(silhouettes)[[i]], img = silhouettes[[i]],
+                      relWidth = silWidth(names(silhouettes)[[i]]))
   }
   splitFreqs <- SplitFrequency(cons, posterior) / length(posterior)
   tooBright <- 9
@@ -361,7 +370,8 @@ BayesRogues <- function(posterior, rogueTaxa) {
   cons <- SortTree(RootTree(ConsensusWithout(posterior, rogueTaxa, p = 0.5), outgroup))
   plot(cons)
   for (i in seq_along(silhouettes)) {
-    add_phylopic_tree(cons, names(silhouettes)[[i]], img = silhouettes[[i]])
+    add_phylopic_tree(cons, names(silhouettes)[[i]], img = silhouettes[[i]],
+                      relWidth = silWidth(names(silhouettes)[[i]]))
   }
   splitFreqs <- SplitFrequency(cons, posterior) / length(posterior)
   tooBright <- 9
@@ -487,7 +497,8 @@ PlotParsCons <- function(trees) {
   cons <- SortTree(RootTree(consensus(trees), outgroup))
   plot(cons)
   for (i in seq_along(silhouettes)) {
-    add_phylopic_tree(cons, names(silhouettes)[[i]], img = silhouettes[[i]])
+    add_phylopic_tree(cons, names(silhouettes)[[i]], img = silhouettes[[i]],
+                      relWidth = silWidth(names(silhouettes)[[i]]))
   }
   concordance <- QuartetConcordance(cons, dat)
   LabelSplits(
@@ -527,7 +538,8 @@ PlotParsRogues <- function(trees, rogueTaxa) {
            rogueTaxa)
   }
   for (i in seq_along(silhouettes)) {
-    add_phylopic_tree(cons, names(silhouettes)[[i]], img = silhouettes[[i]])
+    add_phylopic_tree(cons, names(silhouettes)[[i]], img = silhouettes[[i]],
+                      relWidth = silWidth(names(silhouettes)[[i]]))
   }
   concordance <- QuartetConcordance(cons, dat)
   LabelSplits(
