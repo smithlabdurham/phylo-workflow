@@ -978,7 +978,7 @@ cat(paste(
   if (length(licenses) == 1) paste("a", licenses, "license")
   else paste(AndLast(licenses), "licenses."),
   "Original files: ",
-  paste0("[", names(picID), "](https://www.phylo.pic/images/", picID, ")", collapse = ", ")
+  paste0("[", names(picID), "](https://www.phylopic.org/images/", picID, ")", collapse = ", ")
 ))
 ```
 
