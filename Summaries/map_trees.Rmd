@@ -992,6 +992,8 @@ picID <- picID[order(names(picID))]
 att <- unlist(get_attribution(picID), recursive = FALSE)
 contrib <- sort(setdiff(unique(unlist(sapply(att, `[[`, "contributor"))), "Unknown"))
 licenses <- sort(unique(vapply(att, `[[`, character(1), "license_abbr")))
+licenseUrl <- sort(unique(vapply(att, `[[`, character(1), "license")))
+linkedLicense <- paste0("[", licenses, "](", licenseUrl, ")")
 AndLast <- function(x) paste(c(paste(x[-length(x)], collapse = ", "),
                                x[[length(x)]]), collapse = " and ")
 cat(paste(
@@ -999,8 +1001,8 @@ cat(paste(
   "Taxon silhouettes by",
   AndLast(contrib),
   "were obtained from PhyloPic [@Gearty2023] and are reproduced under",
-  if (length(licenses) == 1) paste("a", licenses, "license")
-  else paste(AndLast(licenses), "licenses."),
+  if (length(licenses) == 1) paste("a", linkedLicense, "license")
+  else paste(AndLast(linkedLicense), "licenses."),
   "Original files: ",
   paste0("[", names(picID), "](https://www.phylopic.org/images/", picID, ")", collapse = ", ")
 ))
