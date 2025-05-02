@@ -780,7 +780,8 @@ K-means++ clustering [@Arthur2007; @Hartigan1979; @TreeDist], and
 hierarchical density based clustering [@Campello2015; @Hahsler2019; @Hahsler2023].
 The clustering quality under each method, with 2–`r max(possibleClusters)` clusters, was compared using the silhouette coefficient [@Rousseeuw1987; @Maechler2022]; high silhouette coefficients distinguish the most clearly defined clusters.
 
-```{r plot-cluster-summary, echo = FALSE, fig.cap = "Evaluation of optimal clustering"}
+```{r plot-cluster-summary, echo = FALSE}
+#| fig.cap = "Evaluation of optimal clustering"
 par(mar = c(4, 4, 0.1, 0.1), cex = 0.7)
 plot(pamSils ~ possibleClusters,
      xlab = "Number of clusters", ylab = "Silhouette coefficient",
@@ -795,9 +796,11 @@ legend("topright", bty = "n",
 
 cluster <- switch(which.max(c(hSil, pamSil, kSil, dbSil)),
                   hCluster, pamCluster, kCluster, dbCluster)
+cl <- table(cluster[cluster > 0])
 ```
 
-```{r hcut, echo = FALSE, eval = FALSE}
+```{r hcut, echo = FALSE}
+#| eval = which.max(c(hSil, pamSil, kSil, dbSil)) == 1
 class(hTree) <- "hclust"
 
 par(mar = c(0, 0, 0, 0))
@@ -806,26 +809,29 @@ points(seq_along(cols), rep(5, length(cols)), pch = 16,
        col = cols[hTree$order])
 ```
 
-
-Plotting the consensus tree for each cluster can reveal resolution that is consistent within each cluster, but obscured in a single consensus of all topologies.
-
-```{r cluster-consensus-trees, echo = FALSE}
+```{r cluster-consensus-trees, echo = FALSE, results = "asis"}
+#| eval = !is.null(cluster) && length(unique(cluster)) > 0,
 #| fig.height = 6.4,
 #| fig.cap = "(ref:clust-cons-cap)"
 
+cat(paste("Plotting the consensus tree for each cluster can reveal resolution",
+          "that is consistent within each cluster, but obscured in a single",
+          "consensus of all topologies.\n"))
+
 calcPP <- sum(lengths(c(mbPosterior, rbPosterior))) > 0
 PlotGrid <- function(n) rep(ceiling(sqrt(n)), 2)
-cl <- table(cluster[cluster > 0])
 par(mfrow = PlotGrid(length(cl)), mar = rep(0.2, 4), cex = 0.5)
 
-for (i in as.integer(names(cl[order(cl, decreasing = TRUE)]))) {
-  trees <- allTrees[cluster == i]
+for (i in seq_along(cl)) {
+  clN <- as.integer(names(cl[order(cl, decreasing = TRUE)]))
+  trees <- allTrees[cluster == clN]
   cons <- SortTree(RootTree(consensus(trees, p = 0.5), outgroup))
   plot(cons)
     
   legend("bottomleft",
-         sprintf("Consensus of %g%% of trees",
+         sprintf("Consensus of cluster %s: %g%% of trees", i,
                  signif(100 * length(trees) / length(allTrees), 3)),
+         text.col = 1 + i,
          bty = "n")
   if (calcPP) {
     splitFreqs <- SplitFrequency(cons, c(mbPosterior, rbPosterior)) / 
@@ -837,7 +843,7 @@ for (i in as.integer(names(cl[order(cl, decreasing = TRUE)]))) {
                   scale = hcl.colors(101 + tooBright, "plasma",
                                      rev = TRUE)[-seq_len(tooBright)]
                 ),
-                frame = "none", pos = 1, cex = 0.8)
+                frame = "none", pos = 1, cex = 0.7)
   }
 }
 
@@ -874,6 +880,24 @@ plot(mapping, ann = FALSE, axes = FALSE, frame.plot = FALSE, type = "n",
 # Plot MST
 invisible(apply(mstEnds, 1, function (segment)
   lines(mapping[segment, 1], mapping[segment, 2], col = "#e0e0e0", lty = 2)))
+
+# Mark clusters
+if (length(unique(cluster)) > 1) {
+  for (i in names(cl)) {
+    clN <- rank(-cl)[i]
+    inCluster <- mapping[cluster == i, 1:2]
+    if (nrow(inCluster) < 3) {
+      next
+    }
+    clusterCol <- clN + 1
+    points(inCluster, col = clusterCol, cex = 1.4)
+    xy <- inCluster[chull(inCluster), ]
+    polygon(xy, border = clusterCol)
+    text(min(xy[, 1]), max(xy[, 2]),
+         paste0("Clust ", clN, ": ", nrow(inCluster), " trees"),
+         cex = 0.6, col = clusterCol)
+  }
+}
 
 # Add points
 points(mapping, col = cols, pch = ifelse(substr(names, 1, 1) == "t", 16, 1))
