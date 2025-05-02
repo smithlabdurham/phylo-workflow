@@ -960,7 +960,7 @@ for (i in 2:nDim) for (j in seq_len(i - 1)) {
 ```
 
 
-```{r acknowledge-pics, echo = FALSE, output = "asis"}
+```{r acknowledge-pics, echo = FALSE, results = "asis"}
 #| eval = length(pic) > 0
 
 picID <- unlist(pic[!is.na(pic)])
@@ -971,6 +971,7 @@ licenses <- sort(unique(vapply(att, `[[`, character(1), "license_abbr")))
 AndLast <- function(x) paste(c(paste(x[-length(x)], collapse = ", "),
                                x[[length(x)]]), collapse = " and ")
 cat(paste(
+  "## Attribution\n",
   "Taxon silhouettes by",
   AndLast(contrib),
   "were obtained from PhyloPic [@Gearty2023] and are reproduced under",
