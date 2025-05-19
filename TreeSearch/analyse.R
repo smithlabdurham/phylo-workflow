@@ -19,7 +19,7 @@ if (is.null(startTree)) {
 }
 notOnTree <- setdiff(names(dat), TipLabels(startTree))
 if (length(notOnTree)) {
-  message("Adding taxa missing from tree: ", paste(notOnTree, collapse = ", "))
+  message("* Adding taxa missing from tree: ", paste(notOnTree, collapse = ", "))
   startTree <- AdditionTree(dat, constraint = startTree)
 }
 
@@ -39,6 +39,12 @@ for (repetition in seq_len(searchRepeats)) for (k in kValues) {
   if (is.null(startTree)) {
     startTree <- AdditionTree(dat, concavity = k)
   }
+  notOnTree <- setdiff(names(dat), TipLabels(startTree))
+  if (length(notOnTree)) {
+    message("* Adding taxa not on tree: ", paste(notOnTree, collapse = ", "))
+    startTree <- AdditionTree(dat, constraint = startTree)
+  }
+
   best <- MaximizeParsimony(
     dataset = dat,
     tree = startTree,
