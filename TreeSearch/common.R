@@ -18,7 +18,9 @@ LatestMatrix <- function(path = ".", full.names = TRUE) {
   ))[1]
 }
 
-LatestTree <- function(dat, fileStart = "", path = ".") {
+#' @param addMissing Logical specifying whether to add data in dat missing in
+#' file using AdditionTree()
+LatestTree <- function(dat, fileStart = "", path = ".", addMissing = FALSE) {
   .Failed <- function() {
     if (fileStart == "") {
       NULL
@@ -31,13 +33,17 @@ LatestTree <- function(dat, fileStart = "", path = ".") {
     path = path,
     pattern = paste0("^", fileStart, ".*.nex.trees[^\\.]*$"),
     full.names = TRUE
-  ))[1]
+  ))[[1]]
   if (is.na(latestFile)) {
     .Failed()
   } else { 
     candidate <- read.nexus(latestFile, force.multi = TRUE)[[1]]
     if (length(setdiff(TipLabels(candidate), TipLabels(dat)))) {
-      .Failed()
+      if (addMissing) {
+        candidate <- AdditionTree(dat, constraint = candidate)
+      } else {
+        .Failed()
+      }
     } else {
       candidate
     }

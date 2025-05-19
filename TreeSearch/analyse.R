@@ -13,7 +13,7 @@ dat <- ReadAsPhyDat(latest)
 
 resultsFile <- ResultsFile(latest, "ew")
 
-startTree <- LatestTree(dat, "ew")
+startTree <- LatestTree(dat, "ew", addMissing = TRUE)
 if (is.null(startTree)) {
   startTree <- AdditionTree(dat)
 }
@@ -30,7 +30,7 @@ write.nexus(best, file = resultsFile)
 
 for (repetition in seq_len(searchRepeats)) for (k in kValues) {
   resultsFile <- ResultsFile(latest, "iw", k)
-  startTree <- LatestTree(dat, paste0("iw", k))
+  startTree <- LatestTree(dat, paste0("iw", k), addMissing = TRUE)
   if (is.null(startTree)) {
     startTree <- AdditionTree(dat, concavity = k)
   }
