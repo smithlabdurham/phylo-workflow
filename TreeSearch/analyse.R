@@ -17,6 +17,11 @@ startTree <- LatestTree(dat, "ew", addMissing = TRUE)
 if (is.null(startTree)) {
   startTree <- AdditionTree(dat)
 }
+notOnTree <- setdiff(names(dat), TipLabels(startTree))
+if (length(notOnTree)) {
+  message("Adding taxa missing from tree: ", paste(notOnTree, collapse = ", "))
+  startTree <- AdditionTree(dat, constraint = startTree)
+}
 
 best <- MaximizeParsimony(
   dataset = dat,
